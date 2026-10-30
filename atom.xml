@@ -10,7 +10,24 @@
   <rights>All rights reserved 2026, 彭宇豪</rights>
   <subtitle>学习记录博客</subtitle>
   <title>彭宇豪的博客</title>
-  <updated>2026-10-30T02:39:08.214Z</updated>
+  <updated>2026-10-30T09:48:24.560Z</updated>
+  <entry>
+    <author>
+      <name>彭宇豪</name>
+    </author>
+    <content>
+      <![CDATA[<p>测试测试</p><p>测试测试</p>]]>
+    </content>
+    <id>http://example.com/2026/10/30/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/</id>
+    <link href="http://example.com/2026/10/30/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/"/>
+    <published>2026-10-30T09:46:03.000Z</published>
+    <summary>
+      <![CDATA[<p>测试测试</p>
+<p>测试测试</p>]]>
+    </summary>
+    <title>我的第一篇文章</title>
+    <updated>2026-10-30T09:48:24.560Z</updated>
+  </entry>
   <entry>
     <author>
       <name>彭宇豪</name>
