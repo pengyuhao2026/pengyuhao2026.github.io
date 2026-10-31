@@ -234,11 +234,13 @@
 <li>相邻字面量会自动拼接，行尾加反斜杠可以跨行写</li>
 </ul>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;Hello &quot;</span> <span class="string">&quot;World!\n&quot;</span>);   <span class="comment">// 两个相邻字面量 → 自动拼成 &quot;Hello World!\n&quot;</span></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;Hello \</span></span><br><span class="line"><span class="string">       World!\n&quot;</span>);</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>字符串是数组，不能用 <code>+ - *</code> 做运算</li>
 <li>字符串的三种写法：</li>
 </ul>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">char</span> *str  = <span class="string">&quot;hello&quot;</span>;   <span class="comment">// 写法一：字符指针，指向字符串字面量</span></span><br><span class="line"><span class="type">char</span> word[] = <span class="string">&quot;hello&quot;</span>;  <span class="comment">// 写法二：字符数组</span></span><br><span class="line"><span class="type">char</span> line[<span class="number">10</span>] = <span class="string">&quot;hello&quot;</span>;<span class="comment">// 写法三：指定大小的字符数组</span></span><br></pre></td></tr></table></figure>
+
 <hr>
 <h2 id="第88讲：字符串变量"><a href="#第88讲：字符串变量" class="headerlink" title="第88讲：字符串变量"></a>第88讲：字符串变量</h2><ul>
 <li>指针本身存的是地址，加了 <code>*</code> 才是它指向的值</li>
@@ -252,6 +254,7 @@
 </ul>
 <hr>
 <h2 id="第89讲：字符串输入输出"><a href="#第89讲：字符串输入输出" class="headerlink" title="第89讲：字符串输入输出"></a>第89讲：字符串输入输出</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">char</span> <span class="built_in">string</span>[<span class="number">8</span>];</span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>, <span class="built_in">string</span>);</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%s&quot;</span>, <span class="built_in">string</span>);</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li><code>scanf(&quot;%s&quot;, ...)</code> 读到空格、Tab、回车为止</li>
 <li>输入超过数组长度会崩溃，可以用 <code>%7s</code> 限制最多读 7 个字符</li>
@@ -260,6 +263,7 @@
 <hr>
 <h2 id="第90讲：字符串数组"><a href="#第90讲：字符串数组" class="headerlink" title="第90讲：字符串数组"></a>第90讲：字符串数组</h2><p>两种写法：</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">char</span> a[][<span class="number">10</span>] = &#123;&#125;</span><br><span class="line"><span class="comment">// 二维数组：每个元素是 char[10]，存长度小于9的字符串</span></span><br><span class="line"></span><br><span class="line"><span class="type">char</span> *a[] = &#123;&#125;</span><br><span class="line"><span class="comment">// 指针数组：每个元素是 char*，指向一个字符串</span></span><br></pre></td></tr></table></figure>
+
 <hr>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>今天学了 87 到 90 四节课，全是字符串相关的内容，还是很有收获的。</p>
 
@@ -281,12 +285,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2026/10/30/261030%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" rel="prev" title="261030学习记录">
-      <i class="fa fa-chevron-left"></i> 261030学习记录
+    <a href="/2026/10/30/261030%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" rel="prev" title="10月30日：折腾了一天搭博客">
+      <i class="fa fa-chevron-left"></i> 10月30日：折腾了一天搭博客
     </a></div>
       <div class="post-nav-item">
-    <a href="/2026/10/31/261031%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/" rel="next" title="10月31日：练背的一天">
-      10月31日：练背的一天 <i class="fa fa-chevron-right"></i>
+    <a href="/2026/10/31/261031%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/" rel="next" title="261031生活日常">
+      261031生活日常 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
