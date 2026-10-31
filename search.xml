@@ -67,6 +67,38 @@
       </tags>
   </entry>
   <entry>
+    <title>261031学习记录</title>
+    <url>/2026/10/31/261031%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<p>下午五点半学了翁恺的第87讲：字符串</p>
+<p>字符串是以“0”结尾的一串字符，这个“0”是字符串结束的标志，并不属于字符串的值</p>
+<p>如 {‘H’,’E’,’L’,’L’,’O’,’!’}只是字符数组，不是字符串，末尾补一个 ‘\0’或直接写0（一个字符）才成为字符串。<br><small style="color:#888">(不能写’0’，这是0字符)</span></p>
+<p>字符串以数组的形式存在，以数组或指针的形式访问</p>
+<p>string.h有很多处理字符串的函数</p>
+<p>字符串的三种表达形式：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">char</span> *str  = “hello”;   <span class="comment">// 写法一：字符指针，指向一个字符串字面量</span></span><br><span class="line"><span class="type">char</span> word[] = <span class="string">&quot;hello&quot;</span>;  <span class="comment">// 写法二：字符数组，里面放 hello</span></span><br><span class="line"><span class="type">char</span> line[<span class="number">10</span>] = <span class="string">&quot;hello&quot;</span>;<span class="comment">// 写法三：指定大小为 10 的字符数组，里面放 hello</span></span><br></pre></td></tr></table></figure>
+<p>如果写了两个相邻的字符串常量，中间什么符号都没有，C 会自动把它们接成一个大字符串：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;Hello &quot;</span> <span class="string">&quot;World!\n&quot;</span>);   <span class="comment">// 两个相邻字面量 → 自动拼成 &quot;Hello World!\n&quot;</span></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>我的第一篇文章</title>
+    <url>/2026/10/30/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/</url>
+    <content><![CDATA[<p>从今天开始，我计划开始写我自己的博客</p>
+<h2 id="我想写点什么"><a href="#我想写点什么" class="headerlink" title="我想写点什么"></a>我想写点什么</h2><p>关于博客的内容暂时有两类：</p>
+<p>-大学的日常生活，干了什么，发生了什么事情，心情怎么样</p>
+<p>-自学方面的记录，包括我的想法，我在哪个课外方面做了什么</p>
+<h2 id="为什么要写博客"><a href="#为什么要写博客" class="headerlink" title="为什么要写博客"></a>为什么要写博客</h2><p>都说学习的复盘很重要，所以我想开始写日记一类的东西，我在网上看到很多人写的博客非常精美高级，所以想学着用github这样有技术含量的东西写博客</p>
+<p>我算不上有耐心的那种人，一直说学英语也没有坚持下了，但我还是想用这种方式，记录我的生活，<strong>希望能坚持下去</strong>。</p>
+]]></content>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>261030生活日常</title>
     <url>/2026/10/30/261030%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/</url>
     <content><![CDATA[<p>第一次记录自己的生活，也不知道该怎么写，<br>反正大概也不会有其他人看我的博客，就记流水账吧。</p>
@@ -89,20 +121,6 @@
 ]]></content>
       <tags>
         <tag>生活</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>我的第一篇文章</title>
-    <url>/2026/10/30/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/</url>
-    <content><![CDATA[<p>从今天开始，我计划开始写我自己的博客</p>
-<h2 id="我想写点什么"><a href="#我想写点什么" class="headerlink" title="我想写点什么"></a>我想写点什么</h2><p>关于博客的内容暂时有两类：</p>
-<p>-大学的日常生活，干了什么，发生了什么事情，心情怎么样</p>
-<p>-自学方面的记录，包括我的想法，我在哪个课外方面做了什么</p>
-<h2 id="为什么要写博客"><a href="#为什么要写博客" class="headerlink" title="为什么要写博客"></a>为什么要写博客</h2><p>都说学习的复盘很重要，所以我想开始写日记一类的东西，我在网上看到很多人写的博客非常精美高级，所以想学着用github这样有技术含量的东西写博客</p>
-<p>我算不上有耐心的那种人，一直说学英语也没有坚持下了，但我还是想用这种方式，记录我的生活，<strong>希望能坚持下去</strong>。</p>
-]]></content>
-      <tags>
-        <tag>随笔</tag>
       </tags>
   </entry>
 </search>

@@ -10,7 +10,26 @@
   <rights>All rights reserved 2026, 彭宇豪</rights>
   <subtitle>学习记录博客</subtitle>
   <title>彭宇豪的博客</title>
-  <updated>2026-10-30T14:08:01.987Z</updated>
+  <updated>2026-10-31T10:05:36.193Z</updated>
+  <entry>
+    <author>
+      <name>彭宇豪</name>
+    </author>
+    <category term="学习" scheme="http://example.com/tags/%E5%AD%A6%E4%B9%A0/"/>
+    <content>
+      <![CDATA[<p>下午五点半学了翁恺的第87讲：字符串</p><p>字符串是以“0”结尾的一串字符，这个“0”是字符串结束的标志，并不属于字符串的值</p><p>如 {‘H’,’E’,’L’,’L’,’O’,’!’}只是字符数组，不是字符串，末尾补一个 ‘\0’或直接写0（一个字符）才成为字符串。<br><small style="color:#888">(不能写’0’，这是0字符)</span></p><p>字符串以数组的形式存在，以数组或指针的形式访问</p><p>string.h有很多处理字符串的函数</p><p>字符串的三种表达形式：</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">char</span> *str  = “hello”;   <span class="comment">// 写法一：字符指针，指向一个字符串字面量</span></span><br><span class="line"><span class="type">char</span> word[] = <span class="string">&quot;hello&quot;</span>;  <span class="comment">// 写法二：字符数组，里面放 hello</span></span><br><span class="line"><span class="type">char</span> line[<span class="number">10</span>] = <span class="string">&quot;hello&quot;</span>;<span class="comment">// 写法三：指定大小为 10 的字符数组，里面放 hello</span></span><br></pre></td></tr></table></figure><p>如果写了两个相邻的字符串常量，中间什么符号都没有，C 会自动把它们接成一个大字符串：</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;Hello &quot;</span> <span class="string">&quot;World!\n&quot;</span>);   <span class="comment">// 两个相邻字面量 → 自动拼成 &quot;Hello World!\n&quot;</span></span><br></pre></td></tr></table></figure>]]>
+    </content>
+    <id>http://example.com/2026/10/31/261031%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</id>
+    <link href="http://example.com/2026/10/31/261031%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
+    <published>2026-10-31T09:35:58.000Z</published>
+    <summary>
+      <![CDATA[<p>下午五点半学了翁恺的第87讲：字符串</p>
+<p>字符串是以“0”结尾的一串字符，这个“0”是字符串结束的标志，并不属于字符串的值</p>
+<p>如 {‘H’,’E’,’L’,’L’,’O’,’!’}只是字符数组，不是字符串，末尾补一个 ‘\0’或直接写0（一个字符）才成]]>
+    </summary>
+    <title>261031学习记录</title>
+    <updated>2026-10-31T10:05:36.193Z</updated>
+  </entry>
   <entry>
     <author>
       <name>彭宇豪</name>
