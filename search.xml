@@ -67,38 +67,6 @@
       </tags>
   </entry>
   <entry>
-    <title>261031学习记录</title>
-    <url>/2026/10/31/261031%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
-    <content><![CDATA[<p>下午五点半学了翁恺的第87讲：字符串</p>
-<p>字符串是以“0”结尾的一串字符，这个“0”是字符串结束的标志，并不属于字符串的值</p>
-<p>如 {‘H’,’E’,’L’,’L’,’O’,’!’}只是字符数组，不是字符串，末尾补一个 ‘\0’或直接写0（一个字符）才成为字符串。<br><small style="color:#888">(不能写’0’，这是0字符)</span></p>
-<p>字符串以数组的形式存在，以数组或指针的形式访问</p>
-<p>string.h有很多处理字符串的函数</p>
-<p>字符串的三种表达形式：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">char</span> *str  = “hello”;   <span class="comment">// 写法一：字符指针，指向一个字符串字面量</span></span><br><span class="line"><span class="type">char</span> word[] = <span class="string">&quot;hello&quot;</span>;  <span class="comment">// 写法二：字符数组，里面放 hello</span></span><br><span class="line"><span class="type">char</span> line[<span class="number">10</span>] = <span class="string">&quot;hello&quot;</span>;<span class="comment">// 写法三：指定大小为 10 的字符数组，里面放 hello</span></span><br></pre></td></tr></table></figure>
-<p>如果写了两个相邻的字符串常量，中间什么符号都没有，C 会自动把它们接成一个大字符串：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;Hello &quot;</span> <span class="string">&quot;World!\n&quot;</span>);   <span class="comment">// 两个相邻字面量 → 自动拼成 &quot;Hello World!\n&quot;</span></span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <tags>
-        <tag>学习</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>我的第一篇文章</title>
-    <url>/2026/10/30/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/</url>
-    <content><![CDATA[<p>从今天开始，我计划开始写我自己的博客</p>
-<h2 id="我想写点什么"><a href="#我想写点什么" class="headerlink" title="我想写点什么"></a>我想写点什么</h2><p>关于博客的内容暂时有两类：</p>
-<p>-大学的日常生活，干了什么，发生了什么事情，心情怎么样</p>
-<p>-自学方面的记录，包括我的想法，我在哪个课外方面做了什么</p>
-<h2 id="为什么要写博客"><a href="#为什么要写博客" class="headerlink" title="为什么要写博客"></a>为什么要写博客</h2><p>都说学习的复盘很重要，所以我想开始写日记一类的东西，我在网上看到很多人写的博客非常精美高级，所以想学着用github这样有技术含量的东西写博客</p>
-<p>我算不上有耐心的那种人，一直说学英语也没有坚持下了，但我还是想用这种方式，记录我的生活，<strong>希望能坚持下去</strong>。</p>
-]]></content>
-      <tags>
-        <tag>随笔</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>261030生活日常</title>
     <url>/2026/10/30/261030%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/</url>
     <content><![CDATA[<p>第一次记录自己的生活，也不知道该怎么写，<br>反正大概也不会有其他人看我的博客，就记流水账吧。</p>
@@ -121,6 +89,71 @@
 ]]></content>
       <tags>
         <tag>生活</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>261031学习记录</title>
+    <url>/2026/10/31/261031%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<p>下午五点半学了翁恺的第 87 到 90 讲，都是字符串相关的内容。</p>
+<h2 id="第87讲：字符串基础"><a href="#第87讲：字符串基础" class="headerlink" title="第87讲：字符串基础"></a>第87讲：字符串基础</h2><ul>
+<li>字符串是以 <code>\0</code> 结尾的一串字符，这个 <code>\0</code> 是结束标志，不算字符串内容</li>
+<li><code>{&#39;H&#39;,&#39;E&#39;,&#39;L&#39;,&#39;L&#39;,&#39;O&#39;,&#39;!&#39;}</code> 只是字符数组，不是字符串，末尾补一个 <code>\0</code> 才是<br><small style="color:#888">（注意是字符 0，不是数字 0）</small></li>
+<li>字符串以数组形式存在，用数组或指针访问</li>
+<li><code>string.h</code> 里有很多处理字符串的函数</li>
+<li>双引号括起来的是字符串字面量，编译器会自动在末尾补 <code>\0</code></li>
+<li>相邻字面量会自动拼接，行尾加反斜杠可以跨行写</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;Hello &quot;</span> <span class="string">&quot;World!\n&quot;</span>);   <span class="comment">// 两个相邻字面量 → 自动拼成 &quot;Hello World!\n&quot;</span></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;Hello \</span></span><br><span class="line"><span class="string">       World!\n&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>字符串是数组，不能用 <code>+ - *</code> 做运算</li>
+<li>字符串的三种写法：</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">char</span> *str  = <span class="string">&quot;hello&quot;</span>;   <span class="comment">// 写法一：字符指针，指向字符串字面量</span></span><br><span class="line"><span class="type">char</span> word[] = <span class="string">&quot;hello&quot;</span>;  <span class="comment">// 写法二：字符数组</span></span><br><span class="line"><span class="type">char</span> line[<span class="number">10</span>] = <span class="string">&quot;hello&quot;</span>;<span class="comment">// 写法三：指定大小的字符数组</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="第88讲：字符串变量"><a href="#第88讲：字符串变量" class="headerlink" title="第88讲：字符串变量"></a>第88讲：字符串变量</h2><ul>
+<li>指针本身存的是地址，加了 <code>*</code> 才是它指向的值</li>
+<li>字符串字面量存在代码段，只读不可改；相同的字符串会共用同一个地址<br><small style="color:#888">（相当于字符串常量）</small></li>
+<li>想要可修改的字符串，要用数组方式，不要用指针<br><small style="color:#888">（数组会把字符串拷贝一份到自己的空间里）</small></li>
+</ul>
+<p><strong>总结：</strong></p>
+<ul>
+<li>构造字符串 → 用数组</li>
+<li>处理字符串 → 用指针</li>
+</ul>
+<hr>
+<h2 id="第89讲：字符串输入输出"><a href="#第89讲：字符串输入输出" class="headerlink" title="第89讲：字符串输入输出"></a>第89讲：字符串输入输出</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">char</span> <span class="built_in">string</span>[<span class="number">8</span>];</span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>, <span class="built_in">string</span>);</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%s&quot;</span>, <span class="built_in">string</span>);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>scanf(&quot;%s&quot;, ...)</code> 读到空格、Tab、回车为止</li>
+<li>输入超过数组长度会崩溃，可以用 <code>%7s</code> 限制最多读 7 个字符</li>
+<li>本地变量（指针）记得初始化</li>
+</ul>
+<hr>
+<h2 id="第90讲：字符串数组"><a href="#第90讲：字符串数组" class="headerlink" title="第90讲：字符串数组"></a>第90讲：字符串数组</h2><p>两种写法：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">char</span> a[][<span class="number">10</span>] = &#123;&#125;</span><br><span class="line"><span class="comment">// 二维数组：每个元素是 char[10]，存长度小于9的字符串</span></span><br><span class="line"></span><br><span class="line"><span class="type">char</span> *a[] = &#123;&#125;</span><br><span class="line"><span class="comment">// 指针数组：每个元素是 char*，指向一个字符串</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>今天学了 87 到 90 四节课，全是字符串相关的内容，还是很有收获的。</p>
+]]></content>
+      <tags>
+        <tag>学习</tag>
+        <tag>C语言</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>我的第一篇文章</title>
+    <url>/2026/10/30/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/</url>
+    <content><![CDATA[<p>从今天开始，我计划开始写我自己的博客</p>
+<h2 id="我想写点什么"><a href="#我想写点什么" class="headerlink" title="我想写点什么"></a>我想写点什么</h2><p>关于博客的内容暂时有两类：</p>
+<p>-大学的日常生活，干了什么，发生了什么事情，心情怎么样</p>
+<p>-自学方面的记录，包括我的想法，我在哪个课外方面做了什么</p>
+<h2 id="为什么要写博客"><a href="#为什么要写博客" class="headerlink" title="为什么要写博客"></a>为什么要写博客</h2><p>都说学习的复盘很重要，所以我想开始写日记一类的东西，我在网上看到很多人写的博客非常精美高级，所以想学着用github这样有技术含量的东西写博客</p>
+<p>我算不上有耐心的那种人，一直说学英语也没有坚持下了，但我还是想用这种方式，记录我的生活，<strong>希望能坚持下去</strong>。</p>
+]]></content>
+      <tags>
+        <tag>随笔</tag>
       </tags>
   </entry>
 </search>
