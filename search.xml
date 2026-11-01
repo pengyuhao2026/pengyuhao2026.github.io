@@ -179,4 +179,56 @@
         <tag>随笔</tag>
       </tags>
   </entry>
+  <entry>
+    <title>261101学习记录</title>
+    <url>/2026/11/01/261101%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<h2 id="第91讲：单字符输入输出"><a href="#第91讲：单字符输入输出" class="headerlink" title="第91讲：单字符输入输出"></a>第91讲：单字符输入输出</h2><ul>
+<li><code>putchar( )</code>：把一个字符输出到终端<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">putchar</span><span class="params">(<span class="type">int</span> a)</span>;  <span class="comment">// 正常返回输出的字符，出错返回 EOF</span></span><br></pre></td></tr></table></figure></li>
+<li><code>getchar( )</code>：从终端读一个字符<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">getchar</span><span class="params">(<span class="type">void</span>)</span>;  <span class="comment">// 返回读到的字符，读到末尾返回 EOF(-1)</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<p><strong>回声程序（echo）：</strong></p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> ch;</span><br><span class="line"><span class="keyword">while</span> ((ch = getchar()) != EOF) &#123;</span><br><span class="line">    <span class="built_in">putchar</span>(ch);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;EOF\n&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>Ctrl + C</code> 强制终止程序</li>
+<li><code>Ctrl + Z</code>（Windows）&#x2F; <code>Ctrl + D</code>（Unix）表示输入结束</li>
+<li>shell 是键盘和程序的桥梁，按下回车才会把输入传给程序</li>
+</ul>
+<hr>
+<h2 id="第92-95讲：字符串函数"><a href="#第92-95讲：字符串函数" class="headerlink" title="第92~95讲：字符串函数"></a>第92~95讲：字符串函数</h2><p><code>#include &lt;string.h&gt;</code> 里常用的几个函数：</p>
+<ul>
+<li><p><code>strlen</code>：返回字符串长度（不算结尾的 <code>\0</code>）<br><small style="color:#888"><code>size_t strlen(const char* s)</code></small></p>
+</li>
+<li><p><code>strcmp</code>：比较两个字符串，相等返回 0，不等返回差值<br><small style="color:#888"><code>int strcmp(const char* s1, const char* s2)</code></small></p>
+</li>
+<li><p><code>strcpy</code>：把后一个字符串拷贝到前一个<br><small style="color:#888"><code>char* strcpy(char* restrict dst, const char* restrict src)</code></small></p>
+</li>
+</ul>
+<p>复制一个字符串的正确写法：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">char</span> *dst;</span><br><span class="line">dst = (<span class="type">char</span> *) <span class="built_in">malloc</span>(<span class="built_in">strlen</span>(src) + <span class="number">1</span>);  <span class="comment">// 申请内存，多1个位置放 \0</span></span><br><span class="line"><span class="built_in">strcpy</span>(dst, src);                        <span class="comment">// 把内容连同 \0 一起拷过去</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>strchr</code>：在字符串里从左往右找字符<br><small style="color:#888"><code>strrchr</code> 是从右往左找</small></li>
+<li><code>strstr</code>：在字符串里找子串</li>
+<li><code>strcasestr</code>：忽略大小写找子串</li>
+</ul>
+<hr>
+<h2 id="第96讲：枚举"><a href="#第96讲：枚举" class="headerlink" title="第96讲：枚举"></a>第96讲：枚举</h2><p><code>enum</code> 是用户自定义类型，本质上是整数。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">color</span> &#123;</span> red, yellow, green &#125;;</span><br><span class="line"><span class="comment">// red=0, yellow=1, green=2，也可以手动指定值</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="第97讲：结构类型"><a href="#第97讲：结构类型" class="headerlink" title="第97讲：结构类型"></a>第97讲：结构类型</h2><p>定义结构体：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">point</span> &#123;</span></span><br><span class="line">    <span class="type">int</span> x;</span><br><span class="line">    <span class="type">int</span> y;</span><br><span class="line">&#125;;  <span class="comment">// 大括号后面的分号不能忘！</span></span><br></pre></td></tr></table></figure>
+
+<p>定义变量：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">point</span> <span class="title">p1</span>, <span class="title">p2</span>;</span></span><br></pre></td></tr></table></figure>
+
+<p>或者直接定义：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">point</span> &#123;</span></span><br><span class="line">    <span class="type">int</span> x;</span><br><span class="line">    <span class="type">int</span> y;</span><br><span class="line">&#125; p1, p2;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>学习</tag>
+        <tag>C语言</tag>
+      </tags>
+  </entry>
 </search>
