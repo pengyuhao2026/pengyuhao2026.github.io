@@ -204,8 +204,9 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2026-11-03 15:14:34" itemprop="dateCreated datePublished" datetime="2026-11-03T15:14:34+08:00">2026-11-03</time>
+              <time title="创建时间：2026-11-03 15:14:34 / 修改时间：17:01:18" itemprop="dateCreated datePublished" datetime="2026-11-03T15:14:34+08:00">2026-11-03</time>
             </span>
 
           
@@ -219,7 +220,49 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          
+          <p>今天学习96讲到105讲的内容<br>96讲枚举<br>enum一次罗列多个整型变量常数<br>enum color{red，yellow，green}；未定义初始值则从0开始</p>
+<p>97讲结构类型<br>声明结构：</p>
+<pre><code class="language-c">// 视频演示代码，逐字稿未完整记录，下面为带注释的示意代码
+struct date &#123;        // 声明一个名为 date 的结构类型
+    int month;        // 成员：月份
+    int day;          // 成员：日
+    int year;         // 成员：年
+&#125;;                   // 注意：大括号后面这个分号一定不能忘
+```c
+定义变量：
+```c
+struct point &#123; int x; int y; &#125;;   // 先声明一个有名字的结构类型 point
+struct point today;               // 再用 &quot;struct point&quot; 作为类型名定义变量 today
+```c
+
+“.”点运算符是取成员变量例如point.x
+
+98讲结构与函数
+自定义结构也可以成为函数的参数，也可作为返回类型
+```c
+int numberofnumbers(struct date d)   //参数是一个struct date 结构变量
+```c
+第98讲结构中的结构
+结构数组
+struct date dates[100]
+struce date dates[]=&#123;&#123;4,5,2005&#125;,&#123;2,5,2005&#125;&#125;;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</code></pre>
+
       
     </div>
 
