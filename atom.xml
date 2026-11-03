@@ -10,26 +10,25 @@
   <rights>All rights reserved 2026, 彭宇豪</rights>
   <subtitle>学习记录博客</subtitle>
   <title>彭宇豪的博客</title>
-  <updated>2026-11-03T09:02:01.298Z</updated>
+  <updated>2026-11-03T09:03:32.796Z</updated>
   <entry>
     <author>
       <name>彭宇豪</name>
     </author>
     <category term="学习" scheme="http://example.com/tags/%E5%AD%A6%E4%B9%A0/"/>
-    <category term="c语言" scheme="http://example.com/tags/c%E8%AF%AD%E8%A8%80/"/>
+    <category term="C语言" scheme="http://example.com/tags/C%E8%AF%AD%E8%A8%80/"/>
     <content>
-      <![CDATA[<p>今天学习96讲到105讲的内容<br>96讲枚举<br>enum一次罗列多个整型变量常数<br>enum color{red，yellow，green}；未定义初始值则从0开始</p><p>97讲结构类型<br>声明结构：</p><pre><code class="language-c">// 视频演示代码，逐字稿未完整记录，下面为带注释的示意代码struct date &#123;        // 声明一个名为 date 的结构类型    int month;        // 成员：月份    int day;          // 成员：日    int year;         // 成员：年&#125;;                   // 注意：大括号后面这个分号一定不能忘```c定义变量：```cstruct point &#123; int x; int y; &#125;;   // 先声明一个有名字的结构类型 pointstruct point today;               // 再用 &quot;struct point&quot; 作为类型名定义变量 today```c“.”点运算符是取成员变量例如point.x98讲结构与函数自定义结构也可以成为函数的参数，也可作为返回类型```cint numberofnumbers(struct date d)   //参数是一个struct date 结构变量```c第98讲结构中的结构结构数组struct date dates[100]struce date dates[]=&#123;&#123;4,5,2005&#125;,&#123;2,5,2005&#125;&#125;;</code></pre>]]>
+      <![CDATA[<p>今天学了 96 到 105 讲的内容。</p><h2 id="第96讲：枚举"><a href="#第96讲：枚举" class="headerlink" title="第96讲：枚举"></a>第96讲：枚举</h2><p><code>enum</code> 是一次性罗列多个整型常量的类型。</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">color</span> &#123;</span> red, yellow, green &#125;;</span><br><span class="line"><span class="comment">// 没指定初始值的话，从 0 开始：red=0, yellow=1, green=2</span></span><br></pre></td></tr></table></figure><hr><h2 id="第97讲：结构类型"><a href="#第97讲：结构类型" class="headerlink" title="第97讲：结构类型"></a>第97讲：结构类型</h2><p>声明结构体：</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">date</span> &#123;</span></span><br><span class="line">    <span class="type">int</span> month;</span><br><span class="line">    <span class="type">int</span> day;</span><br><span class="line">    <span class="type">int</span> year;</span><br><span class="line">&#125;;  <span class="comment">// 大括号后面的分号不能忘！</span></span><br></pre></td></tr></table></figure><p>定义变量：</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">point</span> &#123;</span> <span class="type">int</span> x; <span class="type">int</span> y; &#125;;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">point</span> <span class="title">today</span>;</span></span><br></pre></td></tr></table></figure><p>用 <code>.</code> 运算符取成员，比如 <code>point.x</code>。</p><hr><h2 id="第98讲：结构与函数"><a href="#第98讲：结构与函数" class="headerlink" title="第98讲：结构与函数"></a>第98讲：结构与函数</h2><p>结构体可以当函数参数，也可以当返回值：</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">numberofnumbers</span><span class="params">(<span class="keyword">struct</span> date d)</span>;</span><br></pre></td></tr></table></figure><p>结构体里可以嵌套结构体，也可以定义结构体数组：</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">date</span> <span class="title">dates</span>[100];</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">date</span> <span class="title">dates</span>[] =</span> &#123;&#123;<span class="number">4</span>,<span class="number">5</span>,<span class="number">2005</span>&#125;, &#123;<span class="number">2</span>,<span class="number">5</span>,<span class="number">2005</span>&#125;&#125;;</span><br></pre></td></tr></table></figure>]]>
     </content>
     <id>http://example.com/2026/11/03/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95261103/</id>
     <link href="http://example.com/2026/11/03/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95261103/"/>
     <published>2026-11-03T07:14:34.000Z</published>
     <summary>
-      <![CDATA[<p>今天学习96讲到105讲的内容<br>96讲枚举<br>enum一次罗列多个整型变量常数<br>enum color{red，yellow，green}；未定义初始值则从0开始</p>
-<p>97讲结构类型<br>声明结构：</p>
-<pre><code class="la]]>
+      <![CDATA[<p>今天学了 96 到 105 讲的内容。</p>
+<h2 id="第96讲：枚举"><a href="#第96讲：枚举" class="headerlink" title="第96讲：枚举"></a>第96讲：枚举</h2><p><code>enum</code> 是一次性罗]]>
     </summary>
     <title>学习记录261103</title>
-    <updated>2026-11-03T09:02:01.298Z</updated>
+    <updated>2026-11-03T09:03:32.796Z</updated>
   </entry>
   <entry>
     <author>

@@ -218,6 +218,11 @@
       </tags>
   </entry>
   <entry>
+    <title>261101生活日常</title>
+    <url>/2026/11/02/261101%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>261102学习记录</title>
     <url>/2026/11/02/261102%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
     <content><![CDATA[<p>第98讲结构与函数<br>。。。今天好累不学了，明天要重新把这几节学明白</p>
@@ -240,52 +245,28 @@
   <entry>
     <title>学习记录261103</title>
     <url>/2026/11/03/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95261103/</url>
-    <content><![CDATA[<p>今天学习96讲到105讲的内容<br>96讲枚举<br>enum一次罗列多个整型变量常数<br>enum color{red，yellow，green}；未定义初始值则从0开始</p>
-<p>97讲结构类型<br>声明结构：</p>
-<pre><code class="language-c">// 视频演示代码，逐字稿未完整记录，下面为带注释的示意代码
-struct date &#123;        // 声明一个名为 date 的结构类型
-    int month;        // 成员：月份
-    int day;          // 成员：日
-    int year;         // 成员：年
-&#125;;                   // 注意：大括号后面这个分号一定不能忘
-```c
-定义变量：
-```c
-struct point &#123; int x; int y; &#125;;   // 先声明一个有名字的结构类型 point
-struct point today;               // 再用 &quot;struct point&quot; 作为类型名定义变量 today
-```c
+    <content><![CDATA[<p>今天学了 96 到 105 讲的内容。</p>
+<h2 id="第96讲：枚举"><a href="#第96讲：枚举" class="headerlink" title="第96讲：枚举"></a>第96讲：枚举</h2><p><code>enum</code> 是一次性罗列多个整型常量的类型。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">color</span> &#123;</span> red, yellow, green &#125;;</span><br><span class="line"><span class="comment">// 没指定初始值的话，从 0 开始：red=0, yellow=1, green=2</span></span><br></pre></td></tr></table></figure>
 
-“.”点运算符是取成员变量例如point.x
+<hr>
+<h2 id="第97讲：结构类型"><a href="#第97讲：结构类型" class="headerlink" title="第97讲：结构类型"></a>第97讲：结构类型</h2><p>声明结构体：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">date</span> &#123;</span></span><br><span class="line">    <span class="type">int</span> month;</span><br><span class="line">    <span class="type">int</span> day;</span><br><span class="line">    <span class="type">int</span> year;</span><br><span class="line">&#125;;  <span class="comment">// 大括号后面的分号不能忘！</span></span><br></pre></td></tr></table></figure>
 
-98讲结构与函数
-自定义结构也可以成为函数的参数，也可作为返回类型
-```c
-int numberofnumbers(struct date d)   //参数是一个struct date 结构变量
-```c
-第98讲结构中的结构
-结构数组
-struct date dates[100]
-struce date dates[]=&#123;&#123;4,5,2005&#125;,&#123;2,5,2005&#125;&#125;;
+<p>定义变量：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">point</span> &#123;</span> <span class="type">int</span> x; <span class="type">int</span> y; &#125;;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">point</span> <span class="title">today</span>;</span></span><br></pre></td></tr></table></figure>
 
+<p>用 <code>.</code> 运算符取成员，比如 <code>point.x</code>。</p>
+<hr>
+<h2 id="第98讲：结构与函数"><a href="#第98讲：结构与函数" class="headerlink" title="第98讲：结构与函数"></a>第98讲：结构与函数</h2><p>结构体可以当函数参数，也可以当返回值：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">numberofnumbers</span><span class="params">(<span class="keyword">struct</span> date d)</span>;</span><br></pre></td></tr></table></figure>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-</code></pre>
+<p>结构体里可以嵌套结构体，也可以定义结构体数组：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">date</span> <span class="title">dates</span>[100];</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">date</span> <span class="title">dates</span>[] =</span> &#123;&#123;<span class="number">4</span>,<span class="number">5</span>,<span class="number">2005</span>&#125;, &#123;<span class="number">2</span>,<span class="number">5</span>,<span class="number">2005</span>&#125;&#125;;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <tags>
         <tag>学习</tag>
-        <tag>c语言</tag>
+        <tag>C语言</tag>
       </tags>
   </entry>
   <entry>
@@ -301,10 +282,5 @@ struce date dates[]=&#123;&#123;4,5,2005&#125;,&#123;2,5,2005&#125;&#125;;
       <tags>
         <tag>随笔</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>261101生活日常</title>
-    <url>/2026/11/02/261101%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/</url>
-    <content><![CDATA[]]></content>
   </entry>
 </search>
