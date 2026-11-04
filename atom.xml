@@ -10,7 +10,36 @@
   <rights>All rights reserved 2026, 彭宇豪</rights>
   <subtitle>学习记录博客</subtitle>
   <title>彭宇豪的博客</title>
-  <updated>2026-11-03T14:12:26.500Z</updated>
+  <updated>2026-11-04T11:13:19.890Z</updated>
+  <entry>
+    <author>
+      <name>彭宇豪</name>
+    </author>
+    <id>http://example.com/2026/11/04/261104%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/</id>
+    <link href="http://example.com/2026/11/04/261104%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/"/>
+    <published>2026-11-04T11:13:19.000Z</published>
+    <title>261104生活日常</title>
+    <updated>2026-11-04T11:13:19.890Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>彭宇豪</name>
+    </author>
+    <category term="学习" scheme="http://example.com/tags/%E5%AD%A6%E4%B9%A0/"/>
+    <category term="C语言" scheme="http://example.com/tags/C%E8%AF%AD%E8%A8%80/"/>
+    <content>
+      <![CDATA[<p>第100~103讲ACLLib：用与制作windows程序的教学程序的教学<br>第104讲类型定义<br>Typedef可定义新的类型的名字（typedaf+原来的名字+新的名字）</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span>&#123;</span></span><br><span class="line">  <span class="type">int</span> month;</span><br><span class="line">  <span class="type">int</span> day;</span><br><span class="line">  <span class="type">int</span> year;</span><br><span class="line">&#125;Date;</span><br></pre></td></tr></table></figure><p>第105讲联合</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">union</span> <span class="title">Anelt</span>&#123;</span></span><br><span class="line">   <span class="type">int</span>   i;</span><br><span class="line">   <span class="type">char</span> c;</span><br><span class="line">&#125;elt1,elt2;</span><br></pre></td></tr></table></figure><p>union:与typedef类似，不过elt1和elt2是联合起来的，一起使用一个地址</p>]]>
+    </content>
+    <id>http://example.com/2026/11/04/261104%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</id>
+    <link href="http://example.com/2026/11/04/261104%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
+    <published>2026-11-04T10:52:11.000Z</published>
+    <summary>
+      <![CDATA[<p>第100~103讲ACLLib：用与制作windows程序的教学程序的教学<br>第104讲类型定义<br>Typedef可定义新的类型的名字（typedaf+原来的名字+新的名字）</p>
+<figure class="highlight c"><table><tr><t]]>
+    </summary>
+    <title>261104学习记录</title>
+    <updated>2026-11-04T11:12:48.599Z</updated>
+  </entry>
   <entry>
     <author>
       <name>彭宇豪</name>
@@ -80,7 +109,7 @@
       <name>彭宇豪</name>
     </author>
     <category term="学习" scheme="http://example.com/tags/%E5%AD%A6%E4%B9%A0/"/>
-    <category term="c语言" scheme="http://example.com/tags/c%E8%AF%AD%E8%A8%80/"/>
+    <category term="C语言" scheme="http://example.com/tags/C%E8%AF%AD%E8%A8%80/"/>
     <content>
       <![CDATA[<p>第98讲结构与函数<br>。。。今天好累不学了，明天要重新把这几节学明白</p>]]>
     </content>
@@ -91,7 +120,7 @@
       <![CDATA[<p>第98讲结构与函数<br>。。。今天好累不学了，明天要重新把这几节学明白</p>]]>
     </summary>
     <title>261102学习记录</title>
-    <updated>2026-11-04T10:50:04.629Z</updated>
+    <updated>2026-11-04T11:03:01.931Z</updated>
   </entry>
   <entry>
     <author>
