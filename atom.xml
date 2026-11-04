@@ -19,8 +19,8 @@
     <content>
       <![CDATA[<p>早上依旧老样子<br>上午有两节课。<br>到了下午，本来今天是休息日，但今天东浪花开业，就干脆去健身房做个有氧<br>爬了50分钟坡后，就直接去2楼洗浴了。<br>装修挺不错，但人太多了，泡个澡搓个背就回来了</p>]]>
     </content>
-    <id>http://example.com/2026/11/03/%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8261103/</id>
-    <link href="http://example.com/2026/11/03/%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8261103/"/>
+    <id>http://example.com/2026/11/03/261103%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/</id>
+    <link href="http://example.com/2026/11/03/261103%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/"/>
     <published>2026-11-03T14:09:31.000Z</published>
     <summary>
       <![CDATA[<p>早上依旧老样子<br>上午有两节课。<br>到了下午，本来今天是休息日，但今天东浪花开业，就干脆去健身房做个有氧<br>爬了50分钟坡后，就直接去2楼洗浴了。<br>装修挺不错，但人太多了，泡个澡搓个背就回来了</p>]]>
@@ -37,8 +37,8 @@
     <content>
       <![CDATA[<p>今天学了 96 到 105 讲的内容。</p><h2 id="第96讲：枚举"><a href="#第96讲：枚举" class="headerlink" title="第96讲：枚举"></a>第96讲：枚举</h2><p><code>enum</code> 是一次性罗列多个整型常量的类型。</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">color</span> &#123;</span> red, yellow, green &#125;;</span><br><span class="line"><span class="comment">// 没指定初始值的话，从 0 开始：red=0, yellow=1, green=2</span></span><br></pre></td></tr></table></figure><hr><h2 id="第97讲：结构类型"><a href="#第97讲：结构类型" class="headerlink" title="第97讲：结构类型"></a>第97讲：结构类型</h2><p>声明结构体：</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">date</span> &#123;</span></span><br><span class="line">    <span class="type">int</span> month;</span><br><span class="line">    <span class="type">int</span> day;</span><br><span class="line">    <span class="type">int</span> year;</span><br><span class="line">&#125;;  <span class="comment">// 大括号后面的分号不能忘！</span></span><br></pre></td></tr></table></figure><p>定义变量：</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">point</span> &#123;</span> <span class="type">int</span> x; <span class="type">int</span> y; &#125;;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">point</span> <span class="title">today</span>;</span></span><br></pre></td></tr></table></figure><p>用 <code>.</code> 运算符取成员，比如 <code>point.x</code>。</p><hr><h2 id="第98讲：结构与函数"><a href="#第98讲：结构与函数" class="headerlink" title="第98讲：结构与函数"></a>第98讲：结构与函数</h2><p>结构体可以当函数参数，也可以当返回值：</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">numberofnumbers</span><span class="params">(<span class="keyword">struct</span> date d)</span>;</span><br></pre></td></tr></table></figure><p>结构体里可以嵌套结构体，也可以定义结构体数组：</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">date</span> <span class="title">dates</span>[100];</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">date</span> <span class="title">dates</span>[] =</span> &#123;&#123;<span class="number">4</span>,<span class="number">5</span>,<span class="number">2005</span>&#125;, &#123;<span class="number">2</span>,<span class="number">5</span>,<span class="number">2005</span>&#125;&#125;;</span><br></pre></td></tr></table></figure>]]>
     </content>
-    <id>http://example.com/2026/11/03/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95261103/</id>
-    <link href="http://example.com/2026/11/03/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95261103/"/>
+    <id>http://example.com/2026/11/03/261103%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</id>
+    <link href="http://example.com/2026/11/03/261103%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
     <published>2026-11-03T07:14:34.000Z</published>
     <summary>
       <![CDATA[<p>今天学了 96 到 105 讲的内容。</p>
@@ -91,7 +91,7 @@
       <![CDATA[<p>第98讲结构与函数<br>。。。今天好累不学了，明天要重新把这几节学明白</p>]]>
     </summary>
     <title>261102学习记录</title>
-    <updated>2026-11-02T13:40:16.671Z</updated>
+    <updated>2026-11-04T10:50:04.629Z</updated>
   </entry>
   <entry>
     <author>
@@ -149,7 +149,7 @@
 <h2 id="第87讲：字符串基础"><a href="#第87讲：字符串基础" class="headerlink" title="第87讲：字符串基础"></a>第87讲：字符串基础</h2>]]>
     </summary>
     <title>261031学习记录</title>
-    <updated>2026-10-31T13:29:53.870Z</updated>
+    <updated>2026-11-04T10:50:35.001Z</updated>
   </entry>
   <entry>
     <author>
