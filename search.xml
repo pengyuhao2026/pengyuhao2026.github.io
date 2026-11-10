@@ -51,73 +51,6 @@
       </tags>
   </entry>
   <entry>
-    <title>261031学习记录</title>
-    <url>/2026/10/31/261031%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
-    <content><![CDATA[<p>下午五点半学了翁恺的第 87 到 90 讲，都是字符串相关的内容。</p>
-<h2 id="第87讲：字符串基础"><a href="#第87讲：字符串基础" class="headerlink" title="第87讲：字符串基础"></a>第87讲：字符串基础</h2><ul>
-<li>字符串是以 <code>\0</code> 结尾的一串字符，这个 <code>\0</code> 是结束标志，不算字符串内容</li>
-<li><code>{&#39;H&#39;,&#39;E&#39;,&#39;L&#39;,&#39;L&#39;,&#39;O&#39;,&#39;!&#39;}</code> 只是字符数组，不是字符串，末尾补一个 <code>\0</code> 才是<br><small style="color:#888">（注意是字符 0，不是数字 0）</small></li>
-<li>字符串以数组形式存在，用数组或指针访问</li>
-<li><code>string.h</code> 里有很多处理字符串的函数</li>
-<li>双引号括起来的是字符串字面量，编译器会自动在末尾补 <code>\0</code></li>
-<li>相邻字面量会自动拼接，行尾加反斜杠可以跨行写</li>
-</ul>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;Hello &quot;</span> <span class="string">&quot;World!\n&quot;</span>);   <span class="comment">// 两个相邻字面量 → 自动拼成 &quot;Hello World!\n&quot;</span></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;Hello \</span></span><br><span class="line"><span class="string">       World!\n&quot;</span>);</span><br></pre></td></tr></table></figure>
-<ul>
-<li>字符串是数组，不能用 <code>+ - *</code> 做运算</li>
-<li>字符串的三种写法：</li>
-</ul>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">char</span> *str  = <span class="string">&quot;hello&quot;</span>;   <span class="comment">// 写法一：字符指针，指向字符串字面量</span></span><br><span class="line"><span class="type">char</span> word[] = <span class="string">&quot;hello&quot;</span>;  <span class="comment">// 写法二：字符数组</span></span><br><span class="line"><span class="type">char</span> line[<span class="number">10</span>] = <span class="string">&quot;hello&quot;</span>;<span class="comment">// 写法三：指定大小的字符数组</span></span><br></pre></td></tr></table></figure>
-<hr>
-<h2 id="第88讲：字符串变量"><a href="#第88讲：字符串变量" class="headerlink" title="第88讲：字符串变量"></a>第88讲：字符串变量</h2><ul>
-<li>指针本身存的是地址，加了 <code>*</code> 才是它指向的值</li>
-<li>字符串字面量存在代码段，只读不可改；相同的字符串会共用同一个地址<br><small style="color:#888">（相当于字符串常量）</small></li>
-<li>想要可修改的字符串，要用数组方式，不要用指针<br><small style="color:#888">（数组会把字符串拷贝一份到自己的空间里）</small></li>
-</ul>
-<p><strong>总结：</strong></p>
-<ul>
-<li>构造字符串 → 用数组</li>
-<li>处理字符串 → 用指针</li>
-</ul>
-<hr>
-<h2 id="第89讲：字符串输入输出"><a href="#第89讲：字符串输入输出" class="headerlink" title="第89讲：字符串输入输出"></a>第89讲：字符串输入输出</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">char</span> <span class="built_in">string</span>[<span class="number">8</span>];</span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>, <span class="built_in">string</span>);</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%s&quot;</span>, <span class="built_in">string</span>);</span><br></pre></td></tr></table></figure>
-<ul>
-<li><code>scanf(&quot;%s&quot;, ...)</code> 读到空格、Tab、回车为止</li>
-<li>输入超过数组长度会崩溃，可以用 <code>%7s</code> 限制最多读 7 个字符</li>
-<li>本地变量（指针）记得初始化</li>
-</ul>
-<hr>
-<h2 id="第90讲：字符串数组"><a href="#第90讲：字符串数组" class="headerlink" title="第90讲：字符串数组"></a>第90讲：字符串数组</h2><p>两种写法：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">char</span> a[][<span class="number">10</span>] = &#123;&#125;</span><br><span class="line"><span class="comment">// 二维数组：每个元素是 char[10]，存长度小于9的字符串</span></span><br><span class="line"></span><br><span class="line"><span class="type">char</span> *a[] = &#123;&#125;</span><br><span class="line"><span class="comment">// 指针数组：每个元素是 char*，指向一个字符串</span></span><br></pre></td></tr></table></figure>
-<hr>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>今天学了 87 到 90 四节课，全是字符串相关的内容，还是很有收获的。</p>
-]]></content>
-      <tags>
-        <tag>学习</tag>
-        <tag>C语言</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>261030生活日常</title>
-    <url>/2026/10/30/261030%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/</url>
-    <content><![CDATA[<p>第一次记录自己的生活，也不知道该怎么写，<br>反正大概也不会有其他人看我的博客，就记流水账吧。</p>
-<h2 id="早上"><a href="#早上" class="headerlink" title="早上"></a>早上</h2><p>早上依旧是七点起床，比较困但还是强迫自己起来了。<br>煮上鸡蛋去洗漱，洗漱完开始吃早饭，四个全蛋加60g燕麦，榨菜吃完了，就着20g南瓜子吃完。</p>
-<p>之前直接吃燕麦加鸡蛋差点吃吐，但现在习惯了好了挺多，不过还是很难吃。</p>
-<h2 id="上午"><a href="#上午" class="headerlink" title="上午"></a>上午</h2><p>上午没课，我开始上网，想学点东西但不怎么想学b站上的c语言课程。<br>在上网过程中看到了写博客，于是开始搜教程结合AI开始搭建自己的博客。</p>
-<h2 id="下午"><a href="#下午" class="headerlink" title="下午"></a>下午</h2><p>时间很快就到11点了，最近在吃轻禾小厨的外卖，不是多好吃，而是感觉要健康一点，也挺便宜。<br>吃完休息一会就要上课了，课程很无聊，我基本没听，我对造纸不怎么感兴趣，很快就到了下午4：50，课上完了回宿舍。</p>
-<h2 id="晚上"><a href="#晚上" class="headerlink" title="晚上"></a>晚上</h2><p>回宿舍后先把明天要用的实验预习报告写好，写完了就吃晚饭了。</p>
-<p>吃了一根香蕉和一袋鸡胸肉，吃完了歇会吃彩椒和肌酸，补钾片。</p>
-<h2 id="插曲"><a href="#插曲" class="headerlink" title="插曲"></a>插曲</h2><p>正打算把今天的博客写了，之前在健身房遇到的大叔发消息过来了。</p>
-<p>我很早就怀疑他是gay，果然没错，他把我推给了一个人网名叫什么小虎的，上来第一句就是小熊你好，明明完全不认识上来就套近乎，还要交换照片。</p>
-<p>我那遇到过这种情况，和健身房认识的那个大叔问了问，他说”我把一个可爱的小熊推给他了“，真把我恶心坏了，赶紧拉开距离，还发了朋友圈。</p>
-<hr>
-<p>这些事我也懒得说了，每天就固定写一篇生活一篇学习吧，写完这两个博客卷点烟就睡吧，尽量11：30睡着。</p>
-]]></content>
-      <tags>
-        <tag>生活</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>261101学习记录</title>
     <url>/2026/11/01/261101%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
     <content><![CDATA[<h2 id="第91讲：单字符输入输出"><a href="#第91讲：单字符输入输出" class="headerlink" title="第91讲：单字符输入输出"></a>第91讲：单字符输入输出</h2><ul>
@@ -184,21 +117,6 @@
       </tags>
   </entry>
   <entry>
-    <title>261101生活日常</title>
-    <url>/2026/11/02/261101%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>261102学习记录</title>
-    <url>/2026/11/02/261102%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
-    <content><![CDATA[<p>第98讲结构与函数<br>。。。今天好累不学了，明天要重新把这几节学明白</p>
-]]></content>
-      <tags>
-        <tag>学习</tag>
-        <tag>C语言</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>261102生活日常</title>
     <url>/2026/11/02/261102%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/</url>
     <content><![CDATA[<p>今天有三节课，一直上到下午三点，刚好今天是练腿日，看来今天一天都比较忙。<br>今天感觉状态挺好，计划的重量和组数都做到了，果然是要渐进超负荷，感觉明天腿会很痛，所以我多滚了一会泡沫轴。<br>但是感觉深蹲的动作还是不标准，腰的压力很大，也总是稳，两边不平衡<br>总之要注意，做动作时要注意力集中，尽量动作标准，我可不想受伤<br>健身的时候，那个刘哥也来了，给他抽了我的烟，也聊了很多，被他肯定是有点开心，但是心里还是恶心。他看起来是个好人，只是取向有点问题，还是要和他保持距离。他说我非常符合他们的审美，还说我现在是直的但总有一天我会变弯。操，我会尽量避免。话说，他明明是gay，竟然不喜欢男娘那种类型吗，他是完全不喜欢女人吗，下次要问问他。结束的时候还问我要不要一起去吃饭，绝对不要。<br>晚上回来已经六点半了，学习一会就休息（虽然没学多少，但起码把这两天的博客补上了）。</p>
@@ -207,6 +125,11 @@
         <tag>生活</tag>
         <tag>健身</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>261101生活日常</title>
+    <url>/2026/11/02/261101%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/</url>
+    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>学习记录261103</title>
@@ -228,6 +151,15 @@
       </tags>
   </entry>
   <entry>
+    <title>生活日常261103</title>
+    <url>/2026/11/03/261103%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/</url>
+    <content><![CDATA[<p>早上依旧老样子<br>上午有两节课。<br>到了下午，本来今天是休息日，但今天东浪花开业，就干脆去健身房做个有氧<br>爬了50分钟坡后，就直接去2楼洗浴了。<br>装修挺不错，但人太多了，泡个澡搓个背就回来了</p>
+]]></content>
+      <tags>
+        <tag>生活</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>261104学习记录</title>
     <url>/2026/11/04/261104%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
     <content><![CDATA[<p>第100~103讲ACLLib：用与制作windows程序的教学程序的教学<br>第104讲类型定义<br>Typedef可定义新的类型的名字（typedaf+原来的名字+新的名字）<br><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span>&#123;</span></span><br><span class="line">  <span class="type">int</span> month;</span><br><span class="line">  <span class="type">int</span> day;</span><br><span class="line">  <span class="type">int</span> year;</span><br><span class="line">&#125;Date;</span><br></pre></td></tr></table></figure><br>第105讲联合<br><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">union</span> <span class="title">Anelt</span>&#123;</span></span><br><span class="line">   <span class="type">int</span>   i;</span><br><span class="line">   <span class="type">char</span> c;</span><br><span class="line">&#125;elt1,elt2;</span><br></pre></td></tr></table></figure><br>union:与typedef类似，不过elt1和elt2是联合起来的，一起使用一个地址</p>
@@ -235,15 +167,6 @@
       <tags>
         <tag>学习</tag>
         <tag>C语言</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>生活日常261103</title>
-    <url>/2026/11/03/261103%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/</url>
-    <content><![CDATA[<p>早上依旧老样子<br>上午有两节课。<br>到了下午，本来今天是休息日，但今天东浪花开业，就干脆去健身房做个有氧<br>爬了50分钟坡后，就直接去2楼洗浴了。<br>装修挺不错，但人太多了，泡个澡搓个背就回来了</p>
-]]></content>
-      <tags>
-        <tag>生活</tag>
       </tags>
   </entry>
   <entry>
@@ -256,19 +179,23 @@
       </tags>
   </entry>
   <entry>
-    <title>261105学习记录</title>
-    <url>/2026/11/05/261105%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
-    <content><![CDATA[<p>第106讲全局变量<br>定义在函数外面，有全局的生存域和作用域<br>默认初始值是0和NULL,初始化要用已知的常数值。<br>若函数里有同名的本地变量，全局变量会被隐藏<br><small style="color:#888">(小范围的会覆盖大范围的)</small></p>
-<p>第107讲静态本地变量<br>定义变量时加上static修饰符会成为静态本地变量<br>离开函数时会保留这个变量的值（无视初始化）</p>
-<h2 id="实际上是特殊的全局变量，只是作用域在函数内"><a href="#实际上是特殊的全局变量，只是作用域在函数内" class="headerlink" title="实际上是特殊的全局变量，只是作用域在函数内"></a>实际上是特殊的全局变量，只是作用域在函数内</h2><p>第108讲本地变量贴士<br>返回本地变量地址是危险的，建议用指针（出函数时地址不受控，会被分配给其他变量）<br>要尽量避免使用全局变量（不安全）</p>
-<p>第109讲宏定义<br>“#”开头是编译预处理指令（在编译之前进行的指令‘临时文件’）<br>“#define”来定义一个宏 （#define &lt;宏名&gt;&lt; 宏值&gt;）（直接文本替换）<br>并非c的语句，不能加分号；<br>若宏超过一行，要在分行的地方加‘\’;<br>宏里可以出现其他宏的名字；<br>可以有注释；<br>‘#define_DEBUG’没有值的宏，用于条件编译<br>预定义的宏<br>无类型检查</p>
-<p>第110讲带参数的宏<br>‘#define cube(x)((x)<em>(x)</em>(x))’注意括号</p>
-<p>第111讲多个源代码文件<br>新建项目把几个源代码文件加入，；链接起来（Dev c++）</p>
-<p>安装Keil5 MDK<br>安装了环境，等待学习版到货</p>
+    <title>261030生活日常</title>
+    <url>/2026/10/30/261030%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/</url>
+    <content><![CDATA[<p>第一次记录自己的生活，也不知道该怎么写，<br>反正大概也不会有其他人看我的博客，就记流水账吧。</p>
+<h2 id="早上"><a href="#早上" class="headerlink" title="早上"></a>早上</h2><p>早上依旧是七点起床，比较困但还是强迫自己起来了。<br>煮上鸡蛋去洗漱，洗漱完开始吃早饭，四个全蛋加60g燕麦，榨菜吃完了，就着20g南瓜子吃完。</p>
+<p>之前直接吃燕麦加鸡蛋差点吃吐，但现在习惯了好了挺多，不过还是很难吃。</p>
+<h2 id="上午"><a href="#上午" class="headerlink" title="上午"></a>上午</h2><p>上午没课，我开始上网，想学点东西但不怎么想学b站上的c语言课程。<br>在上网过程中看到了写博客，于是开始搜教程结合AI开始搭建自己的博客。</p>
+<h2 id="下午"><a href="#下午" class="headerlink" title="下午"></a>下午</h2><p>时间很快就到11点了，最近在吃轻禾小厨的外卖，不是多好吃，而是感觉要健康一点，也挺便宜。<br>吃完休息一会就要上课了，课程很无聊，我基本没听，我对造纸不怎么感兴趣，很快就到了下午4：50，课上完了回宿舍。</p>
+<h2 id="晚上"><a href="#晚上" class="headerlink" title="晚上"></a>晚上</h2><p>回宿舍后先把明天要用的实验预习报告写好，写完了就吃晚饭了。</p>
+<p>吃了一根香蕉和一袋鸡胸肉，吃完了歇会吃彩椒和肌酸，补钾片。</p>
+<h2 id="插曲"><a href="#插曲" class="headerlink" title="插曲"></a>插曲</h2><p>正打算把今天的博客写了，之前在健身房遇到的大叔发消息过来了。</p>
+<p>我很早就怀疑他是gay，果然没错，他把我推给了一个人网名叫什么小虎的，上来第一句就是小熊你好，明明完全不认识上来就套近乎，还要交换照片。</p>
+<p>我那遇到过这种情况，和健身房认识的那个大叔问了问，他说”我把一个可爱的小熊推给他了“，真把我恶心坏了，赶紧拉开距离，还发了朋友圈。</p>
+<hr>
+<p>这些事我也懒得说了，每天就固定写一篇生活一篇学习吧，写完这两个博客卷点烟就睡吧，尽量11：30睡着。</p>
 ]]></content>
       <tags>
-        <tag>学习</tag>
-        <tag>C语言</tag>
+        <tag>生活</tag>
       </tags>
   </entry>
   <entry>
@@ -279,24 +206,6 @@
       <tags>
         <tag>生活</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>261106生活日常</title>
-    <url>/2026/11/06/261106%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/</url>
-    <content><![CDATA[<p>今天是练背日，重量大概稳定下来了，练完接了50分钟爬坡，练的很爽。<br>不知道是不是心理作用，我已经感觉到自己体脂的下降，这才第一个月，先到三个月再看。</p>
-<p>下午有两节课，第一节植物纤维，本来想好好听的，但老师声音实在太小，听着听着就睡着了<br>第二节是专业课制浆原理与工程，我有好好听，但知识点很多，感觉记不清。</p>
-<p>我买的是stm32学习版到了，我开始了stm32的学习，实操过程挺有意思，但是知识点讲解很复杂很难懂，慢慢来吧，坚持下去。</p>
-]]></content>
-      <tags>
-        <tag>生活</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>261107生活日常</title>
-    <url>/2026/11/07/261107%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/</url>
-    <content><![CDATA[<p>今天是周六，没有课，于是我几乎学了一天的stm32的视频</p>
-<p>虽然只是跟着视频一步一步做，但收获很多</p>
-]]></content>
   </entry>
   <entry>
     <title>261106学习记录</title>
@@ -323,6 +232,81 @@
       </tags>
   </entry>
   <entry>
+    <title>261106生活日常</title>
+    <url>/2026/11/06/261106%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/</url>
+    <content><![CDATA[<p>今天是练背日，重量大概稳定下来了，练完接了50分钟爬坡，练的很爽。<br>不知道是不是心理作用，我已经感觉到自己体脂的下降，这才第一个月，先到三个月再看。</p>
+<p>下午有两节课，第一节植物纤维，本来想好好听的，但老师声音实在太小，听着听着就睡着了<br>第二节是专业课制浆原理与工程，我有好好听，但知识点很多，感觉记不清。</p>
+<p>我买的是stm32学习版到了，我开始了stm32的学习，实操过程挺有意思，但是知识点讲解很复杂很难懂，慢慢来吧，坚持下去。</p>
+]]></content>
+      <tags>
+        <tag>生活</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>261102学习记录</title>
+    <url>/2026/11/02/261102%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<p>第98讲结构与函数<br>。。。今天好累不学了，明天要重新把这几节学明白</p>
+]]></content>
+      <tags>
+        <tag>学习</tag>
+        <tag>C语言</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>261031学习记录</title>
+    <url>/2026/10/31/261031%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<p>下午五点半学了翁恺的第 87 到 90 讲，都是字符串相关的内容。</p>
+<h2 id="第87讲：字符串基础"><a href="#第87讲：字符串基础" class="headerlink" title="第87讲：字符串基础"></a>第87讲：字符串基础</h2><ul>
+<li>字符串是以 <code>\0</code> 结尾的一串字符，这个 <code>\0</code> 是结束标志，不算字符串内容</li>
+<li><code>{&#39;H&#39;,&#39;E&#39;,&#39;L&#39;,&#39;L&#39;,&#39;O&#39;,&#39;!&#39;}</code> 只是字符数组，不是字符串，末尾补一个 <code>\0</code> 才是<br><small style="color:#888">（注意是字符 0，不是数字 0）</small></li>
+<li>字符串以数组形式存在，用数组或指针访问</li>
+<li><code>string.h</code> 里有很多处理字符串的函数</li>
+<li>双引号括起来的是字符串字面量，编译器会自动在末尾补 <code>\0</code></li>
+<li>相邻字面量会自动拼接，行尾加反斜杠可以跨行写</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;Hello &quot;</span> <span class="string">&quot;World!\n&quot;</span>);   <span class="comment">// 两个相邻字面量 → 自动拼成 &quot;Hello World!\n&quot;</span></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;Hello \</span></span><br><span class="line"><span class="string">       World!\n&quot;</span>);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>字符串是数组，不能用 <code>+ - *</code> 做运算</li>
+<li>字符串的三种写法：</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">char</span> *str  = <span class="string">&quot;hello&quot;</span>;   <span class="comment">// 写法一：字符指针，指向字符串字面量</span></span><br><span class="line"><span class="type">char</span> word[] = <span class="string">&quot;hello&quot;</span>;  <span class="comment">// 写法二：字符数组</span></span><br><span class="line"><span class="type">char</span> line[<span class="number">10</span>] = <span class="string">&quot;hello&quot;</span>;<span class="comment">// 写法三：指定大小的字符数组</span></span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="第88讲：字符串变量"><a href="#第88讲：字符串变量" class="headerlink" title="第88讲：字符串变量"></a>第88讲：字符串变量</h2><ul>
+<li>指针本身存的是地址，加了 <code>*</code> 才是它指向的值</li>
+<li>字符串字面量存在代码段，只读不可改；相同的字符串会共用同一个地址<br><small style="color:#888">（相当于字符串常量）</small></li>
+<li>想要可修改的字符串，要用数组方式，不要用指针<br><small style="color:#888">（数组会把字符串拷贝一份到自己的空间里）</small></li>
+</ul>
+<p><strong>总结：</strong></p>
+<ul>
+<li>构造字符串 → 用数组</li>
+<li>处理字符串 → 用指针</li>
+</ul>
+<hr>
+<h2 id="第89讲：字符串输入输出"><a href="#第89讲：字符串输入输出" class="headerlink" title="第89讲：字符串输入输出"></a>第89讲：字符串输入输出</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">char</span> <span class="built_in">string</span>[<span class="number">8</span>];</span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>, <span class="built_in">string</span>);</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%s&quot;</span>, <span class="built_in">string</span>);</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>scanf(&quot;%s&quot;, ...)</code> 读到空格、Tab、回车为止</li>
+<li>输入超过数组长度会崩溃，可以用 <code>%7s</code> 限制最多读 7 个字符</li>
+<li>本地变量（指针）记得初始化</li>
+</ul>
+<hr>
+<h2 id="第90讲：字符串数组"><a href="#第90讲：字符串数组" class="headerlink" title="第90讲：字符串数组"></a>第90讲：字符串数组</h2><p>两种写法：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">char</span> a[][<span class="number">10</span>] = &#123;&#125;</span><br><span class="line"><span class="comment">// 二维数组：每个元素是 char[10]，存长度小于9的字符串</span></span><br><span class="line"></span><br><span class="line"><span class="type">char</span> *a[] = &#123;&#125;</span><br><span class="line"><span class="comment">// 指针数组：每个元素是 char*，指向一个字符串</span></span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>今天学了 87 到 90 四节课，全是字符串相关的内容，还是很有收获的。</p>
+]]></content>
+      <tags>
+        <tag>学习</tag>
+        <tag>C语言</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>261107生活日常</title>
+    <url>/2026/11/07/261107%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/</url>
+    <content><![CDATA[<p>今天是周六，没有课，于是我几乎学了一天的stm32的视频</p>
+<p>虽然只是跟着视频一步一步做，但收获很多</p>
+]]></content>
+  </entry>
+  <entry>
     <title>261108学习记录</title>
     <url>/2026/11/08/261108%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
     <content><![CDATA[<p>今天主要是复习昨天做的项目，出了最后两个还不能独立写出，其他的都能写出来了，也对项目函数有了很多新理解。</p>
@@ -332,13 +316,48 @@
       </tags>
   </entry>
   <entry>
-    <title>261107学习记录</title>
-    <url>/2026/11/07/261107%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
-    <content><![CDATA[<p>今天学习了江协视频里的3-1到3-4的视频<br>跟着视频大概学习了GPIO输出输入、<br>LED闪烁、LED流水灯、蜂鸣器、按键控制LED、光敏传感器控制蜂鸣器<br>还有c语言里sruct,menu,等语法</p>
+    <title>261108生活日常</title>
+    <url>/2026/11/08/261108%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/</url>
+    <content><![CDATA[<p>今天降温了，很冷，外面还下雨了，碰巧今天是练腿日，回来的时候电动车还没电了</p>
+<p>下午和晚上继续学了stm32，有点难，但我能从中找到乐趣，加油！</p>
 ]]></content>
       <tags>
+        <tag>生活</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>261109生活日常</title>
+    <url>/2026/11/09/261109%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/</url>
+    <content><![CDATA[<p>今天还是老样子，有三节课，下课了回宿舍学习到现在</p>
+]]></content>
+      <tags>
+        <tag>生活</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>261105学习记录</title>
+    <url>/2026/11/05/261105%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<p>第106讲全局变量<br>定义在函数外面，有全局的生存域和作用域<br>默认初始值是0和NULL,初始化要用已知的常数值。<br>若函数里有同名的本地变量，全局变量会被隐藏<br><small style="color:#888">(小范围的会覆盖大范围的)</small></p>
+<p>第107讲静态本地变量<br>定义变量时加上static修饰符会成为静态本地变量<br>离开函数时会保留这个变量的值（无视初始化）</p>
+<h2 id="实际上是特殊的全局变量，只是作用域在函数内"><a href="#实际上是特殊的全局变量，只是作用域在函数内" class="headerlink" title="实际上是特殊的全局变量，只是作用域在函数内"></a>实际上是特殊的全局变量，只是作用域在函数内</h2><p>第108讲本地变量贴士<br>返回本地变量地址是危险的，建议用指针（出函数时地址不受控，会被分配给其他变量）<br>要尽量避免使用全局变量（不安全）</p>
+<p>第109讲宏定义<br>“#”开头是编译预处理指令（在编译之前进行的指令‘临时文件’）<br>“#define”来定义一个宏 （#define &lt;宏名&gt;&lt; 宏值&gt;）（直接文本替换）<br>并非c的语句，不能加分号；<br>若宏超过一行，要在分行的地方加‘\’;<br>宏里可以出现其他宏的名字；<br>可以有注释；<br>‘#define_DEBUG’没有值的宏，用于条件编译<br>预定义的宏<br>无类型检查</p>
+<p>第110讲带参数的宏<br>‘#define cube(x)((x)<em>(x)</em>(x))’注意括号</p>
+<p>第111讲多个源代码文件<br>新建项目把几个源代码文件加入，；链接起来（Dev c++）</p>
+<p>安装Keil5 MDK<br>安装了环境，等待学习版到货</p>
+]]></content>
+      <tags>
+        <tag>学习</tag>
         <tag>C语言</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>261110学习记录</title>
+    <url>/2026/11/10/261110%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<p>今天把w2的两个练习任务完成了，第二个任务复习了switch语法，勉强完成目标，不过可以优化，明天优化吧</p>
+]]></content>
+      <tags>
         <tag>stm32</tag>
+        <tag>c语言</tag>
       </tags>
   </entry>
   <entry>
@@ -351,12 +370,24 @@
       </tags>
   </entry>
   <entry>
-    <title>261109生活日常</title>
-    <url>/2026/11/09/261109%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/</url>
-    <content><![CDATA[<p>今天还是老样子，有三节课，下课了回宿舍学习到现在</p>
+    <title>261110生活日常</title>
+    <url>/2026/11/10/261110%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/</url>
+    <content><![CDATA[<p>今天上午两节课，下午休息一会去健身了</p>
+<p>感觉遇到瓶颈，在减脂是一部分原因，力量一直上不去，改计划吧</p>
 ]]></content>
       <tags>
         <tag>生活</tag>
+        <tag>健身</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>261107学习记录</title>
+    <url>/2026/11/07/261107%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<p>今天学习了江协视频里的3-1到3-4的视频<br>跟着视频大概学习了GPIO输出输入、<br>LED闪烁、LED流水灯、蜂鸣器、按键控制LED、光敏传感器控制蜂鸣器<br>还有c语言里sruct,menu,等语法</p>
+]]></content>
+      <tags>
+        <tag>C语言</tag>
+        <tag>stm32</tag>
       </tags>
   </entry>
   <entry>
@@ -371,16 +402,6 @@
 ]]></content>
       <tags>
         <tag>随笔</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>261108生活日常</title>
-    <url>/2026/11/08/261108%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/</url>
-    <content><![CDATA[<p>今天降温了，很冷，外面还下雨了，碰巧今天是练腿日，回来的时候电动车还没电了</p>
-<p>下午和晚上继续学了stm32，有点难，但我能从中找到乐趣，加油！</p>
-]]></content>
-      <tags>
-        <tag>生活</tag>
       </tags>
   </entry>
 </search>
