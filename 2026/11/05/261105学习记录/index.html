@@ -20,12 +20,12 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="第106讲全局变量定义在函数外面，有全局的生存域和作用域默认初始值是0和NULL,初始化要用已知的常数值。若函数里有同名的本地变量，全局变量会被隐藏(小范围的会覆盖大范围的) 第107讲静态本地变量定义变量时加上static修饰符会成为静态本地变量离开函数时会保留这个变量的值（无视初始化） 实际上是特殊的全局变量，只是作用域在函数内第108讲本地变量贴士返回本地变量地址是危险的，建议用指针（出函数">
+  <meta name="description" content="第106讲全局变量定义在函数外面，有全局的生存域和作用域默认初始值是0和NULL,初始化要用已知的常数值。若函数里有同名的本地变量，全局变量会被隐藏(小范围的会覆盖大范围的) 第107讲静态本地变量定义变量时加上static修饰符会成为静态本地变量离开函数时会保留这个变量的值（无视初始化）##实际上是特殊的全局变量，只是作用域在函数内 第108讲本地变量贴士返回本地变量地址是危险的，建议用指针（出">
 <meta property="og:type" content="article">
 <meta property="og:title" content="261105学习记录">
 <meta property="og:url" content="http://example.com/2026/11/05/261105%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/index.html">
 <meta property="og:site_name" content="彭宇豪的博客">
-<meta property="og:description" content="第106讲全局变量定义在函数外面，有全局的生存域和作用域默认初始值是0和NULL,初始化要用已知的常数值。若函数里有同名的本地变量，全局变量会被隐藏(小范围的会覆盖大范围的) 第107讲静态本地变量定义变量时加上static修饰符会成为静态本地变量离开函数时会保留这个变量的值（无视初始化） 实际上是特殊的全局变量，只是作用域在函数内第108讲本地变量贴士返回本地变量地址是危险的，建议用指针（出函数">
+<meta property="og:description" content="第106讲全局变量定义在函数外面，有全局的生存域和作用域默认初始值是0和NULL,初始化要用已知的常数值。若函数里有同名的本地变量，全局变量会被隐藏(小范围的会覆盖大范围的) 第107讲静态本地变量定义变量时加上static修饰符会成为静态本地变量离开函数时会保留这个变量的值（无视初始化）##实际上是特殊的全局变量，只是作用域在函数内 第108讲本地变量贴士返回本地变量地址是危险的，建议用指针（出">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-11-05T01:49:09.000Z">
 <meta property="article:modified_time" content="2026-11-05T13:09:09.449Z">
@@ -225,8 +225,8 @@
 
       
         <p>第106讲全局变量<br>定义在函数外面，有全局的生存域和作用域<br>默认初始值是0和NULL,初始化要用已知的常数值。<br>若函数里有同名的本地变量，全局变量会被隐藏<br><small style="color:#888">(小范围的会覆盖大范围的)</small></p>
-<p>第107讲静态本地变量<br>定义变量时加上static修饰符会成为静态本地变量<br>离开函数时会保留这个变量的值（无视初始化）</p>
-<h2 id="实际上是特殊的全局变量，只是作用域在函数内"><a href="#实际上是特殊的全局变量，只是作用域在函数内" class="headerlink" title="实际上是特殊的全局变量，只是作用域在函数内"></a>实际上是特殊的全局变量，只是作用域在函数内</h2><p>第108讲本地变量贴士<br>返回本地变量地址是危险的，建议用指针（出函数时地址不受控，会被分配给其他变量）<br>要尽量避免使用全局变量（不安全）</p>
+<p>第107讲静态本地变量<br>定义变量时加上static修饰符会成为静态本地变量<br>离开函数时会保留这个变量的值（无视初始化）<br>##实际上是特殊的全局变量，只是作用域在函数内</p>
+<p>第108讲本地变量贴士<br>返回本地变量地址是危险的，建议用指针（出函数时地址不受控，会被分配给其他变量）<br>要尽量避免使用全局变量（不安全）</p>
 <p>第109讲宏定义<br>“#”开头是编译预处理指令（在编译之前进行的指令‘临时文件’）<br>“#define”来定义一个宏 （#define &lt;宏名&gt;&lt; 宏值&gt;）（直接文本替换）<br>并非c的语句，不能加分号；<br>若宏超过一行，要在分行的地方加‘\’;<br>宏里可以出现其他宏的名字；<br>可以有注释；<br>‘#define_DEBUG’没有值的宏，用于条件编译<br>预定义的宏<br>无类型检查</p>
 <p>第110讲带参数的宏<br>‘#define cube(x)((x)<em>(x)</em>(x))’注意括号</p>
 <p>第111讲多个源代码文件<br>新建项目把几个源代码文件加入，；链接起来（Dev c++）</p>
@@ -315,7 +315,6 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E9%99%85%E4%B8%8A%E6%98%AF%E7%89%B9%E6%AE%8A%E7%9A%84%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%EF%BC%8C%E5%8F%AA%E6%98%AF%E4%BD%9C%E7%94%A8%E5%9F%9F%E5%9C%A8%E5%87%BD%E6%95%B0%E5%86%85"><span class="nav-number">1.</span> <span class="nav-text">实际上是特殊的全局变量，只是作用域在函数内</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -329,7 +328,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">25</span>
+          <span class="site-state-item-count">27</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

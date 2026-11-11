@@ -20,12 +20,12 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="2-2新建工程  型号分类和缩写，在资料里查找 新建工程步骤： 建立工程文件夹，Keil中新建工程，选择型号。 工程文件夹里建立Strat、Library、User等文件夹，复制固件库里面的文件到工程文件夹 工程里对应建立Strat、Library、User等同名称的分组，然后将文件夹里的文件添加到工程分组里 工程选项，C&#x2F;C++,Include Paths内声明所有包含头文件的文件夹 工程选项，">
+  <meta name="description" content="2-2新建工程  型号分类和缩写，在资料里查找 新建工程步骤：   建立工程文件夹，Keil中新建工程，选择型号。 工程文件夹里建立Strat、Library、User等文件夹，复制固件库里面的文件到工程文件夹 工程里对应建立Strat、Library、User等同名称的分组，然后将文件夹里的文件添加到工程分组里 工程选项，C&#x2F;C++,Include Paths内声明所有包含头文件的文件">
 <meta property="og:type" content="article">
 <meta property="og:title" content="261106学习记录">
 <meta property="og:url" content="http://example.com/2026/11/06/261106%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/index.html">
 <meta property="og:site_name" content="彭宇豪的博客">
-<meta property="og:description" content="2-2新建工程  型号分类和缩写，在资料里查找 新建工程步骤： 建立工程文件夹，Keil中新建工程，选择型号。 工程文件夹里建立Strat、Library、User等文件夹，复制固件库里面的文件到工程文件夹 工程里对应建立Strat、Library、User等同名称的分组，然后将文件夹里的文件添加到工程分组里 工程选项，C&#x2F;C++,Include Paths内声明所有包含头文件的文件夹 工程选项，">
+<meta property="og:description" content="2-2新建工程  型号分类和缩写，在资料里查找 新建工程步骤：   建立工程文件夹，Keil中新建工程，选择型号。 工程文件夹里建立Strat、Library、User等文件夹，复制固件库里面的文件到工程文件夹 工程里对应建立Strat、Library、User等同名称的分组，然后将文件夹里的文件添加到工程分组里 工程选项，C&#x2F;C++,Include Paths内声明所有包含头文件的文件">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-11-06T11:47:05.000Z">
 <meta property="article:modified_time" content="2026-11-06T13:22:57.799Z">
@@ -227,18 +227,22 @@
         <p>2-2新建工程</p>
 <ul>
 <li>型号分类和缩写，在资料里查找</li>
-<li>新建工程步骤：<ol>
+<li>新建工程步骤：</li>
+</ul>
+<ol>
 <li>建立工程文件夹，Keil中新建工程，选择型号。</li>
 <li>工程文件夹里建立Strat、Library、User等文件夹，复制固件库里面的文件到工程文件夹</li>
 <li>工程里对应建立Strat、Library、User等同名称的分组，然后将文件夹里的文件添加到工程分组里</li>
-<li>工程选项，C/C++,Include Paths内声明所有包含头文件的文件夹</li>
-<li>工程选项，C/C++,Define内定义USE_STDPERIPH_DRIVER</li>
+<li>工程选项，C&#x2F;C++,Include Paths内声明所有包含头文件的文件夹</li>
+<li>工程选项，C&#x2F;C++,Define内定义USE_STDPERIPH_DRIVER</li>
 <li>工程选项，Debug,下拉列表选择对应调试器，Settings,Flash Download里勾选Reset and Run</li>
 </ol>
-</li>
+<ul>
 <li>工程架构</li>
 </ul>
-<p>C语言复习<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span>          <span class="comment">// ① 引入标准库，这样才能用 printf 打印</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span>            <span class="comment">// ② 定义一个结构体&quot;模板&quot;，里面有两个格子</span></span><br><span class="line">    <span class="type">int</span> pin;                <span class="comment">//    格子1：pin（引脚），整数类型</span></span><br><span class="line">    <span class="type">int</span> mode;               <span class="comment">//    格子2：mode（模式），整数类型</span></span><br><span class="line">&#125; Cfg;                      <span class="comment">//    给这个模板起名叫 Cfg，以后用它当类型名</span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">Setup</span><span class="params">(Cfg *p)</span> &#123;        <span class="comment">// ③ 定义函数 Setup，参数 p 是一个 Cfg 的指针（地址）</span></span><br><span class="line">    p-&gt;pin = <span class="number">13</span>;            <span class="comment">//    给 p 指向的那个结构体的 pin 格子，写入 13</span></span><br><span class="line">    p-&gt;mode = <span class="number">1</span>;            <span class="comment">//    给 mode 格子写入 1</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;                <span class="comment">// ④ main：程序入口，所有代码从这里开始跑</span></span><br><span class="line">    Cfg cfg;                <span class="comment">//    按 Cfg 模板造一个具体的结构体，名字叫 cfg</span></span><br><span class="line">    Setup(&amp;cfg);            <span class="comment">//    把 cfg 的地址（&amp;cfg）传给 Setup</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;pin=%d, mode=%d\n&quot;</span>, cfg.pin, cfg.mode);  <span class="comment">// 打印 cfg 两个格子的值</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;1左移4位 = %d\n&quot;</span>, <span class="number">1</span> &lt;&lt; <span class="number">4</span>);               <span class="comment">// 打印位运算结果</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;               <span class="comment">//    告诉系统程序正常结束</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br><strong>1&lt;&lt;4</strong>把1左移4位</p>
+<p>C语言复习</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span>          <span class="comment">// ① 引入标准库，这样才能用 printf 打印</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span>            <span class="comment">// ② 定义一个结构体&quot;模板&quot;，里面有两个格子</span></span><br><span class="line">    <span class="type">int</span> pin;                <span class="comment">//    格子1：pin（引脚），整数类型</span></span><br><span class="line">    <span class="type">int</span> mode;               <span class="comment">//    格子2：mode（模式），整数类型</span></span><br><span class="line">&#125; Cfg;                      <span class="comment">//    给这个模板起名叫 Cfg，以后用它当类型名</span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">Setup</span><span class="params">(Cfg *p)</span> &#123;        <span class="comment">// ③ 定义函数 Setup，参数 p 是一个 Cfg 的指针（地址）</span></span><br><span class="line">    p-&gt;pin = <span class="number">13</span>;            <span class="comment">//    给 p 指向的那个结构体的 pin 格子，写入 13</span></span><br><span class="line">    p-&gt;mode = <span class="number">1</span>;            <span class="comment">//    给 mode 格子写入 1</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;                <span class="comment">// ④ main：程序入口，所有代码从这里开始跑</span></span><br><span class="line">    Cfg cfg;                <span class="comment">//    按 Cfg 模板造一个具体的结构体，名字叫 cfg</span></span><br><span class="line">    Setup(&amp;cfg);            <span class="comment">//    把 cfg 的地址（&amp;cfg）传给 Setup</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;pin=%d, mode=%d\n&quot;</span>, cfg.pin, cfg.mode);  <span class="comment">// 打印 cfg 两个格子的值</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;1左移4位 = %d\n&quot;</span>, <span class="number">1</span> &lt;&lt; <span class="number">4</span>);               <span class="comment">// 打印位运算结果</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;               <span class="comment">//    告诉系统程序正常结束</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>1&lt;&lt;4</strong>把1左移4位</p>
 
     </div>
 
@@ -336,7 +340,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">25</span>
+          <span class="site-state-item-count">27</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
