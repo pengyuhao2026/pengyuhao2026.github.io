@@ -10,7 +10,42 @@
   <rights>All rights reserved 2026, 彭宇豪</rights>
   <subtitle>学习记录博客</subtitle>
   <title>彭宇豪的博客</title>
-  <updated>2026-11-11T14:37:53.887Z</updated>
+  <updated>2026-11-12T13:03:55.083Z</updated>
+  <entry>
+    <author>
+      <name>彭宇豪</name>
+    </author>
+    <category term="生活" scheme="http://example.com/tags/%E7%94%9F%E6%B4%BB/"/>
+    <category term="健身" scheme="http://example.com/tags/%E5%81%A5%E8%BA%AB/"/>
+    <content>
+      <![CDATA[<p>今天是手臂日，一共练了九个动作，很爽<br>下午学了三个小时</p>]]>
+    </content>
+    <id>http://example.com/2026/11/12/261112%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/</id>
+    <link href="http://example.com/2026/11/12/261112%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/"/>
+    <published>2026-11-12T13:01:56.000Z</published>
+    <summary>
+      <![CDATA[<p>今天是手臂日，一共练了九个动作，很爽<br>下午学了三个小时</p>]]>
+    </summary>
+    <title>261112生活日常</title>
+    <updated>2026-11-12T13:03:55.083Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>彭宇豪</name>
+    </author>
+    <category term="stm32" scheme="http://example.com/tags/stm32/"/>
+    <content>
+      <![CDATA[<p>今天学了5-1和5-2，主要是中断函数，有点复杂，明天搞清楚</p>]]>
+    </content>
+    <id>http://example.com/2026/11/12/261112%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</id>
+    <link href="http://example.com/2026/11/12/261112%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
+    <published>2026-11-12T13:01:50.000Z</published>
+    <summary>
+      <![CDATA[<p>今天学了5-1和5-2，主要是中断函数，有点复杂，明天搞清楚</p>]]>
+    </summary>
+    <title>261112学习记录</title>
+    <updated>2026-11-12T13:02:49.952Z</updated>
+  </entry>
   <entry>
     <author>
       <name>彭宇豪</name>
@@ -336,33 +371,5 @@
     </summary>
     <title>学习记录261103</title>
     <updated>2026-11-03T09:03:32.796Z</updated>
-  </entry>
-  <entry>
-    <author>
-      <name>彭宇豪</name>
-    </author>
-    <category term="生活" scheme="http://example.com/tags/%E7%94%9F%E6%B4%BB/"/>
-    <category term="健身" scheme="http://example.com/tags/%E5%81%A5%E8%BA%AB/"/>
-    <content>
-      <![CDATA[<p>今天有三节课，一直上到下午三点，刚好今天是练腿日，看来今天一天都比较忙。<br>今天感觉状态挺好，计划的重量和组数都做到了，果然是要渐进超负荷，感觉明天腿会很痛，所以我多滚了一会泡沫轴。<br>但是感觉深蹲的动作还是不标准，腰的压力很大，也总是稳，两边不平衡<br>总之要注意，做动作时要注意力集中，尽量动作标准，我可不想受伤<br>健身的时候，那个刘哥也来了，给他抽了我的烟，也聊了很多，被他肯定是有点开心，但是心里还是恶心。他看起来是个好人，只是取向有点问题，还是要和他保持距离。他说我非常符合他们的审美，还说我现在是直的但总有一天我会变弯。操，我会尽量避免。话说，他明明是gay，竟然不喜欢男娘那种类型吗，他是完全不喜欢女人吗，下次要问问他。结束的时候还问我要不要一起去吃饭，绝对不要。<br>晚上回来已经六点半了，学习一会就休息（虽然没学多少，但起码把这两天的博客补上了）。</p>]]>
-    </content>
-    <id>http://example.com/2026/11/02/261102%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/</id>
-    <link href="http://example.com/2026/11/02/261102%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/"/>
-    <published>2026-11-02T12:00:36.000Z</published>
-    <summary>
-      <![CDATA[<p>今天有三节课，一直上到下午三点，刚好今天是练腿日，看来今天一天都比较忙。<br>今天感觉状态挺好，计划的重量和组数都做到了，果然是要渐进超负荷，感觉明天腿会很痛，所以我多滚了一会泡沫轴。<br>但是感觉深蹲的动作还是不标准，腰的压力很大，也总是稳，两边不平衡<br>总之要注]]>
-    </summary>
-    <title>261102生活日常</title>
-    <updated>2026-11-02T12:10:23.620Z</updated>
-  </entry>
-  <entry>
-    <author>
-      <name>彭宇豪</name>
-    </author>
-    <id>http://example.com/2026/11/02/261101%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/</id>
-    <link href="http://example.com/2026/11/02/261101%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/"/>
-    <published>2026-11-02T11:50:31.000Z</published>
-    <title>261101生活日常</title>
-    <updated>2026-11-02T11:50:31.488Z</updated>
   </entry>
 </feed>

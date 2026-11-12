@@ -216,15 +216,6 @@
       </tags>
   </entry>
   <entry>
-    <title>261105生活日常</title>
-    <url>/2026/11/05/261105%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/</url>
-    <content><![CDATA[<p>今天老样子，不过我大概想好了未来的发展方向。<br>我问了ai，因为我是造纸专业的，还对计算机硬件，机械之类的感兴趣，所以想成为硬件工程师，加油！！！<br><a href="file:///C:/Users/Creeper/Doubao/chats/2026-11-05/new-chat/hardware-roadmap-final/%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF%E5%9B%BE-%E7%BB%88%E6%9E%81%E7%89%88.html">这是我找ai生成的路线图</a></p>
-]]></content>
-      <tags>
-        <tag>生活</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>261030生活日常</title>
     <url>/2026/10/30/261030%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/</url>
     <content><![CDATA[<p>第一次记录自己的生活，也不知道该怎么写，<br>反正大概也不会有其他人看我的博客，就记流水账吧。</p>
@@ -247,50 +238,6 @@
 ]]></content>
       <tags>
         <tag>生活</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>261106学习记录</title>
-    <url>/2026/11/06/261106%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
-    <content><![CDATA[<p>2-2新建工程</p>
-<ul>
-<li>型号分类和缩写，在资料里查找</li>
-<li>新建工程步骤：</li>
-</ul>
-<ol>
-<li>建立工程文件夹，Keil中新建工程，选择型号。</li>
-<li>工程文件夹里建立Strat、Library、User等文件夹，复制固件库里面的文件到工程文件夹</li>
-<li>工程里对应建立Strat、Library、User等同名称的分组，然后将文件夹里的文件添加到工程分组里</li>
-<li>工程选项，C&#x2F;C++,Include Paths内声明所有包含头文件的文件夹</li>
-<li>工程选项，C&#x2F;C++,Define内定义USE_STDPERIPH_DRIVER</li>
-<li>工程选项，Debug,下拉列表选择对应调试器，Settings,Flash Download里勾选Reset and Run</li>
-</ol>
-<ul>
-<li>工程架构</li>
-</ul>
-<p>C语言复习</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span>          <span class="comment">// ① 引入标准库，这样才能用 printf 打印</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span>            <span class="comment">// ② 定义一个结构体&quot;模板&quot;，里面有两个格子</span></span><br><span class="line">    <span class="type">int</span> pin;                <span class="comment">//    格子1：pin（引脚），整数类型</span></span><br><span class="line">    <span class="type">int</span> mode;               <span class="comment">//    格子2：mode（模式），整数类型</span></span><br><span class="line">&#125; Cfg;                      <span class="comment">//    给这个模板起名叫 Cfg，以后用它当类型名</span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">Setup</span><span class="params">(Cfg *p)</span> &#123;        <span class="comment">// ③ 定义函数 Setup，参数 p 是一个 Cfg 的指针（地址）</span></span><br><span class="line">    p-&gt;pin = <span class="number">13</span>;            <span class="comment">//    给 p 指向的那个结构体的 pin 格子，写入 13</span></span><br><span class="line">    p-&gt;mode = <span class="number">1</span>;            <span class="comment">//    给 mode 格子写入 1</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;                <span class="comment">// ④ main：程序入口，所有代码从这里开始跑</span></span><br><span class="line">    Cfg cfg;                <span class="comment">//    按 Cfg 模板造一个具体的结构体，名字叫 cfg</span></span><br><span class="line">    Setup(&amp;cfg);            <span class="comment">//    把 cfg 的地址（&amp;cfg）传给 Setup</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;pin=%d, mode=%d\n&quot;</span>, cfg.pin, cfg.mode);  <span class="comment">// 打印 cfg 两个格子的值</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;1左移4位 = %d\n&quot;</span>, <span class="number">1</span> &lt;&lt; <span class="number">4</span>);               <span class="comment">// 打印位运算结果</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;               <span class="comment">//    告诉系统程序正常结束</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>1&lt;&lt;4</strong>把1左移4位</p>
-]]></content>
-      <tags>
-        <tag>C语言</tag>
-        <tag>STM32</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>261105学习记录</title>
-    <url>/2026/11/05/261105%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
-    <content><![CDATA[<p>第106讲全局变量<br>定义在函数外面，有全局的生存域和作用域<br>默认初始值是0和NULL,初始化要用已知的常数值。<br>若函数里有同名的本地变量，全局变量会被隐藏<br><small style="color:#888">(小范围的会覆盖大范围的)</small></p>
-<p>第107讲静态本地变量<br>定义变量时加上static修饰符会成为静态本地变量<br>离开函数时会保留这个变量的值（无视初始化）<br>##实际上是特殊的全局变量，只是作用域在函数内</p>
-<p>第108讲本地变量贴士<br>返回本地变量地址是危险的，建议用指针（出函数时地址不受控，会被分配给其他变量）<br>要尽量避免使用全局变量（不安全）</p>
-<p>第109讲宏定义<br>“#”开头是编译预处理指令（在编译之前进行的指令‘临时文件’）<br>“#define”来定义一个宏 （#define &lt;宏名&gt;&lt; 宏值&gt;）（直接文本替换）<br>并非c的语句，不能加分号；<br>若宏超过一行，要在分行的地方加‘\’;<br>宏里可以出现其他宏的名字；<br>可以有注释；<br>‘#define_DEBUG’没有值的宏，用于条件编译<br>预定义的宏<br>无类型检查</p>
-<p>第110讲带参数的宏<br>‘#define cube(x)((x)<em>(x)</em>(x))’注意括号</p>
-<p>第111讲多个源代码文件<br>新建项目把几个源代码文件加入，；链接起来（Dev c++）</p>
-<p>安装Keil5 MDK<br>安装了环境，等待学习版到货</p>
-]]></content>
-      <tags>
-        <tag>学习</tag>
-        <tag>C语言</tag>
       </tags>
   </entry>
   <entry>
@@ -345,6 +292,15 @@
       </tags>
   </entry>
   <entry>
+    <title>261105生活日常</title>
+    <url>/2026/11/05/261105%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/</url>
+    <content><![CDATA[<p>今天老样子，不过我大概想好了未来的发展方向。<br>我问了ai，因为我是造纸专业的，还对计算机硬件，机械之类的感兴趣，所以想成为硬件工程师，加油！！！<br><a href="file:///C:/Users/Creeper/Doubao/chats/2026-11-05/new-chat/hardware-roadmap-final/%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF%E5%9B%BE-%E7%BB%88%E6%9E%81%E7%89%88.html">这是我找ai生成的路线图</a></p>
+]]></content>
+      <tags>
+        <tag>生活</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>261106生活日常</title>
     <url>/2026/11/06/261106%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/</url>
     <content><![CDATA[<p>今天是练背日，重量大概稳定下来了，练完接了50分钟爬坡，练的很爽。<br>不知道是不是心理作用，我已经感觉到自己体脂的下降，这才第一个月，先到三个月再看。</p>
@@ -363,6 +319,34 @@
       <tags>
         <tag>学习</tag>
         <tag>C语言</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>261106学习记录</title>
+    <url>/2026/11/06/261106%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<p>2-2新建工程</p>
+<ul>
+<li>型号分类和缩写，在资料里查找</li>
+<li>新建工程步骤：</li>
+</ul>
+<ol>
+<li>建立工程文件夹，Keil中新建工程，选择型号。</li>
+<li>工程文件夹里建立Strat、Library、User等文件夹，复制固件库里面的文件到工程文件夹</li>
+<li>工程里对应建立Strat、Library、User等同名称的分组，然后将文件夹里的文件添加到工程分组里</li>
+<li>工程选项，C&#x2F;C++,Include Paths内声明所有包含头文件的文件夹</li>
+<li>工程选项，C&#x2F;C++,Define内定义USE_STDPERIPH_DRIVER</li>
+<li>工程选项，Debug,下拉列表选择对应调试器，Settings,Flash Download里勾选Reset and Run</li>
+</ol>
+<ul>
+<li>工程架构</li>
+</ul>
+<p>C语言复习</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span>          <span class="comment">// ① 引入标准库，这样才能用 printf 打印</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span>            <span class="comment">// ② 定义一个结构体&quot;模板&quot;，里面有两个格子</span></span><br><span class="line">    <span class="type">int</span> pin;                <span class="comment">//    格子1：pin（引脚），整数类型</span></span><br><span class="line">    <span class="type">int</span> mode;               <span class="comment">//    格子2：mode（模式），整数类型</span></span><br><span class="line">&#125; Cfg;                      <span class="comment">//    给这个模板起名叫 Cfg，以后用它当类型名</span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">Setup</span><span class="params">(Cfg *p)</span> &#123;        <span class="comment">// ③ 定义函数 Setup，参数 p 是一个 Cfg 的指针（地址）</span></span><br><span class="line">    p-&gt;pin = <span class="number">13</span>;            <span class="comment">//    给 p 指向的那个结构体的 pin 格子，写入 13</span></span><br><span class="line">    p-&gt;mode = <span class="number">1</span>;            <span class="comment">//    给 mode 格子写入 1</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;                <span class="comment">// ④ main：程序入口，所有代码从这里开始跑</span></span><br><span class="line">    Cfg cfg;                <span class="comment">//    按 Cfg 模板造一个具体的结构体，名字叫 cfg</span></span><br><span class="line">    Setup(&amp;cfg);            <span class="comment">//    把 cfg 的地址（&amp;cfg）传给 Setup</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;pin=%d, mode=%d\n&quot;</span>, cfg.pin, cfg.mode);  <span class="comment">// 打印 cfg 两个格子的值</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;1左移4位 = %d\n&quot;</span>, <span class="number">1</span> &lt;&lt; <span class="number">4</span>);               <span class="comment">// 打印位运算结果</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;               <span class="comment">//    告诉系统程序正常结束</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>1&lt;&lt;4</strong>把1左移4位</p>
+]]></content>
+      <tags>
+        <tag>C语言</tag>
+        <tag>STM32</tag>
       </tags>
   </entry>
   <entry>
@@ -392,21 +376,28 @@
       </tags>
   </entry>
   <entry>
-    <title>261109学习记录</title>
-    <url>/2026/11/09/261109%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
-    <content><![CDATA[<p>自行完成了按键控制led和传感器控制蜂鸣器两个项目，对io的8中形式有了更深入了解</p>
-]]></content>
-      <tags>
-        <tag>stm32</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>261109生活日常</title>
     <url>/2026/11/09/261109%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/</url>
     <content><![CDATA[<p>今天还是老样子，有三节课，下课了回宿舍学习到现在</p>
 ]]></content>
       <tags>
         <tag>生活</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>261105学习记录</title>
+    <url>/2026/11/05/261105%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<p>第106讲全局变量<br>定义在函数外面，有全局的生存域和作用域<br>默认初始值是0和NULL,初始化要用已知的常数值。<br>若函数里有同名的本地变量，全局变量会被隐藏<br><small style="color:#888">(小范围的会覆盖大范围的)</small></p>
+<p>第107讲静态本地变量<br>定义变量时加上static修饰符会成为静态本地变量<br>离开函数时会保留这个变量的值（无视初始化）<br>##实际上是特殊的全局变量，只是作用域在函数内</p>
+<p>第108讲本地变量贴士<br>返回本地变量地址是危险的，建议用指针（出函数时地址不受控，会被分配给其他变量）<br>要尽量避免使用全局变量（不安全）</p>
+<p>第109讲宏定义<br>“#”开头是编译预处理指令（在编译之前进行的指令‘临时文件’）<br>“#define”来定义一个宏 （#define &lt;宏名&gt;&lt; 宏值&gt;）（直接文本替换）<br>并非c的语句，不能加分号；<br>若宏超过一行，要在分行的地方加‘\’;<br>宏里可以出现其他宏的名字；<br>可以有注释；<br>‘#define_DEBUG’没有值的宏，用于条件编译<br>预定义的宏<br>无类型检查</p>
+<p>第110讲带参数的宏<br>‘#define cube(x)((x)<em>(x)</em>(x))’注意括号</p>
+<p>第111讲多个源代码文件<br>新建项目把几个源代码文件加入，；链接起来（Dev c++）</p>
+<p>安装Keil5 MDK<br>安装了环境，等待学习版到货</p>
+]]></content>
+      <tags>
+        <tag>学习</tag>
+        <tag>C语言</tag>
       </tags>
   </entry>
   <entry>
@@ -420,6 +411,46 @@
       </tags>
   </entry>
   <entry>
+    <title>261110生活日常</title>
+    <url>/2026/11/10/261110%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/</url>
+    <content><![CDATA[<p>今天上午两节课，下午休息一会去健身了</p>
+<p>感觉遇到瓶颈，在减脂是一部分原因，力量一直上不去，改计划吧</p>
+]]></content>
+      <tags>
+        <tag>生活</tag>
+        <tag>健身</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>261107学习记录</title>
+    <url>/2026/11/07/261107%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<p>今天学习了江协视频里的3-1到3-4的视频<br>跟着视频大概学习了GPIO输出输入、<br>LED闪烁、LED流水灯、蜂鸣器、按键控制LED、光敏传感器控制蜂鸣器<br>还有c语言里sruct,menu,等语法</p>
+]]></content>
+      <tags>
+        <tag>C语言</tag>
+        <tag>stm32</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>261112学习记录</title>
+    <url>/2026/11/12/261112%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<p>今天学了5-1和5-2，主要是中断函数，有点复杂，明天搞清楚</p>
+]]></content>
+      <tags>
+        <tag>stm32</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>261112生活日常</title>
+    <url>/2026/11/12/261112%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/</url>
+    <content><![CDATA[<p>今天是手臂日，一共练了九个动作，很爽<br>下午学了三个小时</p>
+]]></content>
+      <tags>
+        <tag>生活</tag>
+        <tag>健身</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>261111学习记录</title>
     <url>/2026/11/11/261111%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
     <content><![CDATA[<p>今天先把昨天按键控制三种模式流水灯的代码完善了<br>然后学了4-2OLED控制，还有keil的调试模式</p>
@@ -429,14 +460,12 @@
       </tags>
   </entry>
   <entry>
-    <title>261110生活日常</title>
-    <url>/2026/11/10/261110%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/</url>
-    <content><![CDATA[<p>今天上午两节课，下午休息一会去健身了</p>
-<p>感觉遇到瓶颈，在减脂是一部分原因，力量一直上不去，改计划吧</p>
+    <title>261109学习记录</title>
+    <url>/2026/11/09/261109%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<p>自行完成了按键控制led和传感器控制蜂鸣器两个项目，对io的8中形式有了更深入了解</p>
 ]]></content>
       <tags>
-        <tag>生活</tag>
-        <tag>健身</tag>
+        <tag>stm32</tag>
       </tags>
   </entry>
   <entry>
@@ -461,16 +490,6 @@
 ]]></content>
       <tags>
         <tag>随笔</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>261107学习记录</title>
-    <url>/2026/11/07/261107%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
-    <content><![CDATA[<p>今天学习了江协视频里的3-1到3-4的视频<br>跟着视频大概学习了GPIO输出输入、<br>LED闪烁、LED流水灯、蜂鸣器、按键控制LED、光敏传感器控制蜂鸣器<br>还有c语言里sruct,menu,等语法</p>
-]]></content>
-      <tags>
-        <tag>C语言</tag>
-        <tag>stm32</tag>
       </tags>
   </entry>
 </search>
