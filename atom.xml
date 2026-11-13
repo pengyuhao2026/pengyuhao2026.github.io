@@ -10,7 +10,41 @@
   <rights>All rights reserved 2026, 彭宇豪</rights>
   <subtitle>学习记录博客</subtitle>
   <title>彭宇豪的博客</title>
-  <updated>2026-11-12T13:03:55.083Z</updated>
+  <updated>2026-11-13T14:28:01.271Z</updated>
+  <entry>
+    <author>
+      <name>彭宇豪</name>
+    </author>
+    <category term="stm32" scheme="http://example.com/tags/stm32/"/>
+    <content>
+      <![CDATA[<p>今天没怎么学，让ai把学习路程重新整理了一下</p>]]>
+    </content>
+    <id>http://example.com/2026/11/13/261113%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</id>
+    <link href="http://example.com/2026/11/13/261113%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
+    <published>2026-11-13T14:27:17.000Z</published>
+    <summary>
+      <![CDATA[<p>今天没怎么学，让ai把学习路程重新整理了一下</p>]]>
+    </summary>
+    <title>261113学习记录</title>
+    <updated>2026-11-13T14:28:01.271Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>彭宇豪</name>
+    </author>
+    <category term="生活" scheme="http://example.com/tags/%E7%94%9F%E6%B4%BB/"/>
+    <content>
+      <![CDATA[<p>今天早上赖了半个小时床，明天不能这样<br>下午两节课，上完课去拿快递，酵母蛋白到货，还有黄铜手卷器<br>蛋白粉味道还行，就是飞粉有点严重</p>]]>
+    </content>
+    <id>http://example.com/2026/11/13/261113%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/</id>
+    <link href="http://example.com/2026/11/13/261113%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/"/>
+    <published>2026-11-13T14:27:10.000Z</published>
+    <summary>
+      <![CDATA[<p>今天早上赖了半个小时床，明天不能这样<br>下午两节课，上完课去拿快递，酵母蛋白到货，还有黄铜手卷器<br>蛋白粉味道还行，就是飞粉有点严重</p>]]>
+    </summary>
+    <title>261113生活日常</title>
+    <updated>2026-11-13T14:29:44.626Z</updated>
+  </entry>
   <entry>
     <author>
       <name>彭宇豪</name>
@@ -335,41 +369,5 @@
     </summary>
     <title>261104学习记录</title>
     <updated>2026-11-04T11:12:48.599Z</updated>
-  </entry>
-  <entry>
-    <author>
-      <name>彭宇豪</name>
-    </author>
-    <category term="生活" scheme="http://example.com/tags/%E7%94%9F%E6%B4%BB/"/>
-    <content>
-      <![CDATA[<p>早上依旧老样子<br>上午有两节课。<br>到了下午，本来今天是休息日，但今天东浪花开业，就干脆去健身房做个有氧<br>爬了50分钟坡后，就直接去2楼洗浴了。<br>装修挺不错，但人太多了，泡个澡搓个背就回来了</p>]]>
-    </content>
-    <id>http://example.com/2026/11/03/261103%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/</id>
-    <link href="http://example.com/2026/11/03/261103%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/"/>
-    <published>2026-11-03T14:09:31.000Z</published>
-    <summary>
-      <![CDATA[<p>早上依旧老样子<br>上午有两节课。<br>到了下午，本来今天是休息日，但今天东浪花开业，就干脆去健身房做个有氧<br>爬了50分钟坡后，就直接去2楼洗浴了。<br>装修挺不错，但人太多了，泡个澡搓个背就回来了</p>]]>
-    </summary>
-    <title>生活日常261103</title>
-    <updated>2026-11-03T14:12:26.500Z</updated>
-  </entry>
-  <entry>
-    <author>
-      <name>彭宇豪</name>
-    </author>
-    <category term="学习" scheme="http://example.com/tags/%E5%AD%A6%E4%B9%A0/"/>
-    <category term="C语言" scheme="http://example.com/tags/C%E8%AF%AD%E8%A8%80/"/>
-    <content>
-      <![CDATA[<p>今天学了 96 到 105 讲的内容。</p><h2 id="第96讲：枚举"><a href="#第96讲：枚举" class="headerlink" title="第96讲：枚举"></a>第96讲：枚举</h2><p><code>enum</code> 是一次性罗列多个整型常量的类型。</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">color</span> &#123;</span> red, yellow, green &#125;;</span><br><span class="line"><span class="comment">// 没指定初始值的话，从 0 开始：red=0, yellow=1, green=2</span></span><br></pre></td></tr></table></figure><hr><h2 id="第97讲：结构类型"><a href="#第97讲：结构类型" class="headerlink" title="第97讲：结构类型"></a>第97讲：结构类型</h2><p>声明结构体：</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">date</span> &#123;</span></span><br><span class="line">    <span class="type">int</span> month;</span><br><span class="line">    <span class="type">int</span> day;</span><br><span class="line">    <span class="type">int</span> year;</span><br><span class="line">&#125;;  <span class="comment">// 大括号后面的分号不能忘！</span></span><br></pre></td></tr></table></figure><p>定义变量：</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">point</span> &#123;</span> <span class="type">int</span> x; <span class="type">int</span> y; &#125;;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">point</span> <span class="title">today</span>;</span></span><br></pre></td></tr></table></figure><p>用 <code>.</code> 运算符取成员，比如 <code>point.x</code>。</p><hr><h2 id="第98讲：结构与函数"><a href="#第98讲：结构与函数" class="headerlink" title="第98讲：结构与函数"></a>第98讲：结构与函数</h2><p>结构体可以当函数参数，也可以当返回值：</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">numberofnumbers</span><span class="params">(<span class="keyword">struct</span> date d)</span>;</span><br></pre></td></tr></table></figure><p>结构体里可以嵌套结构体，也可以定义结构体数组：</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">date</span> <span class="title">dates</span>[100];</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">date</span> <span class="title">dates</span>[] =</span> &#123;&#123;<span class="number">4</span>,<span class="number">5</span>,<span class="number">2005</span>&#125;, &#123;<span class="number">2</span>,<span class="number">5</span>,<span class="number">2005</span>&#125;&#125;;</span><br></pre></td></tr></table></figure>]]>
-    </content>
-    <id>http://example.com/2026/11/03/261103%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</id>
-    <link href="http://example.com/2026/11/03/261103%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
-    <published>2026-11-03T07:14:34.000Z</published>
-    <summary>
-      <![CDATA[<p>今天学了 96 到 105 讲的内容。</p>
-<h2 id="第96讲：枚举"><a href="#第96讲：枚举" class="headerlink" title="第96讲：枚举"></a>第96讲：枚举</h2><p><code>enum</code> 是一次性罗]]>
-    </summary>
-    <title>学习记录261103</title>
-    <updated>2026-11-03T09:03:32.796Z</updated>
   </entry>
 </feed>
