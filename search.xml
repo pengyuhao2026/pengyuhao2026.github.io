@@ -90,132 +90,6 @@
       </tags>
   </entry>
   <entry>
-    <title>261101学习记录</title>
-    <url>/2026/11/01/261101%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
-    <content><![CDATA[<h2 id="第91讲：单字符输入输出"><a href="#第91讲：单字符输入输出" class="headerlink" title="第91讲：单字符输入输出"></a>第91讲：单字符输入输出</h2><ul>
-<li><code>putchar( )</code>：把一个字符输出到终端<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">putchar</span><span class="params">(<span class="type">int</span> a)</span>;  <span class="comment">// 正常返回输出的字符，出错返回 EOF</span></span><br></pre></td></tr></table></figure></li>
-<li><code>getchar( )</code>：从终端读一个字符<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">getchar</span><span class="params">(<span class="type">void</span>)</span>;  <span class="comment">// 返回读到的字符，读到末尾返回 EOF(-1)</span></span><br></pre></td></tr></table></figure></li>
-</ul>
-<p><strong>回声程序（echo）：</strong></p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> ch;</span><br><span class="line"><span class="keyword">while</span> ((ch = getchar()) != EOF) &#123;</span><br><span class="line">    <span class="built_in">putchar</span>(ch);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;EOF\n&quot;</span>);</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><code>Ctrl + C</code> 强制终止程序</li>
-<li><code>Ctrl + Z</code>（Windows）&#x2F; <code>Ctrl + D</code>（Unix）表示输入结束</li>
-<li>shell 是键盘和程序的桥梁，按下回车才会把输入传给程序</li>
-</ul>
-<hr>
-<h2 id="第92-95讲：字符串函数"><a href="#第92-95讲：字符串函数" class="headerlink" title="第92~95讲：字符串函数"></a>第92~95讲：字符串函数</h2><p><code>#include &lt;string.h&gt;</code> 里常用的几个函数：</p>
-<ul>
-<li><p><code>strlen</code>：返回字符串长度（不算结尾的 <code>\0</code>）<br><small style="color:#888"><code>size_t strlen(const char* s)</code></small></p>
-</li>
-<li><p><code>strcmp</code>：比较两个字符串，相等返回 0，不等返回差值<br><small style="color:#888"><code>int strcmp(const char* s1, const char* s2)</code></small></p>
-</li>
-<li><p><code>strcpy</code>：把后一个字符串拷贝到前一个<br><small style="color:#888"><code>char* strcpy(char* restrict dst, const char* restrict src)</code></small></p>
-</li>
-</ul>
-<p>复制一个字符串的正确写法：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">char</span> *dst;</span><br><span class="line">dst = (<span class="type">char</span> *) <span class="built_in">malloc</span>(<span class="built_in">strlen</span>(src) + <span class="number">1</span>);  <span class="comment">// 申请内存，多1个位置放 \0</span></span><br><span class="line"><span class="built_in">strcpy</span>(dst, src);                        <span class="comment">// 把内容连同 \0 一起拷过去</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><code>strchr</code>：在字符串里从左往右找字符<br><small style="color:#888"><code>strrchr</code> 是从右往左找</small></li>
-<li><code>strstr</code>：在字符串里找子串</li>
-<li><code>strcasestr</code>：忽略大小写找子串</li>
-</ul>
-<hr>
-<h2 id="第96讲：枚举"><a href="#第96讲：枚举" class="headerlink" title="第96讲：枚举"></a>第96讲：枚举</h2><p><code>enum</code> 是用户自定义类型，本质上是整数。</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">color</span> &#123;</span> red, yellow, green &#125;;</span><br><span class="line"><span class="comment">// red=0, yellow=1, green=2，也可以手动指定值</span></span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="第97讲：结构类型"><a href="#第97讲：结构类型" class="headerlink" title="第97讲：结构类型"></a>第97讲：结构类型</h2><p>定义结构体：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">point</span> &#123;</span></span><br><span class="line">    <span class="type">int</span> x;</span><br><span class="line">    <span class="type">int</span> y;</span><br><span class="line">&#125;;  <span class="comment">// 大括号后面的分号不能忘！</span></span><br></pre></td></tr></table></figure>
-
-<p>定义变量：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">point</span> <span class="title">p1</span>, <span class="title">p2</span>;</span></span><br></pre></td></tr></table></figure>
-
-<p>或者直接定义：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">point</span> &#123;</span></span><br><span class="line">    <span class="type">int</span> x;</span><br><span class="line">    <span class="type">int</span> y;</span><br><span class="line">&#125; p1, p2;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <tags>
-        <tag>学习</tag>
-        <tag>C语言</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>261101生活日常</title>
-    <url>/2026/11/02/261101%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>261102生活日常</title>
-    <url>/2026/11/02/261102%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/</url>
-    <content><![CDATA[<p>今天有三节课，一直上到下午三点，刚好今天是练腿日，看来今天一天都比较忙。<br>今天感觉状态挺好，计划的重量和组数都做到了，果然是要渐进超负荷，感觉明天腿会很痛，所以我多滚了一会泡沫轴。<br>但是感觉深蹲的动作还是不标准，腰的压力很大，也总是稳，两边不平衡<br>总之要注意，做动作时要注意力集中，尽量动作标准，我可不想受伤<br>健身的时候，那个刘哥也来了，给他抽了我的烟，也聊了很多，被他肯定是有点开心，但是心里还是恶心。他看起来是个好人，只是取向有点问题，还是要和他保持距离。他说我非常符合他们的审美，还说我现在是直的但总有一天我会变弯。操，我会尽量避免。话说，他明明是gay，竟然不喜欢男娘那种类型吗，他是完全不喜欢女人吗，下次要问问他。结束的时候还问我要不要一起去吃饭，绝对不要。<br>晚上回来已经六点半了，学习一会就休息（虽然没学多少，但起码把这两天的博客补上了）。</p>
-]]></content>
-      <tags>
-        <tag>生活</tag>
-        <tag>健身</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>学习记录261103</title>
-    <url>/2026/11/03/261103%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
-    <content><![CDATA[<p>今天学了 96 到 105 讲的内容。</p>
-<h2 id="第96讲：枚举"><a href="#第96讲：枚举" class="headerlink" title="第96讲：枚举"></a>第96讲：枚举</h2><p><code>enum</code> 是一次性罗列多个整型常量的类型。</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">color</span> &#123;</span> red, yellow, green &#125;;</span><br><span class="line"><span class="comment">// 没指定初始值的话，从 0 开始：red=0, yellow=1, green=2</span></span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="第97讲：结构类型"><a href="#第97讲：结构类型" class="headerlink" title="第97讲：结构类型"></a>第97讲：结构类型</h2><p>声明结构体：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">date</span> &#123;</span></span><br><span class="line">    <span class="type">int</span> month;</span><br><span class="line">    <span class="type">int</span> day;</span><br><span class="line">    <span class="type">int</span> year;</span><br><span class="line">&#125;;  <span class="comment">// 大括号后面的分号不能忘！</span></span><br></pre></td></tr></table></figure>
-
-<p>定义变量：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">point</span> &#123;</span> <span class="type">int</span> x; <span class="type">int</span> y; &#125;;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">point</span> <span class="title">today</span>;</span></span><br></pre></td></tr></table></figure>
-
-<p>用 <code>.</code> 运算符取成员，比如 <code>point.x</code>。</p>
-<hr>
-<h2 id="第98讲：结构与函数"><a href="#第98讲：结构与函数" class="headerlink" title="第98讲：结构与函数"></a>第98讲：结构与函数</h2><p>结构体可以当函数参数，也可以当返回值：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">numberofnumbers</span><span class="params">(<span class="keyword">struct</span> date d)</span>;</span><br></pre></td></tr></table></figure>
-
-<p>结构体里可以嵌套结构体，也可以定义结构体数组：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">date</span> <span class="title">dates</span>[100];</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">date</span> <span class="title">dates</span>[] =</span> &#123;&#123;<span class="number">4</span>,<span class="number">5</span>,<span class="number">2005</span>&#125;, &#123;<span class="number">2</span>,<span class="number">5</span>,<span class="number">2005</span>&#125;&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <tags>
-        <tag>学习</tag>
-        <tag>C语言</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>生活日常261103</title>
-    <url>/2026/11/03/261103%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/</url>
-    <content><![CDATA[<p>早上依旧老样子<br>上午有两节课。<br>到了下午，本来今天是休息日，但今天东浪花开业，就干脆去健身房做个有氧<br>爬了50分钟坡后，就直接去2楼洗浴了。<br>装修挺不错，但人太多了，泡个澡搓个背就回来了</p>
-]]></content>
-      <tags>
-        <tag>生活</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>261104学习记录</title>
-    <url>/2026/11/04/261104%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
-    <content><![CDATA[<p>第100~103讲ACLLib：用与制作windows程序的教学程序的教学<br>第104讲类型定义<br>Typedef可定义新的类型的名字（typedaf+原来的名字+新的名字）</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span>&#123;</span></span><br><span class="line">  <span class="type">int</span> month;</span><br><span class="line">  <span class="type">int</span> day;</span><br><span class="line">  <span class="type">int</span> year;</span><br><span class="line">&#125;Date;</span><br></pre></td></tr></table></figure>
-<p>第105讲联合</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">union</span> <span class="title">Anelt</span>&#123;</span></span><br><span class="line">   <span class="type">int</span>   i;</span><br><span class="line">   <span class="type">char</span> c;</span><br><span class="line">&#125;elt1,elt2;</span><br></pre></td></tr></table></figure>
-<p>union:与typedef类似，不过elt1和elt2是联合起来的，一起使用一个地址</p>
-]]></content>
-      <tags>
-        <tag>学习</tag>
-        <tag>C语言</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>261104生活日常</title>
-    <url>/2026/11/04/261104%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/</url>
-    <content><![CDATA[<p>今天老样子</p>
-]]></content>
-      <tags>
-        <tag>生活</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>261030生活日常</title>
     <url>/2026/10/30/261030%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/</url>
     <content><![CDATA[<p>第一次记录自己的生活，也不知道该怎么写，<br>反正大概也不会有其他人看我的博客，就记流水账吧。</p>
@@ -292,6 +166,197 @@
       </tags>
   </entry>
   <entry>
+    <title>261101学习记录</title>
+    <url>/2026/11/01/261101%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<h2 id="第91讲：单字符输入输出"><a href="#第91讲：单字符输入输出" class="headerlink" title="第91讲：单字符输入输出"></a>第91讲：单字符输入输出</h2><ul>
+<li><code>putchar( )</code>：把一个字符输出到终端<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">putchar</span><span class="params">(<span class="type">int</span> a)</span>;  <span class="comment">// 正常返回输出的字符，出错返回 EOF</span></span><br></pre></td></tr></table></figure></li>
+<li><code>getchar( )</code>：从终端读一个字符<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">getchar</span><span class="params">(<span class="type">void</span>)</span>;  <span class="comment">// 返回读到的字符，读到末尾返回 EOF(-1)</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<p><strong>回声程序（echo）：</strong></p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> ch;</span><br><span class="line"><span class="keyword">while</span> ((ch = getchar()) != EOF) &#123;</span><br><span class="line">    <span class="built_in">putchar</span>(ch);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;EOF\n&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>Ctrl + C</code> 强制终止程序</li>
+<li><code>Ctrl + Z</code>（Windows）&#x2F; <code>Ctrl + D</code>（Unix）表示输入结束</li>
+<li>shell 是键盘和程序的桥梁，按下回车才会把输入传给程序</li>
+</ul>
+<hr>
+<h2 id="第92-95讲：字符串函数"><a href="#第92-95讲：字符串函数" class="headerlink" title="第92~95讲：字符串函数"></a>第92~95讲：字符串函数</h2><p><code>#include &lt;string.h&gt;</code> 里常用的几个函数：</p>
+<ul>
+<li><p><code>strlen</code>：返回字符串长度（不算结尾的 <code>\0</code>）<br><small style="color:#888"><code>size_t strlen(const char* s)</code></small></p>
+</li>
+<li><p><code>strcmp</code>：比较两个字符串，相等返回 0，不等返回差值<br><small style="color:#888"><code>int strcmp(const char* s1, const char* s2)</code></small></p>
+</li>
+<li><p><code>strcpy</code>：把后一个字符串拷贝到前一个<br><small style="color:#888"><code>char* strcpy(char* restrict dst, const char* restrict src)</code></small></p>
+</li>
+</ul>
+<p>复制一个字符串的正确写法：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">char</span> *dst;</span><br><span class="line">dst = (<span class="type">char</span> *) <span class="built_in">malloc</span>(<span class="built_in">strlen</span>(src) + <span class="number">1</span>);  <span class="comment">// 申请内存，多1个位置放 \0</span></span><br><span class="line"><span class="built_in">strcpy</span>(dst, src);                        <span class="comment">// 把内容连同 \0 一起拷过去</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>strchr</code>：在字符串里从左往右找字符<br><small style="color:#888"><code>strrchr</code> 是从右往左找</small></li>
+<li><code>strstr</code>：在字符串里找子串</li>
+<li><code>strcasestr</code>：忽略大小写找子串</li>
+</ul>
+<hr>
+<h2 id="第96讲：枚举"><a href="#第96讲：枚举" class="headerlink" title="第96讲：枚举"></a>第96讲：枚举</h2><p><code>enum</code> 是用户自定义类型，本质上是整数。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">color</span> &#123;</span> red, yellow, green &#125;;</span><br><span class="line"><span class="comment">// red=0, yellow=1, green=2，也可以手动指定值</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="第97讲：结构类型"><a href="#第97讲：结构类型" class="headerlink" title="第97讲：结构类型"></a>第97讲：结构类型</h2><p>定义结构体：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">point</span> &#123;</span></span><br><span class="line">    <span class="type">int</span> x;</span><br><span class="line">    <span class="type">int</span> y;</span><br><span class="line">&#125;;  <span class="comment">// 大括号后面的分号不能忘！</span></span><br></pre></td></tr></table></figure>
+
+<p>定义变量：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">point</span> <span class="title">p1</span>, <span class="title">p2</span>;</span></span><br></pre></td></tr></table></figure>
+
+<p>或者直接定义：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">point</span> &#123;</span></span><br><span class="line">    <span class="type">int</span> x;</span><br><span class="line">    <span class="type">int</span> y;</span><br><span class="line">&#125; p1, p2;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>学习</tag>
+        <tag>C语言</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>261101生活日常</title>
+    <url>/2026/11/02/261101%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>261102学习记录</title>
+    <url>/2026/11/02/261102%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<p>第98讲结构与函数<br>。。。今天好累不学了，明天要重新把这几节学明白</p>
+]]></content>
+      <tags>
+        <tag>学习</tag>
+        <tag>C语言</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>261102生活日常</title>
+    <url>/2026/11/02/261102%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/</url>
+    <content><![CDATA[<p>今天有三节课，一直上到下午三点，刚好今天是练腿日，看来今天一天都比较忙。<br>今天感觉状态挺好，计划的重量和组数都做到了，果然是要渐进超负荷，感觉明天腿会很痛，所以我多滚了一会泡沫轴。<br>但是感觉深蹲的动作还是不标准，腰的压力很大，也总是稳，两边不平衡<br>总之要注意，做动作时要注意力集中，尽量动作标准，我可不想受伤<br>健身的时候，那个刘哥也来了，给他抽了我的烟，也聊了很多，被他肯定是有点开心，但是心里还是恶心。他看起来是个好人，只是取向有点问题，还是要和他保持距离。他说我非常符合他们的审美，还说我现在是直的但总有一天我会变弯。操，我会尽量避免。话说，他明明是gay，竟然不喜欢男娘那种类型吗，他是完全不喜欢女人吗，下次要问问他。结束的时候还问我要不要一起去吃饭，绝对不要。<br>晚上回来已经六点半了，学习一会就休息（虽然没学多少，但起码把这两天的博客补上了）。</p>
+]]></content>
+      <tags>
+        <tag>生活</tag>
+        <tag>健身</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>261104学习记录</title>
+    <url>/2026/11/04/261104%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<p>第100~103讲ACLLib：用与制作windows程序的教学程序的教学<br>第104讲类型定义<br>Typedef可定义新的类型的名字（typedaf+原来的名字+新的名字）</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span>&#123;</span></span><br><span class="line">  <span class="type">int</span> month;</span><br><span class="line">  <span class="type">int</span> day;</span><br><span class="line">  <span class="type">int</span> year;</span><br><span class="line">&#125;Date;</span><br></pre></td></tr></table></figure>
+<p>第105讲联合</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">union</span> <span class="title">Anelt</span>&#123;</span></span><br><span class="line">   <span class="type">int</span>   i;</span><br><span class="line">   <span class="type">char</span> c;</span><br><span class="line">&#125;elt1,elt2;</span><br></pre></td></tr></table></figure>
+<p>union:与typedef类似，不过elt1和elt2是联合起来的，一起使用一个地址</p>
+]]></content>
+      <tags>
+        <tag>学习</tag>
+        <tag>C语言</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>学习记录261103</title>
+    <url>/2026/11/03/261103%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<p>今天学了 96 到 105 讲的内容。</p>
+<h2 id="第96讲：枚举"><a href="#第96讲：枚举" class="headerlink" title="第96讲：枚举"></a>第96讲：枚举</h2><p><code>enum</code> 是一次性罗列多个整型常量的类型。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">color</span> &#123;</span> red, yellow, green &#125;;</span><br><span class="line"><span class="comment">// 没指定初始值的话，从 0 开始：red=0, yellow=1, green=2</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="第97讲：结构类型"><a href="#第97讲：结构类型" class="headerlink" title="第97讲：结构类型"></a>第97讲：结构类型</h2><p>声明结构体：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">date</span> &#123;</span></span><br><span class="line">    <span class="type">int</span> month;</span><br><span class="line">    <span class="type">int</span> day;</span><br><span class="line">    <span class="type">int</span> year;</span><br><span class="line">&#125;;  <span class="comment">// 大括号后面的分号不能忘！</span></span><br></pre></td></tr></table></figure>
+
+<p>定义变量：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">point</span> &#123;</span> <span class="type">int</span> x; <span class="type">int</span> y; &#125;;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">point</span> <span class="title">today</span>;</span></span><br></pre></td></tr></table></figure>
+
+<p>用 <code>.</code> 运算符取成员，比如 <code>point.x</code>。</p>
+<hr>
+<h2 id="第98讲：结构与函数"><a href="#第98讲：结构与函数" class="headerlink" title="第98讲：结构与函数"></a>第98讲：结构与函数</h2><p>结构体可以当函数参数，也可以当返回值：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">numberofnumbers</span><span class="params">(<span class="keyword">struct</span> date d)</span>;</span><br></pre></td></tr></table></figure>
+
+<p>结构体里可以嵌套结构体，也可以定义结构体数组：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">date</span> <span class="title">dates</span>[100];</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">date</span> <span class="title">dates</span>[] =</span> &#123;&#123;<span class="number">4</span>,<span class="number">5</span>,<span class="number">2005</span>&#125;, &#123;<span class="number">2</span>,<span class="number">5</span>,<span class="number">2005</span>&#125;&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>学习</tag>
+        <tag>C语言</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>生活日常261103</title>
+    <url>/2026/11/03/261103%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/</url>
+    <content><![CDATA[<p>早上依旧老样子<br>上午有两节课。<br>到了下午，本来今天是休息日，但今天东浪花开业，就干脆去健身房做个有氧<br>爬了50分钟坡后，就直接去2楼洗浴了。<br>装修挺不错，但人太多了，泡个澡搓个背就回来了</p>
+]]></content>
+      <tags>
+        <tag>生活</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>261104生活日常</title>
+    <url>/2026/11/04/261104%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/</url>
+    <content><![CDATA[<p>今天老样子</p>
+]]></content>
+      <tags>
+        <tag>生活</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>261105学习记录</title>
+    <url>/2026/11/05/261105%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<p>第106讲全局变量<br>定义在函数外面，有全局的生存域和作用域<br>默认初始值是0和NULL,初始化要用已知的常数值。<br>若函数里有同名的本地变量，全局变量会被隐藏<br><small style="color:#888">(小范围的会覆盖大范围的)</small></p>
+<p>第107讲静态本地变量<br>定义变量时加上static修饰符会成为静态本地变量<br>离开函数时会保留这个变量的值（无视初始化）<br>##实际上是特殊的全局变量，只是作用域在函数内</p>
+<p>第108讲本地变量贴士<br>返回本地变量地址是危险的，建议用指针（出函数时地址不受控，会被分配给其他变量）<br>要尽量避免使用全局变量（不安全）</p>
+<p>第109讲宏定义<br>“#”开头是编译预处理指令（在编译之前进行的指令‘临时文件’）<br>“#define”来定义一个宏 （#define &lt;宏名&gt;&lt; 宏值&gt;）（直接文本替换）<br>并非c的语句，不能加分号；<br>若宏超过一行，要在分行的地方加‘\’;<br>宏里可以出现其他宏的名字；<br>可以有注释；<br>‘#define_DEBUG’没有值的宏，用于条件编译<br>预定义的宏<br>无类型检查</p>
+<p>第110讲带参数的宏<br>‘#define cube(x)((x)<em>(x)</em>(x))’注意括号</p>
+<p>第111讲多个源代码文件<br>新建项目把几个源代码文件加入，；链接起来（Dev c++）</p>
+<p>安装Keil5 MDK<br>安装了环境，等待学习版到货</p>
+]]></content>
+      <tags>
+        <tag>学习</tag>
+        <tag>C语言</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>261105生活日常</title>
+    <url>/2026/11/05/261105%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/</url>
+    <content><![CDATA[<p>今天老样子，不过我大概想好了未来的发展方向。<br>我问了ai，因为我是造纸专业的，还对计算机硬件，机械之类的感兴趣，所以想成为硬件工程师，加油！！！<br><a href="file:///C:/Users/Creeper/Doubao/chats/2026-11-05/new-chat/hardware-roadmap-final/%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF%E5%9B%BE-%E7%BB%88%E6%9E%81%E7%89%88.html">这是我找ai生成的路线图</a></p>
+]]></content>
+      <tags>
+        <tag>生活</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>261108学习记录</title>
+    <url>/2026/11/08/261108%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<p>今天主要是复习昨天做的项目，出了最后两个还不能独立写出，其他的都能写出来了，也对项目函数有了很多新理解。</p>
+]]></content>
+      <tags>
+        <tag>stm32</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>261107学习记录</title>
+    <url>/2026/11/07/261107%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<p>今天学习了江协视频里的3-1到3-4的视频<br>跟着视频大概学习了GPIO输出输入、<br>LED闪烁、LED流水灯、蜂鸣器、按键控制LED、光敏传感器控制蜂鸣器<br>还有c语言里sruct,menu,等语法</p>
+]]></content>
+      <tags>
+        <tag>C语言</tag>
+        <tag>stm32</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>261106生活日常</title>
+    <url>/2026/11/06/261106%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/</url>
+    <content><![CDATA[<p>今天是练背日，重量大概稳定下来了，练完接了50分钟爬坡，练的很爽。<br>不知道是不是心理作用，我已经感觉到自己体脂的下降，这才第一个月，先到三个月再看。</p>
+<p>下午有两节课，第一节植物纤维，本来想好好听的，但老师声音实在太小，听着听着就睡着了<br>第二节是专业课制浆原理与工程，我有好好听，但知识点很多，感觉记不清。</p>
+<p>我买的是stm32学习版到了，我开始了stm32的学习，实操过程挺有意思，但是知识点讲解很复杂很难懂，慢慢来吧，坚持下去。</p>
+]]></content>
+      <tags>
+        <tag>生活</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>261106学习记录</title>
     <url>/2026/11/06/261106%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
     <content><![CDATA[<p>2-2新建工程</p>
@@ -320,23 +385,12 @@
       </tags>
   </entry>
   <entry>
-    <title>261106生活日常</title>
-    <url>/2026/11/06/261106%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/</url>
-    <content><![CDATA[<p>今天是练背日，重量大概稳定下来了，练完接了50分钟爬坡，练的很爽。<br>不知道是不是心理作用，我已经感觉到自己体脂的下降，这才第一个月，先到三个月再看。</p>
-<p>下午有两节课，第一节植物纤维，本来想好好听的，但老师声音实在太小，听着听着就睡着了<br>第二节是专业课制浆原理与工程，我有好好听，但知识点很多，感觉记不清。</p>
-<p>我买的是stm32学习版到了，我开始了stm32的学习，实操过程挺有意思，但是知识点讲解很复杂很难懂，慢慢来吧，坚持下去。</p>
+    <title>261109学习记录</title>
+    <url>/2026/11/09/261109%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<p>自行完成了按键控制led和传感器控制蜂鸣器两个项目，对io的8中形式有了更深入了解</p>
 ]]></content>
       <tags>
-        <tag>生活</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>261105生活日常</title>
-    <url>/2026/11/05/261105%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/</url>
-    <content><![CDATA[<p>今天老样子，不过我大概想好了未来的发展方向。<br>我问了ai，因为我是造纸专业的，还对计算机硬件，机械之类的感兴趣，所以想成为硬件工程师，加油！！！<br><a href="file:///C:/Users/Creeper/Doubao/chats/2026-11-05/new-chat/hardware-roadmap-final/%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF%E5%9B%BE-%E7%BB%88%E6%9E%81%E7%89%88.html">这是我找ai生成的路线图</a></p>
-]]></content>
-      <tags>
-        <tag>生活</tag>
+        <tag>stm32</tag>
       </tags>
   </entry>
   <entry>
@@ -347,9 +401,19 @@
 ]]></content>
   </entry>
   <entry>
-    <title>261108学习记录</title>
-    <url>/2026/11/08/261108%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
-    <content><![CDATA[<p>今天主要是复习昨天做的项目，出了最后两个还不能独立写出，其他的都能写出来了，也对项目函数有了很多新理解。</p>
+    <title>261110学习记录</title>
+    <url>/2026/11/10/261110%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<p>今天把w2的两个练习任务完成了，第二个任务复习了switch语法，勉强完成目标，不过可以优化，明天优化吧</p>
+]]></content>
+      <tags>
+        <tag>stm32</tag>
+        <tag>c语言</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>261111学习记录</title>
+    <url>/2026/11/11/261111%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<p>今天先把昨天按键控制三种模式流水灯的代码完善了<br>然后学了4-2OLED控制，还有keil的调试模式</p>
 ]]></content>
       <tags>
         <tag>stm32</tag>
@@ -366,48 +430,12 @@
       </tags>
   </entry>
   <entry>
-    <title>261102学习记录</title>
-    <url>/2026/11/02/261102%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
-    <content><![CDATA[<p>第98讲结构与函数<br>。。。今天好累不学了，明天要重新把这几节学明白</p>
-]]></content>
-      <tags>
-        <tag>学习</tag>
-        <tag>C语言</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>261109生活日常</title>
     <url>/2026/11/09/261109%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/</url>
     <content><![CDATA[<p>今天还是老样子，有三节课，下课了回宿舍学习到现在</p>
 ]]></content>
       <tags>
         <tag>生活</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>261105学习记录</title>
-    <url>/2026/11/05/261105%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
-    <content><![CDATA[<p>第106讲全局变量<br>定义在函数外面，有全局的生存域和作用域<br>默认初始值是0和NULL,初始化要用已知的常数值。<br>若函数里有同名的本地变量，全局变量会被隐藏<br><small style="color:#888">(小范围的会覆盖大范围的)</small></p>
-<p>第107讲静态本地变量<br>定义变量时加上static修饰符会成为静态本地变量<br>离开函数时会保留这个变量的值（无视初始化）<br>##实际上是特殊的全局变量，只是作用域在函数内</p>
-<p>第108讲本地变量贴士<br>返回本地变量地址是危险的，建议用指针（出函数时地址不受控，会被分配给其他变量）<br>要尽量避免使用全局变量（不安全）</p>
-<p>第109讲宏定义<br>“#”开头是编译预处理指令（在编译之前进行的指令‘临时文件’）<br>“#define”来定义一个宏 （#define &lt;宏名&gt;&lt; 宏值&gt;）（直接文本替换）<br>并非c的语句，不能加分号；<br>若宏超过一行，要在分行的地方加‘\’;<br>宏里可以出现其他宏的名字；<br>可以有注释；<br>‘#define_DEBUG’没有值的宏，用于条件编译<br>预定义的宏<br>无类型检查</p>
-<p>第110讲带参数的宏<br>‘#define cube(x)((x)<em>(x)</em>(x))’注意括号</p>
-<p>第111讲多个源代码文件<br>新建项目把几个源代码文件加入，；链接起来（Dev c++）</p>
-<p>安装Keil5 MDK<br>安装了环境，等待学习版到货</p>
-]]></content>
-      <tags>
-        <tag>学习</tag>
-        <tag>C语言</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>261110学习记录</title>
-    <url>/2026/11/10/261110%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
-    <content><![CDATA[<p>今天把w2的两个练习任务完成了，第二个任务复习了switch语法，勉强完成目标，不过可以优化，明天优化吧</p>
-]]></content>
-      <tags>
-        <tag>stm32</tag>
-        <tag>c语言</tag>
       </tags>
   </entry>
   <entry>
@@ -422,22 +450,22 @@
       </tags>
   </entry>
   <entry>
-    <title>261107学习记录</title>
-    <url>/2026/11/07/261107%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
-    <content><![CDATA[<p>今天学习了江协视频里的3-1到3-4的视频<br>跟着视频大概学习了GPIO输出输入、<br>LED闪烁、LED流水灯、蜂鸣器、按键控制LED、光敏传感器控制蜂鸣器<br>还有c语言里sruct,menu,等语法</p>
-]]></content>
-      <tags>
-        <tag>C语言</tag>
-        <tag>stm32</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>261112学习记录</title>
     <url>/2026/11/12/261112%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
     <content><![CDATA[<p>今天学了5-1和5-2，主要是中断函数，有点复杂，明天搞清楚</p>
 ]]></content>
       <tags>
         <tag>stm32</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>261111生活日常</title>
+    <url>/2026/11/11/261111%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/</url>
+    <content><![CDATA[<p>今天计划练背，背和二头都很有感觉<br>今天双十一，买了酵母和乳清两种蛋白粉和茶叶和黄铜手卷器，用了700多<br>这比去按摩要好很多</p>
+]]></content>
+      <tags>
+        <tag>生活</tag>
+        <tag>健身</tag>
       </tags>
   </entry>
   <entry>
@@ -451,9 +479,19 @@
       </tags>
   </entry>
   <entry>
-    <title>261113学习记录</title>
-    <url>/2026/11/13/261113%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
-    <content><![CDATA[<p>今天没怎么学，让ai把学习路程重新整理了一下</p>
+    <title>261114生活日常</title>
+    <url>/2026/11/14/261114%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/</url>
+    <content><![CDATA[<p>今天练腿，没完成定下的目标，主要是改变了训练计划，加上时间有点不够了</p>
+]]></content>
+      <tags>
+        <tag>生活</tag>
+        <tag>健身</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>261114学习记录</title>
+    <url>/2026/11/14/261114%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<p>今天把第5讲的两个项目自己做了一遍<br>主要是中断函数<br>中断函数的初始化要复杂一点<br>1.打开GPIO和AFIO的RCC计时器<br>2.初始化GPIO<br>3,用GPIO_EXTILineConfig选择中断引脚<br>4.初始化EXTI<br>5.用NVIC_PriorityGroupConfig选择分组<br>6.初始化NVIC<br>7.中断函数的名字是固定的在startup_stm32f10x_md.s里找</p>
 ]]></content>
       <tags>
         <tag>stm32</tag>
@@ -469,28 +507,18 @@
       </tags>
   </entry>
   <entry>
-    <title>261114学习记录</title>
-    <url>/2026/11/14/261114%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
-    <content><![CDATA[<p>今天把第5讲的两个项目自己做了一遍<br>主要是中断函数<br>中断函数的初始化要复杂一点<br>1.打开GPIO和AFIO的RCC计时器<br>2.初始化GPIO<br>3,用GPIO_EXTILineConfig选择中断引脚<br>4.初始化EXTI<br>5.用NVIC_PriorityGroupConfig选择分组<br>6.初始化NVIC<br>7.中断函数的名字是固定的在startup_stm32f10x_md.s里找</p>
+    <title>261115学习记录</title>
+    <url>/2026/11/15/261115%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<p>今天只学了1个小时，关于tim定时中断</p>
 ]]></content>
       <tags>
         <tag>stm32</tag>
       </tags>
   </entry>
   <entry>
-    <title>261114生活日常</title>
-    <url>/2026/11/14/261114%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/</url>
-    <content><![CDATA[<p>今天练腿，没完成定下的目标，主要是改变了训练计划，加上时间有点不够了</p>
-]]></content>
-      <tags>
-        <tag>生活</tag>
-        <tag>健身</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>261115学习记录</title>
-    <url>/2026/11/15/261115%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
-    <content><![CDATA[<p>今天只学了1个小时，关于tim定时中断</p>
+    <title>261113学习记录</title>
+    <url>/2026/11/13/261113%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<p>今天没怎么学，让ai把学习路程重新整理了一下</p>
 ]]></content>
       <tags>
         <tag>stm32</tag>
@@ -507,6 +535,25 @@
       </tags>
   </entry>
   <entry>
+    <title>261116学习记录</title>
+    <url>/2026/11/16/261116%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<p>今天学了TIM函数的内部定时和外部定时<br>内部定时：<br>1.RCC开启TIM的时钟<br>2.TIM_InternalClockConfig配置內部时钟源（不配置默认内部）<br>3.时基单元初始化<br>4.中断输出配置：TIM_ClearFlag清除TIM_TimeBaseInit函数末尾的更新标志位；TIM_ITConfig开启TIM的更新中断<br>5.NVIC_PriorityGroupConfig配置NVIC的分组<br>6.配置NVIC<br>7.TIM_Cmd给TIM使能<br>8.中断函数里用TIM_GetITStatus判断中断；TIM_ClearITPendingBit清除中断标志位</p>
+<p>外部定时<br>1.RCC开启TIM和GPIOA的时钟<br>2.初始化GPIO<br>3.TIM_ETRClockMode2Config配置外部时钟源（ETR固定PA0）<br>4.时基单元初始化<br>5.中断输出配置：TIM_ClearFlag清除TIM_TimeBaseInit函数末尾的更新标志位；TIM_ITConfig开启TIM的更新中断<br>6.NVIC_PriorityGroupConfig配置NVIC的分组<br>7.配置NVIC<br>8.TIM_Cmd给TIM使能<br>9.中断函数里用TIM_GetITStatus判断中断；TIM_ClearITPendingBit清除中断标志位</p>
+]]></content>
+      <tags>
+        <tag>stm32</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>261116生活日常</title>
+    <url>/2026/11/16/261116%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/</url>
+    <content><![CDATA[<p>今天休息日，中午吃了比较放纵的一顿，拉肚子了<br>下午我买的椅子到了，但是被监控拍到了，好像是说要处分，无所谓，不是什么大事<br>椅子挺舒服，晚上完成了今天的学习任务，虽然刚开始看理论部分时一头雾水，但是实践项目部分还是很顺利的，能够好好的集中精神，越学越感到我的不足，我的路还有很远很远，加油！！！</p>
+]]></content>
+      <tags>
+        <tag>生活</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>我的第一篇文章</title>
     <url>/2026/10/30/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/</url>
     <content><![CDATA[<p>从今天开始，我计划开始写我自己的博客</p>
@@ -518,34 +565,6 @@
 ]]></content>
       <tags>
         <tag>随笔</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>261111生活日常</title>
-    <url>/2026/11/11/261111%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/</url>
-    <content><![CDATA[<p>今天计划练背，背和二头都很有感觉<br>今天双十一，买了酵母和乳清两种蛋白粉和茶叶和黄铜手卷器，用了700多<br>这比去按摩要好很多</p>
-]]></content>
-      <tags>
-        <tag>生活</tag>
-        <tag>健身</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>261109学习记录</title>
-    <url>/2026/11/09/261109%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
-    <content><![CDATA[<p>自行完成了按键控制led和传感器控制蜂鸣器两个项目，对io的8中形式有了更深入了解</p>
-]]></content>
-      <tags>
-        <tag>stm32</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>261111学习记录</title>
-    <url>/2026/11/11/261111%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
-    <content><![CDATA[<p>今天先把昨天按键控制三种模式流水灯的代码完善了<br>然后学了4-2OLED控制，还有keil的调试模式</p>
-]]></content>
-      <tags>
-        <tag>stm32</tag>
       </tags>
   </entry>
 </search>
