@@ -10,7 +10,51 @@
   <rights>All rights reserved 2026, 彭宇豪</rights>
   <subtitle>学习记录博客</subtitle>
   <title>彭宇豪的博客</title>
-  <updated>2026-11-16T12:57:27.577Z</updated>
+  <updated>2026-11-17T13:59:30.685Z</updated>
+  <entry>
+    <author>
+      <name>彭宇豪</name>
+    </author>
+    <id>http://example.com/2026/11/17/261117%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8-1/</id>
+    <link href="http://example.com/2026/11/17/261117%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8-1/"/>
+    <published>2026-11-17T13:59:30.000Z</published>
+    <title>261117生活日常</title>
+    <updated>2026-11-17T13:59:30.685Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>彭宇豪</name>
+    </author>
+    <category term="健身" scheme="http://example.com/tags/%E5%81%A5%E8%BA%AB/"/>
+    <content>
+      <![CDATA[<p>今天早上起晚了，没吃鸡蛋燕麦，喝了杯蛋白粉就算了<br>健身挪到了下午，今天练胸，最好的状态下75kg可以推四个，感觉回复很不错<br>今天被导员叫到办公室，给我两天时间处理椅子，我先拖着，之后再看吧<br>有点影响心情</p>]]>
+    </content>
+    <id>http://example.com/2026/11/17/261117%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/</id>
+    <link href="http://example.com/2026/11/17/261117%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/"/>
+    <published>2026-11-17T13:57:36.000Z</published>
+    <summary>
+      <![CDATA[<p>今天早上起晚了，没吃鸡蛋燕麦，喝了杯蛋白粉就算了<br>健身挪到了下午，今天练胸，最好的状态下75kg可以推四个，感觉回复很不错<br>今天被导员叫到办公室，给我两天时间处理椅子，我先拖着，之后再看吧<br>有点影响心情</p>]]>
+    </summary>
+    <title>261117生活日常</title>
+    <updated>2026-11-17T14:02:13.849Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>彭宇豪</name>
+    </author>
+    <category term="stm32" scheme="http://example.com/tags/stm32/"/>
+    <content>
+      <![CDATA[<p>今天学了6-3和6-4<br>pwm呼吸灯和舵机<br>时间有点赶，学的不怎么清楚</p>]]>
+    </content>
+    <id>http://example.com/2026/11/17/261117%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</id>
+    <link href="http://example.com/2026/11/17/261117%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
+    <published>2026-11-17T13:57:28.000Z</published>
+    <summary>
+      <![CDATA[<p>今天学了6-3和6-4<br>pwm呼吸灯和舵机<br>时间有点赶，学的不怎么清楚</p>]]>
+    </summary>
+    <title>261117学习记录</title>
+    <updated>2026-11-17T13:59:20.054Z</updated>
+  </entry>
   <entry>
     <author>
       <name>彭宇豪</name>
@@ -307,57 +351,5 @@
     </summary>
     <title>261108生活日常</title>
     <updated>2026-11-08T14:02:46.951Z</updated>
-  </entry>
-  <entry>
-    <author>
-      <name>彭宇豪</name>
-    </author>
-    <category term="stm32" scheme="http://example.com/tags/stm32/"/>
-    <content>
-      <![CDATA[<p>今天主要是复习昨天做的项目，出了最后两个还不能独立写出，其他的都能写出来了，也对项目函数有了很多新理解。</p>]]>
-    </content>
-    <id>http://example.com/2026/11/08/261108%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</id>
-    <link href="http://example.com/2026/11/08/261108%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
-    <published>2026-11-08T13:58:43.000Z</published>
-    <summary>
-      <![CDATA[<p>今天主要是复习昨天做的项目，出了最后两个还不能独立写出，其他的都能写出来了，也对项目函数有了很多新理解。</p>]]>
-    </summary>
-    <title>261108学习记录</title>
-    <updated>2026-11-08T14:00:48.846Z</updated>
-  </entry>
-  <entry>
-    <author>
-      <name>彭宇豪</name>
-    </author>
-    <content>
-      <![CDATA[<p>今天是周六，没有课，于是我几乎学了一天的stm32的视频</p><p>虽然只是跟着视频一步一步做，但收获很多</p>]]>
-    </content>
-    <id>http://example.com/2026/11/07/261107%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/</id>
-    <link href="http://example.com/2026/11/07/261107%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/"/>
-    <published>2026-11-07T13:46:22.000Z</published>
-    <summary>
-      <![CDATA[<p>今天是周六，没有课，于是我几乎学了一天的stm32的视频</p>
-<p>虽然只是跟着视频一步一步做，但收获很多</p>]]>
-    </summary>
-    <title>261107生活日常</title>
-    <updated>2026-11-07T13:47:38.436Z</updated>
-  </entry>
-  <entry>
-    <author>
-      <name>彭宇豪</name>
-    </author>
-    <category term="C语言" scheme="http://example.com/tags/C%E8%AF%AD%E8%A8%80/"/>
-    <category term="stm32" scheme="http://example.com/tags/stm32/"/>
-    <content>
-      <![CDATA[<p>今天学习了江协视频里的3-1到3-4的视频<br>跟着视频大概学习了GPIO输出输入、<br>LED闪烁、LED流水灯、蜂鸣器、按键控制LED、光敏传感器控制蜂鸣器<br>还有c语言里sruct,menu,等语法</p>]]>
-    </content>
-    <id>http://example.com/2026/11/07/261107%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</id>
-    <link href="http://example.com/2026/11/07/261107%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
-    <published>2026-11-07T13:40:10.000Z</published>
-    <summary>
-      <![CDATA[<p>今天学习了江协视频里的3-1到3-4的视频<br>跟着视频大概学习了GPIO输出输入、<br>LED闪烁、LED流水灯、蜂鸣器、按键控制LED、光敏传感器控制蜂鸣器<br>还有c语言里sruct,menu,等语法</p>]]>
-    </summary>
-    <title>261107学习记录</title>
-    <updated>2026-11-07T13:46:07.650Z</updated>
   </entry>
 </feed>
