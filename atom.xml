@@ -10,7 +10,51 @@
   <rights>All rights reserved 2026, 彭宇豪</rights>
   <subtitle>学习记录博客</subtitle>
   <title>彭宇豪的博客</title>
-  <updated>2026-11-17T13:59:30.685Z</updated>
+  <updated>2026-11-18T13:32:51.187Z</updated>
+  <entry>
+    <author>
+      <name>彭宇豪</name>
+    </author>
+    <id>http://example.com/2026/11/18/261118%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8-1/</id>
+    <link href="http://example.com/2026/11/18/261118%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8-1/"/>
+    <published>2026-11-18T13:32:51.000Z</published>
+    <title>261118生活日常</title>
+    <updated>2026-11-18T13:32:51.187Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>彭宇豪</name>
+    </author>
+    <category term="健身" scheme="http://example.com/tags/%E5%81%A5%E8%BA%AB/"/>
+    <content>
+      <![CDATA[<p>今天还是推迟了一个小时起床，明天一定要准时起床，不然我就是废物<br>今天练背，挺有感觉，但是引体向上还是做不了，下次开始要做引体向上的练习<br>下午上了一节课，visa卡等我回宿舍才到，明天去拿然后激活<br>晚上吃了泡面，感觉肠胃还是没有适应，一顿多吃点蛋白质肚子就有点不舒服，看了郭洋的短剧，很厉害，我绝对不会去碰这些东西<br>晚上没怎么学，明天要加油</p>]]>
+    </content>
+    <id>http://example.com/2026/11/18/261118%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/</id>
+    <link href="http://example.com/2026/11/18/261118%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/"/>
+    <published>2026-11-18T13:32:33.000Z</published>
+    <summary>
+      <![CDATA[<p>今天还是推迟了一个小时起床，明天一定要准时起床，不然我就是废物<br>今天练背，挺有感觉，但是引体向上还是做不了，下次开始要做引体向上的练习<br>下午上了一节课，visa卡等我回宿舍才到，明天去拿然后激活<br>晚上吃了泡面，感觉肠胃还是没有适应，一顿多吃点蛋白质肚子就有]]>
+    </summary>
+    <title>261118生活日常</title>
+    <updated>2026-11-18T13:36:53.842Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>彭宇豪</name>
+    </author>
+    <category term="stm32" scheme="http://example.com/tags/stm32/"/>
+    <content>
+      <![CDATA[<p>今天没怎么学，只是把昨天漏的直流电机跟着做了，程序都挺简单，就是那些初始化很复杂，明天的任务时把这三个项目全部搞懂，全部自己做出来，今天已经是我学习stm32的14天了，没想到过这么快，我的目标是在这学期放寒假前把stm32的教学视频看完弄懂，然后放寒假时开始接触pcb板，大三下学期尽量把网站上的任务全部完成，我必是人中龙凤</p>]]>
+    </content>
+    <id>http://example.com/2026/11/18/261118%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</id>
+    <link href="http://example.com/2026/11/18/261118%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
+    <published>2026-11-18T13:32:21.000Z</published>
+    <summary>
+      <![CDATA[<p>今天没怎么学，只是把昨天漏的直流电机跟着做了，程序都挺简单，就是那些初始化很复杂，明天的任务时把这三个项目全部搞懂，全部自己做出来，今天已经是我学习stm32的14天了，没想到过这么快，我的目标是在这学期放寒假前把stm32的教学视频看完弄懂，然后放寒假时开始接触pcb板，]]>
+    </summary>
+    <title>261118学习记录</title>
+    <updated>2026-11-18T13:40:50.417Z</updated>
+  </entry>
   <entry>
     <author>
       <name>彭宇豪</name>
@@ -299,57 +343,5 @@
     </summary>
     <title>261110学习记录</title>
     <updated>2026-11-10T14:37:36.726Z</updated>
-  </entry>
-  <entry>
-    <author>
-      <name>彭宇豪</name>
-    </author>
-    <category term="生活" scheme="http://example.com/tags/%E7%94%9F%E6%B4%BB/"/>
-    <content>
-      <![CDATA[<p>今天还是老样子，有三节课，下课了回宿舍学习到现在</p>]]>
-    </content>
-    <id>http://example.com/2026/11/09/261109%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/</id>
-    <link href="http://example.com/2026/11/09/261109%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/"/>
-    <published>2026-11-09T13:58:00.000Z</published>
-    <summary>
-      <![CDATA[<p>今天还是老样子，有三节课，下课了回宿舍学习到现在</p>]]>
-    </summary>
-    <title>261109生活日常</title>
-    <updated>2026-11-09T14:01:22.134Z</updated>
-  </entry>
-  <entry>
-    <author>
-      <name>彭宇豪</name>
-    </author>
-    <category term="stm32" scheme="http://example.com/tags/stm32/"/>
-    <content>
-      <![CDATA[<p>自行完成了按键控制led和传感器控制蜂鸣器两个项目，对io的8中形式有了更深入了解</p>]]>
-    </content>
-    <id>http://example.com/2026/11/09/261109%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</id>
-    <link href="http://example.com/2026/11/09/261109%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
-    <published>2026-11-09T13:57:50.000Z</published>
-    <summary>
-      <![CDATA[<p>自行完成了按键控制led和传感器控制蜂鸣器两个项目，对io的8中形式有了更深入了解</p>]]>
-    </summary>
-    <title>261109学习记录</title>
-    <updated>2026-11-09T14:00:10.117Z</updated>
-  </entry>
-  <entry>
-    <author>
-      <name>彭宇豪</name>
-    </author>
-    <category term="生活" scheme="http://example.com/tags/%E7%94%9F%E6%B4%BB/"/>
-    <content>
-      <![CDATA[<p>今天降温了，很冷，外面还下雨了，碰巧今天是练腿日，回来的时候电动车还没电了</p><p>下午和晚上继续学了stm32，有点难，但我能从中找到乐趣，加油！</p>]]>
-    </content>
-    <id>http://example.com/2026/11/08/261108%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/</id>
-    <link href="http://example.com/2026/11/08/261108%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/"/>
-    <published>2026-11-08T13:58:56.000Z</published>
-    <summary>
-      <![CDATA[<p>今天降温了，很冷，外面还下雨了，碰巧今天是练腿日，回来的时候电动车还没电了</p>
-<p>下午和晚上继续学了stm32，有点难，但我能从中找到乐趣，加油！</p>]]>
-    </summary>
-    <title>261108生活日常</title>
-    <updated>2026-11-08T14:02:46.951Z</updated>
   </entry>
 </feed>
