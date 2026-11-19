@@ -10,16 +10,40 @@
   <rights>All rights reserved 2026, 彭宇豪</rights>
   <subtitle>学习记录博客</subtitle>
   <title>彭宇豪的博客</title>
-  <updated>2026-11-18T13:32:51.187Z</updated>
+  <updated>2026-11-19T13:30:17.564Z</updated>
   <entry>
     <author>
       <name>彭宇豪</name>
     </author>
-    <id>http://example.com/2026/11/18/261118%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8-1/</id>
-    <link href="http://example.com/2026/11/18/261118%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8-1/"/>
-    <published>2026-11-18T13:32:51.000Z</published>
-    <title>261118生活日常</title>
-    <updated>2026-11-18T13:32:51.187Z</updated>
+    <category term="健身" scheme="http://example.com/tags/%E5%81%A5%E8%BA%AB/"/>
+    <content>
+      <![CDATA[<p>今天练手臂，如果完全独立肌肉，举起的重量小的可怜，我一共做了八个动作，其中包括窄推，练完后喝了粉，然后爬了50分钟的坡，感觉很不错<br>回来的路上本来打算把快递都拿了的，结果车没电了，只能先回去冲，到了下午五点再去拿快递，结果工商银行已经下班了，明明才五点钟，明天下午下课后去把卡激活了吧。</p>]]>
+    </content>
+    <id>http://example.com/2026/11/19/261119%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/</id>
+    <link href="http://example.com/2026/11/19/261119%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/"/>
+    <published>2026-11-19T13:26:18.000Z</published>
+    <summary>
+      <![CDATA[<p>今天练手臂，如果完全独立肌肉，举起的重量小的可怜，我一共做了八个动作，其中包括窄推，练完后喝了粉，然后爬了50分钟的坡，感觉很不错<br>回来的路上本来打算把快递都拿了的，结果车没电了，只能先回去冲，到了下午五点再去拿快递，结果工商银行已经下班了，明明才五点钟，明天下午下课]]>
+    </summary>
+    <title>261119生活日常</title>
+    <updated>2026-11-19T13:30:17.564Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>彭宇豪</name>
+    </author>
+    <category term="stm32" scheme="http://example.com/tags/stm32/"/>
+    <content>
+      <![CDATA[<p>今天把pwm控制LED呼吸灯、舵机和直流电机的项目自己完成了，虽然中间遇到一些困难，但是还算是圆满完成<br>配置pwm的主要流程：<br>1.RCC开启外设的时钟，主要是定时器TIM和GPIO<br>2.配置GPIO口，输出模式选择复用模式<br>3.选择时钟源（外部或内部，默认内部）<br>4。配置时基单元<br>5，配置输出比较模块，用不到的结构体变量要初始化<br>6.TIM使能</p>]]>
+    </content>
+    <id>http://example.com/2026/11/19/261119%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</id>
+    <link href="http://example.com/2026/11/19/261119%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
+    <published>2026-11-19T13:26:10.000Z</published>
+    <summary>
+      <![CDATA[<p>今天把pwm控制LED呼吸灯、舵机和直流电机的项目自己完成了，虽然中间遇到一些困难，但是还算是圆满完成<br>配置pwm的主要流程：<br>1.RCC开启外设的时钟，主要是定时器TIM和GPIO<br>2.配置GPIO口，输出模式选择复用模式<br>3.选择时钟源（外部或内]]>
+    </summary>
+    <title>261119学习记录</title>
+    <updated>2026-11-19T13:37:40.119Z</updated>
   </entry>
   <entry>
     <author>
@@ -54,16 +78,6 @@
     </summary>
     <title>261118学习记录</title>
     <updated>2026-11-18T13:40:50.417Z</updated>
-  </entry>
-  <entry>
-    <author>
-      <name>彭宇豪</name>
-    </author>
-    <id>http://example.com/2026/11/17/261117%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8-1/</id>
-    <link href="http://example.com/2026/11/17/261117%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8-1/"/>
-    <published>2026-11-17T13:59:30.000Z</published>
-    <title>261117生活日常</title>
-    <updated>2026-11-17T13:59:30.685Z</updated>
   </entry>
   <entry>
     <author>

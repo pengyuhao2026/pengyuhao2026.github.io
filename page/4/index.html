@@ -285,7 +285,11 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>第100~103讲ACLLib：用与制作windows程序的教学程序的教学<br>第104讲类型定义<br>Typedef可定义新的类型的名字（typedaf+原来的名字+新的名字）<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span>&#123;</span></span><br><span class="line">  <span class="type">int</span> month;</span><br><span class="line">  <span class="type">int</span> day;</span><br><span class="line">  <span class="type">int</span> year;</span><br><span class="line">&#125;Date;</span><br></pre></td></tr></table></figure><br>第105讲联合<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">union</span> <span class="title">Anelt</span>&#123;</span></span><br><span class="line">   <span class="type">int</span>   i;</span><br><span class="line">   <span class="type">char</span> c;</span><br><span class="line">&#125;elt1,elt2;</span><br></pre></td></tr></table></figure><br>union:与typedef类似，不过elt1和elt2是联合起来的，一起使用一个地址</p>
+          <p>第100~103讲ACLLib：用与制作windows程序的教学程序的教学<br>第104讲类型定义<br>Typedef可定义新的类型的名字（typedaf+原来的名字+新的名字）</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span>&#123;</span></span><br><span class="line">  <span class="type">int</span> month;</span><br><span class="line">  <span class="type">int</span> day;</span><br><span class="line">  <span class="type">int</span> year;</span><br><span class="line">&#125;Date;</span><br></pre></td></tr></table></figure>
+<p>第105讲联合</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">union</span> <span class="title">Anelt</span>&#123;</span></span><br><span class="line">   <span class="type">int</span>   i;</span><br><span class="line">   <span class="type">char</span> c;</span><br><span class="line">&#125;elt1,elt2;</span><br></pre></td></tr></table></figure>
+<p>union:与typedef类似，不过elt1和elt2是联合起来的，一起使用一个地址</p>
 
       
     </div>
@@ -406,13 +410,21 @@
           <p>今天学了 96 到 105 讲的内容。</p>
 <h2 id="第96讲：枚举"><a href="#第96讲：枚举" class="headerlink" title="第96讲：枚举"></a>第96讲：枚举</h2><p><code>enum</code> 是一次性罗列多个整型常量的类型。</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">color</span> &#123;</span> red, yellow, green &#125;;</span><br><span class="line"><span class="comment">// 没指定初始值的话，从 0 开始：red=0, yellow=1, green=2</span></span><br></pre></td></tr></table></figure>
+
 <hr>
-<h2 id="第97讲：结构类型"><a href="#第97讲：结构类型" class="headerlink" title="第97讲：结构类型"></a>第97讲：结构类型</h2><p>声明结构体：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">date</span> &#123;</span></span><br><span class="line">    <span class="type">int</span> month;</span><br><span class="line">    <span class="type">int</span> day;</span><br><span class="line">    <span class="type">int</span> year;</span><br><span class="line">&#125;;  <span class="comment">// 大括号后面的分号不能忘！</span></span><br></pre></td></tr></table></figure></p>
-<p>定义变量：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">point</span> &#123;</span> <span class="type">int</span> x; <span class="type">int</span> y; &#125;;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">point</span> <span class="title">today</span>;</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="第97讲：结构类型"><a href="#第97讲：结构类型" class="headerlink" title="第97讲：结构类型"></a>第97讲：结构类型</h2><p>声明结构体：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">date</span> &#123;</span></span><br><span class="line">    <span class="type">int</span> month;</span><br><span class="line">    <span class="type">int</span> day;</span><br><span class="line">    <span class="type">int</span> year;</span><br><span class="line">&#125;;  <span class="comment">// 大括号后面的分号不能忘！</span></span><br></pre></td></tr></table></figure>
+
+<p>定义变量：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">point</span> &#123;</span> <span class="type">int</span> x; <span class="type">int</span> y; &#125;;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">point</span> <span class="title">today</span>;</span></span><br></pre></td></tr></table></figure>
+
 <p>用 <code>.</code> 运算符取成员，比如 <code>point.x</code>。</p>
 <hr>
-<h2 id="第98讲：结构与函数"><a href="#第98讲：结构与函数" class="headerlink" title="第98讲：结构与函数"></a>第98讲：结构与函数</h2><p>结构体可以当函数参数，也可以当返回值：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">numberofnumbers</span><span class="params">(<span class="keyword">struct</span> date d)</span>;</span><br></pre></td></tr></table></figure></p>
-<p>结构体里可以嵌套结构体，也可以定义结构体数组：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">date</span> <span class="title">dates</span>[100];</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">date</span> <span class="title">dates</span>[] =</span> &#123;&#123;<span class="number">4</span>,<span class="number">5</span>,<span class="number">2005</span>&#125;, &#123;<span class="number">2</span>,<span class="number">5</span>,<span class="number">2005</span>&#125;&#125;;</span><br></pre></td></tr></table></figure></p>
+<h2 id="第98讲：结构与函数"><a href="#第98讲：结构与函数" class="headerlink" title="第98讲：结构与函数"></a>第98讲：结构与函数</h2><p>结构体可以当函数参数，也可以当返回值：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">numberofnumbers</span><span class="params">(<span class="keyword">struct</span> date d)</span>;</span><br></pre></td></tr></table></figure>
+
+<p>结构体里可以嵌套结构体，也可以定义结构体数组：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">date</span> <span class="title">dates</span>[100];</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">date</span> <span class="title">dates</span>[] =</span> &#123;&#123;<span class="number">4</span>,<span class="number">5</span>,<span class="number">2005</span>&#125;, &#123;<span class="number">2</span>,<span class="number">5</span>,<span class="number">2005</span>&#125;&#125;;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -654,13 +666,14 @@
       
           <h2 id="第91讲：单字符输入输出"><a href="#第91讲：单字符输入输出" class="headerlink" title="第91讲：单字符输入输出"></a>第91讲：单字符输入输出</h2><ul>
 <li><code>putchar( )</code>：把一个字符输出到终端<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">putchar</span><span class="params">(<span class="type">int</span> a)</span>;  <span class="comment">// 正常返回输出的字符，出错返回 EOF</span></span><br></pre></td></tr></table></figure></li>
-<li><code>getchar( )</code>：从终端读一个字符<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">getchar</span><span class="params">(<span class="type">void</span>)</span>;  <span class="comment">// 返回读到的字符，读到末尾返回 EOF(-1)</span></span><br></pre></td></tr></table></figure>
-</li>
+<li><code>getchar( )</code>：从终端读一个字符<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">getchar</span><span class="params">(<span class="type">void</span>)</span>;  <span class="comment">// 返回读到的字符，读到末尾返回 EOF(-1)</span></span><br></pre></td></tr></table></figure></li>
 </ul>
-<p><strong>回声程序（echo）：</strong><br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> ch;</span><br><span class="line"><span class="keyword">while</span> ((ch = getchar()) != EOF) &#123;</span><br><span class="line">    <span class="built_in">putchar</span>(ch);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;EOF\n&quot;</span>);</span><br></pre></td></tr></table></figure></p>
+<p><strong>回声程序（echo）：</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> ch;</span><br><span class="line"><span class="keyword">while</span> ((ch = getchar()) != EOF) &#123;</span><br><span class="line">    <span class="built_in">putchar</span>(ch);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;EOF\n&quot;</span>);</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li><code>Ctrl + C</code> 强制终止程序</li>
-<li><code>Ctrl + Z</code>（Windows）/ <code>Ctrl + D</code>（Unix）表示输入结束</li>
+<li><code>Ctrl + Z</code>（Windows）&#x2F; <code>Ctrl + D</code>（Unix）表示输入结束</li>
 <li>shell 是键盘和程序的桥梁，按下回车才会把输入传给程序</li>
 </ul>
 <hr>
@@ -673,7 +686,9 @@
 <li><p><code>strcpy</code>：把后一个字符串拷贝到前一个<br><small style="color:#888"><code>char* strcpy(char* restrict dst, const char* restrict src)</code></small></p>
 </li>
 </ul>
-<p>复制一个字符串的正确写法：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">char</span> *dst;</span><br><span class="line">dst = (<span class="type">char</span> *) <span class="built_in">malloc</span>(<span class="built_in">strlen</span>(src) + <span class="number">1</span>);  <span class="comment">// 申请内存，多1个位置放 \0</span></span><br><span class="line"><span class="built_in">strcpy</span>(dst, src);                        <span class="comment">// 把内容连同 \0 一起拷过去</span></span><br></pre></td></tr></table></figure></p>
+<p>复制一个字符串的正确写法：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">char</span> *dst;</span><br><span class="line">dst = (<span class="type">char</span> *) <span class="built_in">malloc</span>(<span class="built_in">strlen</span>(src) + <span class="number">1</span>);  <span class="comment">// 申请内存，多1个位置放 \0</span></span><br><span class="line"><span class="built_in">strcpy</span>(dst, src);                        <span class="comment">// 把内容连同 \0 一起拷过去</span></span><br></pre></td></tr></table></figure>
+
 <ul>
 <li><code>strchr</code>：在字符串里从左往右找字符<br><small style="color:#888"><code>strrchr</code> 是从右往左找</small></li>
 <li><code>strstr</code>：在字符串里找子串</li>
@@ -682,10 +697,16 @@
 <hr>
 <h2 id="第96讲：枚举"><a href="#第96讲：枚举" class="headerlink" title="第96讲：枚举"></a>第96讲：枚举</h2><p><code>enum</code> 是用户自定义类型，本质上是整数。</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">color</span> &#123;</span> red, yellow, green &#125;;</span><br><span class="line"><span class="comment">// red=0, yellow=1, green=2，也可以手动指定值</span></span><br></pre></td></tr></table></figure>
+
 <hr>
-<h2 id="第97讲：结构类型"><a href="#第97讲：结构类型" class="headerlink" title="第97讲：结构类型"></a>第97讲：结构类型</h2><p>定义结构体：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">point</span> &#123;</span></span><br><span class="line">    <span class="type">int</span> x;</span><br><span class="line">    <span class="type">int</span> y;</span><br><span class="line">&#125;;  <span class="comment">// 大括号后面的分号不能忘！</span></span><br></pre></td></tr></table></figure></p>
-<p>定义变量：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">point</span> <span class="title">p1</span>, <span class="title">p2</span>;</span></span><br></pre></td></tr></table></figure></p>
-<p>或者直接定义：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">point</span> &#123;</span></span><br><span class="line">    <span class="type">int</span> x;</span><br><span class="line">    <span class="type">int</span> y;</span><br><span class="line">&#125; p1, p2;</span><br></pre></td></tr></table></figure></p>
+<h2 id="第97讲：结构类型"><a href="#第97讲：结构类型" class="headerlink" title="第97讲：结构类型"></a>第97讲：结构类型</h2><p>定义结构体：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">point</span> &#123;</span></span><br><span class="line">    <span class="type">int</span> x;</span><br><span class="line">    <span class="type">int</span> y;</span><br><span class="line">&#125;;  <span class="comment">// 大括号后面的分号不能忘！</span></span><br></pre></td></tr></table></figure>
+
+<p>定义变量：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">point</span> <span class="title">p1</span>, <span class="title">p2</span>;</span></span><br></pre></td></tr></table></figure>
+
+<p>或者直接定义：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">point</span> &#123;</span></span><br><span class="line">    <span class="type">int</span> x;</span><br><span class="line">    <span class="type">int</span> y;</span><br><span class="line">&#125; p1, p2;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -832,11 +853,13 @@
 <li>相邻字面量会自动拼接，行尾加反斜杠可以跨行写</li>
 </ul>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;Hello &quot;</span> <span class="string">&quot;World!\n&quot;</span>);   <span class="comment">// 两个相邻字面量 → 自动拼成 &quot;Hello World!\n&quot;</span></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;Hello \</span></span><br><span class="line"><span class="string">       World!\n&quot;</span>);</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>字符串是数组，不能用 <code>+ - *</code> 做运算</li>
 <li>字符串的三种写法：</li>
 </ul>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">char</span> *str  = <span class="string">&quot;hello&quot;</span>;   <span class="comment">// 写法一：字符指针，指向字符串字面量</span></span><br><span class="line"><span class="type">char</span> word[] = <span class="string">&quot;hello&quot;</span>;  <span class="comment">// 写法二：字符数组</span></span><br><span class="line"><span class="type">char</span> line[<span class="number">10</span>] = <span class="string">&quot;hello&quot;</span>;<span class="comment">// 写法三：指定大小的字符数组</span></span><br></pre></td></tr></table></figure>
+
 <hr>
 <h2 id="第88讲：字符串变量"><a href="#第88讲：字符串变量" class="headerlink" title="第88讲：字符串变量"></a>第88讲：字符串变量</h2><ul>
 <li>指针本身存的是地址，加了 <code>*</code> 才是它指向的值</li>
@@ -850,6 +873,7 @@
 </ul>
 <hr>
 <h2 id="第89讲：字符串输入输出"><a href="#第89讲：字符串输入输出" class="headerlink" title="第89讲：字符串输入输出"></a>第89讲：字符串输入输出</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">char</span> <span class="built_in">string</span>[<span class="number">8</span>];</span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>, <span class="built_in">string</span>);</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%s&quot;</span>, <span class="built_in">string</span>);</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li><code>scanf(&quot;%s&quot;, ...)</code> 读到空格、Tab、回车为止</li>
 <li>输入超过数组长度会崩溃，可以用 <code>%7s</code> 限制最多读 7 个字符</li>
@@ -858,6 +882,7 @@
 <hr>
 <h2 id="第90讲：字符串数组"><a href="#第90讲：字符串数组" class="headerlink" title="第90讲：字符串数组"></a>第90讲：字符串数组</h2><p>两种写法：</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">char</span> a[][<span class="number">10</span>] = &#123;&#125;</span><br><span class="line"><span class="comment">// 二维数组：每个元素是 char[10]，存长度小于9的字符串</span></span><br><span class="line"></span><br><span class="line"><span class="type">char</span> *a[] = &#123;&#125;</span><br><span class="line"><span class="comment">// 指针数组：每个元素是 char*，指向一个字符串</span></span><br></pre></td></tr></table></figure>
+
 <hr>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>今天学了 87 到 90 四节课，全是字符串相关的内容，还是很有收获的。</p>
 
