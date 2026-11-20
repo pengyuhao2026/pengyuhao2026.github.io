@@ -10,7 +10,40 @@
   <rights>All rights reserved 2026, 彭宇豪</rights>
   <subtitle>学习记录博客</subtitle>
   <title>彭宇豪的博客</title>
-  <updated>2026-11-19T13:30:17.564Z</updated>
+  <updated>2026-11-20T14:17:08.454Z</updated>
+  <entry>
+    <author>
+      <name>彭宇豪</name>
+    </author>
+    <content>
+      <![CDATA[<p>今天休息日，还是老样子<br>下午去把visa卡激活了，上完下午的课，回宿舍把英站的耗材买了。，用了362<br>买了2000个威尔逊滤嘴，一盒绿天鹅纸，当天就发货了，希望能顺利下车</p>]]>
+    </content>
+    <id>http://example.com/2026/11/20/261120%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/</id>
+    <link href="http://example.com/2026/11/20/261120%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/"/>
+    <published>2026-11-20T14:13:54.000Z</published>
+    <summary>
+      <![CDATA[<p>今天休息日，还是老样子<br>下午去把visa卡激活了，上完下午的课，回宿舍把英站的耗材买了。，用了362<br>买了2000个威尔逊滤嘴，一盒绿天鹅纸，当天就发货了，希望能顺利下车</p>]]>
+    </summary>
+    <title>261120生活日常</title>
+    <updated>2026-11-20T14:17:08.454Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>彭宇豪</name>
+    </author>
+    <category term="stm32" scheme="http://example.com/tags/stm32/"/>
+    <content>
+      <![CDATA[<p>今天学了pwm输出捕获</p>]]>
+    </content>
+    <id>http://example.com/2026/11/20/261120%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</id>
+    <link href="http://example.com/2026/11/20/261120%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
+    <published>2026-11-20T14:13:48.000Z</published>
+    <summary>
+      <![CDATA[<p>今天学了pwm输出捕获</p>]]>
+    </summary>
+    <title>261120学习记录</title>
+    <updated>2026-11-20T14:17:49.264Z</updated>
+  </entry>
   <entry>
     <author>
       <name>彭宇豪</name>
@@ -320,42 +353,5 @@
     </summary>
     <title>261111学习记录</title>
     <updated>2026-11-11T14:36:05.035Z</updated>
-  </entry>
-  <entry>
-    <author>
-      <name>彭宇豪</name>
-    </author>
-    <category term="生活" scheme="http://example.com/tags/%E7%94%9F%E6%B4%BB/"/>
-    <category term="健身" scheme="http://example.com/tags/%E5%81%A5%E8%BA%AB/"/>
-    <content>
-      <![CDATA[<p>今天上午两节课，下午休息一会去健身了</p><p>感觉遇到瓶颈，在减脂是一部分原因，力量一直上不去，改计划吧</p>]]>
-    </content>
-    <id>http://example.com/2026/11/10/261110%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/</id>
-    <link href="http://example.com/2026/11/10/261110%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/"/>
-    <published>2026-11-10T14:35:59.000Z</published>
-    <summary>
-      <![CDATA[<p>今天上午两节课，下午休息一会去健身了</p>
-<p>感觉遇到瓶颈，在减脂是一部分原因，力量一直上不去，改计划吧</p>]]>
-    </summary>
-    <title>261110生活日常</title>
-    <updated>2026-11-10T14:39:05.659Z</updated>
-  </entry>
-  <entry>
-    <author>
-      <name>彭宇豪</name>
-    </author>
-    <category term="stm32" scheme="http://example.com/tags/stm32/"/>
-    <category term="c语言" scheme="http://example.com/tags/c%E8%AF%AD%E8%A8%80/"/>
-    <content>
-      <![CDATA[<p>今天把w2的两个练习任务完成了，第二个任务复习了switch语法，勉强完成目标，不过可以优化，明天优化吧</p>]]>
-    </content>
-    <id>http://example.com/2026/11/10/261110%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</id>
-    <link href="http://example.com/2026/11/10/261110%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
-    <published>2026-11-10T14:35:46.000Z</published>
-    <summary>
-      <![CDATA[<p>今天把w2的两个练习任务完成了，第二个任务复习了switch语法，勉强完成目标，不过可以优化，明天优化吧</p>]]>
-    </summary>
-    <title>261110学习记录</title>
-    <updated>2026-11-10T14:37:36.726Z</updated>
   </entry>
 </feed>
