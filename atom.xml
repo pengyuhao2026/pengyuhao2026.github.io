@@ -10,7 +10,41 @@
   <rights>All rights reserved 2026, 彭宇豪</rights>
   <subtitle>学习记录博客</subtitle>
   <title>彭宇豪的博客</title>
-  <updated>2026-11-20T14:17:08.454Z</updated>
+  <updated>2026-11-21T13:18:34.942Z</updated>
+  <entry>
+    <author>
+      <name>彭宇豪</name>
+    </author>
+    <category term="stm32" scheme="http://example.com/tags/stm32/"/>
+    <content>
+      <![CDATA[<p>今天主要把pwm输入捕获的项目自己写了一遍，全部写完之后变得很清晰<br>主要分两部分<br>第一个是输出比较部分：<br>1.开启GPIO和TIM的时钟<br>2.GPIO初始化<br>3.配置TIM的时钟源（默认内部）<br>4.时基单元舒适化（时钟分频；计数器模式；ARR;PSC;重复计数器，通用定时器就是这些）<br>5.输出比较初始化（TIM_OCStructInit设置初始值；输出比较模式；输出极性；输出使能；CCR）<br>6.TIM使能<br>7.可用TIM_SetCompare1设置CCR1;TIM_PrescalerConfig设置PSC</p><p>第二个输入捕获部分<br>1.前4点和输出比较一样，就是改了TIM;ARR;PSC<br>2.输入捕获初始化(选择配置定时器通道；输入滤波器参数0xF；极性，选择上升沿触发；捕获预分频；输入信号交叉，选择直通)<br>3.TIM_PWMIConfig将结构体变量交给TIM_PWMIConfig，配置TIM3的输入捕获通道此函数同时会把另一个通道配置为相反的配置，实现PWMI模式<br>4.选择触发源及从模式TIM_SelectInputTrigger(TIM3, TIM_TS_TI1FP1)   TIM_SelectSlaveMode(TIM3, TIM_SlaveMode_Reset);<br>5.TIM使能<br>6.测周法频率1000000(标准频率) &#x2F; (TIM_GetCapture1(TIM3) + 1)<br>7.占空比TIM_GetCapture2(TIM3) + 1) * 100 &#x2F; (TIM_GetCapture1(TIM3) + 1)</p>]]>
+    </content>
+    <id>http://example.com/2026/11/21/261121%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</id>
+    <link href="http://example.com/2026/11/21/261121%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
+    <published>2026-11-21T13:01:00.000Z</published>
+    <summary>
+      <![CDATA[<p>今天主要把pwm输入捕获的项目自己写了一遍，全部写完之后变得很清晰<br>主要分两部分<br>第一个是输出比较部分：<br>1.开启GPIO和TIM的时钟<br>2.GPIO初始化<br>3.配置TIM的时钟源（默认内部）<br>4.时基单元舒适化（时钟分频；计数器模式；A]]>
+    </summary>
+    <title>261121学习记录</title>
+    <updated>2026-11-21T13:18:34.942Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>彭宇豪</name>
+    </author>
+    <category term="健身" scheme="http://example.com/tags/%E5%81%A5%E8%BA%AB/"/>
+    <content>
+      <![CDATA[<p>今天练腿日，因为上次上午练腿能明显感觉到没有能量，所以这次改到下午练腿<br>今天蹲100kg<em>5</em>5，感觉还行，感觉力量会涨的很快<br>晚上回来买了300g酱牛肉和10块钱葱香大饼，吃的很撑，下次不能这样了</p>]]>
+    </content>
+    <id>http://example.com/2026/11/21/261121%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/</id>
+    <link href="http://example.com/2026/11/21/261121%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/"/>
+    <published>2026-11-21T13:00:52.000Z</published>
+    <summary>
+      <![CDATA[<p>今天练腿日，因为上次上午练腿能明显感觉到没有能量，所以这次改到下午练腿<br>今天蹲100kg<em>5</em>5，感觉还行，感觉力量会涨的很快<br>晚上回来买了300g酱牛肉和10块钱葱香大饼，吃的很撑，下次不能这样了</p>]]>
+    </summary>
+    <title>261121生活日常</title>
+    <updated>2026-11-21T13:03:59.640Z</updated>
+  </entry>
   <entry>
     <author>
       <name>彭宇豪</name>
@@ -318,40 +352,5 @@
     </summary>
     <title>261112学习记录</title>
     <updated>2026-11-12T13:02:49.952Z</updated>
-  </entry>
-  <entry>
-    <author>
-      <name>彭宇豪</name>
-    </author>
-    <category term="生活" scheme="http://example.com/tags/%E7%94%9F%E6%B4%BB/"/>
-    <category term="健身" scheme="http://example.com/tags/%E5%81%A5%E8%BA%AB/"/>
-    <content>
-      <![CDATA[<p>今天计划练背，背和二头都很有感觉<br>今天双十一，买了酵母和乳清两种蛋白粉和茶叶和黄铜手卷器，用了700多<br>这比去按摩要好很多</p>]]>
-    </content>
-    <id>http://example.com/2026/11/11/261111%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/</id>
-    <link href="http://example.com/2026/11/11/261111%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/"/>
-    <published>2026-11-11T14:34:21.000Z</published>
-    <summary>
-      <![CDATA[<p>今天计划练背，背和二头都很有感觉<br>今天双十一，买了酵母和乳清两种蛋白粉和茶叶和黄铜手卷器，用了700多<br>这比去按摩要好很多</p>]]>
-    </summary>
-    <title>261111生活日常</title>
-    <updated>2026-11-11T14:37:53.887Z</updated>
-  </entry>
-  <entry>
-    <author>
-      <name>彭宇豪</name>
-    </author>
-    <category term="stm32" scheme="http://example.com/tags/stm32/"/>
-    <content>
-      <![CDATA[<p>今天先把昨天按键控制三种模式流水灯的代码完善了<br>然后学了4-2OLED控制，还有keil的调试模式</p>]]>
-    </content>
-    <id>http://example.com/2026/11/11/261111%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</id>
-    <link href="http://example.com/2026/11/11/261111%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
-    <published>2026-11-11T14:33:44.000Z</published>
-    <summary>
-      <![CDATA[<p>今天先把昨天按键控制三种模式流水灯的代码完善了<br>然后学了4-2OLED控制，还有keil的调试模式</p>]]>
-    </summary>
-    <title>261111学习记录</title>
-    <updated>2026-11-11T14:36:05.035Z</updated>
   </entry>
 </feed>
