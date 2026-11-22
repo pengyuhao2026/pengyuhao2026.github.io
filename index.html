@@ -181,6 +181,129 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2026/11/22/261122%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="彭宇豪">
+      <meta itemprop="description" content="个人学习博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="彭宇豪的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2026/11/22/261122%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" class="post-title-link" itemprop="url">261122学习记录</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2026-11-22 21:08:46 / 修改时间：21:19:10" itemprop="dateCreated datePublished" datetime="2026-11-22T21:08:46+08:00">2026-11-22</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>今天主要学了6-8编码器接口测速<br>总体来说比较简单<br>整体思路是配置编码器为外部输入时钟源<br>通过两个通道判断方向</p>
+<ul>
+<li>GPIO输入模式是看外设的静息状态，如果是高电平就用上拉输入<br>1.RCC开启GPIO和TIM时钟<br>2.GPIO初始化<br>3.时基单元初始化<br>4.输入捕获初始化</li>
+</ul>
+ <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">TIM_ICInitTypeDef TIM_ICInitStructure;								TIM_ICStructInit(&amp;TIM_ICInitStructure);									TIM_ICInitStructure.TIM_Channel = TIM_Channel_1;					TIM_ICInitStructure.TIM_ICFilter = <span class="number">0xF</span>;								TIM_ICInit(TIM3, &amp;TIM_ICInitStructure);								TIM_ICInitStructure.TIM_Channel = TIM_Channel_2;					TIM_ICInitStructure.TIM_ICFilter = <span class="number">0xF</span>;								TIM_ICInit(TIM3, &amp;TIM_ICInitStructure);				</span><br></pre></td></tr></table></figure>
+<p>这是同时配置两个通道的结构<br>只用配置滤波参数，其他的要么用不到，要么在编码器接口配置中配置了<br>5.编码器接口配置TIM_EncoderInterfaceConfig(TIM3, TIM_EncoderMode_TI12, TIM_ICPolarity_Rising, TIM_ICPolarity_Rising);<br>6.TIM使能</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2026/11/22/261122%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="彭宇豪">
+      <meta itemprop="description" content="个人学习博客">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="彭宇豪的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2026/11/22/261122%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/" class="post-title-link" itemprop="url">261122生活日常</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2026-11-22 21:08:39 / 修改时间：21:10:58" itemprop="dateCreated datePublished" datetime="2026-11-22T21:08:39+08:00">2026-11-22</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>今天练肩日<br>上午有实验课，所以只能下午去<br>下午还是三点开始练<br>两个推，两个飞，一个后束<br>练完充血了，到镜子一看，线条出来了，很不错<br>练完买了两个馒头，回宿舍和蛋白粉一起吃了</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2026/11/21/261121%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -650,124 +773,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2026/11/17/261117%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="彭宇豪">
-      <meta itemprop="description" content="个人学习博客">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="彭宇豪的博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2026/11/17/261117%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/" class="post-title-link" itemprop="url">261117生活日常</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2026-11-17 21:57:36 / 修改时间：22:02:13" itemprop="dateCreated datePublished" datetime="2026-11-17T21:57:36+08:00">2026-11-17</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>今天早上起晚了，没吃鸡蛋燕麦，喝了杯蛋白粉就算了<br>健身挪到了下午，今天练胸，最好的状态下75kg可以推四个，感觉回复很不错<br>今天被导员叫到办公室，给我两天时间处理椅子，我先拖着，之后再看吧<br>有点影响心情</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2026/11/17/261117%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="彭宇豪">
-      <meta itemprop="description" content="个人学习博客">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="彭宇豪的博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2026/11/17/261117%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" class="post-title-link" itemprop="url">261117学习记录</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2026-11-17 21:57:28 / 修改时间：21:59:20" itemprop="dateCreated datePublished" datetime="2026-11-17T21:57:28+08:00">2026-11-17</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>今天学了6-3和6-4<br>pwm呼吸灯和舵机<br>时间有点赶，学的不怎么清楚</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -837,7 +842,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">47</span>
+          <span class="site-state-item-count">49</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
