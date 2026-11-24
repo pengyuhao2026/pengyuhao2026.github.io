@@ -223,10 +223,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>今天学了ADC的单通道和双通道<br>ADC可以i把引脚上连续变化的模拟电压转换为内存中存储的数字变量，建立模拟电路到数字电路的桥梁<br>1.开启ADC和GPIO的时钟<br>2.设置ADC时钟的分频，ADC的最大频率是14MHz,所以选6分频RCC_ADCCLKConfig<br>3.GPIO初始化模式选GPIO_Mode_AIN，模拟输入<br>4.ADC_RegularChannelConfig配置通道<br>5.ADC初始化<br>（<br>ADC_Mode	模式<br>ADC_DataAlign 数据对齐<br>ADC_ExternalTrigConv外部触发<br>ADC_ContinuousConvMode连续转换<br>ADC_ScanConvMode扫描模式<br>ADC_NbrOfChannel通道数)<br>6.ADC使能<br>7.ADC校准</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">      ADC_ResetCalibration(ADC1);								</span><br><span class="line"><span class="keyword">while</span> (ADC_GetResetCalibrationStatus(ADC1) == SET);</span><br><span class="line">ADC_StartCalibration(ADC1);</span><br><span class="line"><span class="keyword">while</span> (ADC_GetCalibrationStatus(ADC1) == SET);</span><br></pre></td></tr></table></figure>
-<p>如果想在不使用DMA的情况下使用多通道<br>可以将ADInit里的通道配置删除，在取值函数里列出</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">uint16_t</span> <span class="title function_">AD_GetValue</span><span class="params">(<span class="type">uint8_t</span> ADC_Channel)</span></span><br><span class="line">&#123;</span><br><span class="line">	ADC_RegularChannelConfig(ADC1, ADC_Channel, <span class="number">1</span>, ADC_SampleTime_55Cycles5);	<span class="comment">//在每次转换前，根据函数形参灵活更改规则组的通道1</span></span><br><span class="line">	ADC_SoftwareStartConvCmd(ADC1, ENABLE);					<span class="comment">//软件触发AD转换一次</span></span><br><span class="line">	<span class="keyword">while</span> (ADC_GetFlagStatus(ADC1, ADC_FLAG_EOC) == RESET);	<span class="comment">//等待EOC标志位，即等待AD转换结束</span></span><br><span class="line">	<span class="keyword">return</span> ADC_GetConversionValue(ADC1);					<span class="comment">//读数据寄存器，得到AD转换的结果</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <p>今天学了ADC的单通道和双通道<br>ADC可以i把引脚上连续变化的模拟电压转换为内存中存储的数字变量，建立模拟电路到数字电路的桥梁<br>1.开启ADC和GPIO的时钟<br>2.设置ADC时钟的分频，ADC的最大频率是14MHz,所以选6分频RCC_ADCCLKConfig<br>3.GPIO初始化模式选GPIO_Mode_AIN，模拟输入<br>4.ADC_RegularChannelConfig配置通道<br>5.ADC初始化<br>（<br>ADC_Mode    模式<br>ADC_DataAlign 数据对齐<br>ADC_ExternalTrigConv外部触发<br>ADC_ContinuousConvMode连续转换<br>ADC_ScanConvMode扫描模式<br>ADC_NbrOfChannel通道数)<br>6.ADC使能<br>7.ADC校准<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">      ADC_ResetCalibration(ADC1);								</span><br><span class="line"><span class="keyword">while</span> (ADC_GetResetCalibrationStatus(ADC1) == SET);</span><br><span class="line">ADC_StartCalibration(ADC1);</span><br><span class="line"><span class="keyword">while</span> (ADC_GetCalibrationStatus(ADC1) == SET);</span><br></pre></td></tr></table></figure><br>如果想在不使用DMA的情况下使用多通道<br>可以将ADInit里的通道配置删除，在取值函数里列出<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">uint16_t</span> <span class="title function_">AD_GetValue</span><span class="params">(<span class="type">uint8_t</span> ADC_Channel)</span></span><br><span class="line">&#123;</span><br><span class="line">	ADC_RegularChannelConfig(ADC1, ADC_Channel, <span class="number">1</span>, ADC_SampleTime_55Cycles5);	<span class="comment">//在每次转换前，根据函数形参灵活更改规则组的通道1</span></span><br><span class="line">	ADC_SoftwareStartConvCmd(ADC1, ENABLE);					<span class="comment">//软件触发AD转换一次</span></span><br><span class="line">	<span class="keyword">while</span> (ADC_GetFlagStatus(ADC1, ADC_FLAG_EOC) == RESET);	<span class="comment">//等待EOC标志位，即等待AD转换结束</span></span><br><span class="line">	<span class="keyword">return</span> ADC_GetConversionValue(ADC1);					<span class="comment">//读数据寄存器，得到AD转换的结果</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
     </div>
 
     
@@ -247,7 +245,10 @@
     <a href="/2026/11/23/261123%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/" rel="prev" title="261123生活日常">
       <i class="fa fa-chevron-left"></i> 261123生活日常
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2026/11/24/261124%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" rel="next" title="261124学习记录">
+      261124学习记录 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -319,7 +320,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">51</span>
+          <span class="site-state-item-count">53</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
