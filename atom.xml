@@ -10,7 +10,41 @@
   <rights>All rights reserved 2026, 彭宇豪</rights>
   <subtitle>学习记录博客</subtitle>
   <title>彭宇豪的博客</title>
-  <updated>2026-11-24T13:25:34.916Z</updated>
+  <updated>2026-11-25T14:01:59.145Z</updated>
+  <entry>
+    <author>
+      <name>彭宇豪</name>
+    </author>
+    <category term="stm32" scheme="http://example.com/tags/stm32/"/>
+    <content>
+      <![CDATA[<p>今天把DMA数据转运和DMA+ADC多通道的代码搞清楚了<br>还写了笔记，把DMA和ADC的知识梳理了一遍<br>这两个工程写清楚了其实不难<br>第一个工程<br>用DMA把数组的数据转到另一个数组<br>要注意的是因为要传数组和大小进去，DMA初始化要注意参数的类型<br>要类型强制转换，还有设定计数器的值时要给DMA失能，<br>设定值之后，要给一点时间让标志位状态reset，还要清除标志位</p><p>第二个工程<br>ADC不断扫描，把数据存到DR<br>再由DMA转运，DMA由ADC硬件触发<br>需要注意的是关于ADC的初始化<br>要用RCC_ADCCLKConfig分配时钟<br>要规则通道配置<br>还要校准ADC复位和重启<br>还有extern的使用</p>]]>
+    </content>
+    <id>http://example.com/2026/11/25/261125%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</id>
+    <link href="http://example.com/2026/11/25/261125%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
+    <published>2026-11-25T13:49:24.000Z</published>
+    <summary>
+      <![CDATA[<p>今天把DMA数据转运和DMA+ADC多通道的代码搞清楚了<br>还写了笔记，把DMA和ADC的知识梳理了一遍<br>这两个工程写清楚了其实不难<br>第一个工程<br>用DMA把数组的数据转到另一个数组<br>要注意的是因为要传数组和大小进去，DMA初始化要注意参数的类型<]]>
+    </summary>
+    <title>261125学习记录</title>
+    <updated>2026-11-25T14:01:59.145Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>彭宇豪</name>
+    </author>
+    <category term="健身" scheme="http://example.com/tags/%E5%81%A5%E8%BA%AB/"/>
+    <content>
+      <![CDATA[<p>今天练背，还是老样子，没什么进步，但还是想先保持，背部不能盲目上重量<br>晚上学习stm32，开始用笔记本记笔记，这个博客就用来写我遇到的错误和体会<br>笔记本上写我学的知识点</p>]]>
+    </content>
+    <id>http://example.com/2026/11/25/261125%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/</id>
+    <link href="http://example.com/2026/11/25/261125%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/"/>
+    <published>2026-11-25T13:49:16.000Z</published>
+    <summary>
+      <![CDATA[<p>今天练背，还是老样子，没什么进步，但还是想先保持，背部不能盲目上重量<br>晚上学习stm32，开始用笔记本记笔记，这个博客就用来写我遇到的错误和体会<br>笔记本上写我学的知识点</p>]]>
+    </summary>
+    <title>261125生活日常</title>
+    <updated>2026-11-25T13:51:29.201Z</updated>
+  </entry>
   <entry>
     <author>
       <name>彭宇豪</name>
@@ -51,7 +85,7 @@
     </author>
     <category term="stm32" scheme="http://example.com/tags/stm32/"/>
     <content>
-      <![CDATA[<p>今天学了ADC的单通道和双通道<br>ADC可以i把引脚上连续变化的模拟电压转换为内存中存储的数字变量，建立模拟电路到数字电路的桥梁<br>1.开启ADC和GPIO的时钟<br>2.设置ADC时钟的分频，ADC的最大频率是14MHz,所以选6分频RCC_ADCCLKConfig<br>3.GPIO初始化模式选GPIO_Mode_AIN，模拟输入<br>4.ADC_RegularChannelConfig配置通道<br>5.ADC初始化<br>（<br>ADC_Mode    模式<br>ADC_DataAlign 数据对齐<br>ADC_ExternalTrigConv外部触发<br>ADC_ContinuousConvMode连续转换<br>ADC_ScanConvMode扫描模式<br>ADC_NbrOfChannel通道数)<br>6.ADC使能<br>7.ADC校准<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">      ADC_ResetCalibration(ADC1);</span><br><span class="line"><span class="keyword">while</span> (ADC_GetResetCalibrationStatus(ADC1) == SET);</span><br><span class="line">ADC_StartCalibration(ADC1);</span><br><span class="line"><span class="keyword">while</span> (ADC_GetCalibrationStatus(ADC1) == SET);</span><br></pre></td></tr></table></figure><br>如果想在不使用DMA的情况下使用多通道<br>可以将ADInit里的通道配置删除，在取值函数里列出<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">uint16_t</span> <span class="title function_">AD_GetValue</span><span class="params">(<span class="type">uint8_t</span> ADC_Channel)</span></span><br><span class="line">&#123;</span><br><span class="line">ADC_RegularChannelConfig(ADC1, ADC_Channel, <span class="number">1</span>, ADC_SampleTime_55Cycles5);<span class="comment">//在每次转换前，根据函数形参灵活更改规则组的通道1</span></span><br><span class="line">ADC_SoftwareStartConvCmd(ADC1, ENABLE);<span class="comment">//软件触发AD转换一次</span></span><br><span class="line"><span class="keyword">while</span> (ADC_GetFlagStatus(ADC1, ADC_FLAG_EOC) == RESET);<span class="comment">//等待EOC标志位，即等待AD转换结束</span></span><br><span class="line"><span class="keyword">return</span> ADC_GetConversionValue(ADC1);<span class="comment">//读数据寄存器，得到AD转换的结果</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>]]>
+      <![CDATA[<p>今天学了ADC的单通道和双通道<br>ADC可以i把引脚上连续变化的模拟电压转换为内存中存储的数字变量，建立模拟电路到数字电路的桥梁<br>1.开启ADC和GPIO的时钟<br>2.设置ADC时钟的分频，ADC的最大频率是14MHz,所以选6分频RCC_ADCCLKConfig<br>3.GPIO初始化模式选GPIO_Mode_AIN，模拟输入<br>4.ADC_RegularChannelConfig配置通道<br>5.ADC初始化<br>（<br>ADC_Mode模式<br>ADC_DataAlign 数据对齐<br>ADC_ExternalTrigConv外部触发<br>ADC_ContinuousConvMode连续转换<br>ADC_ScanConvMode扫描模式<br>ADC_NbrOfChannel通道数)<br>6.ADC使能<br>7.ADC校准</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">      ADC_ResetCalibration(ADC1);</span><br><span class="line"><span class="keyword">while</span> (ADC_GetResetCalibrationStatus(ADC1) == SET);</span><br><span class="line">ADC_StartCalibration(ADC1);</span><br><span class="line"><span class="keyword">while</span> (ADC_GetCalibrationStatus(ADC1) == SET);</span><br></pre></td></tr></table></figure><p>如果想在不使用DMA的情况下使用多通道<br>可以将ADInit里的通道配置删除，在取值函数里列出</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">uint16_t</span> <span class="title function_">AD_GetValue</span><span class="params">(<span class="type">uint8_t</span> ADC_Channel)</span></span><br><span class="line">&#123;</span><br><span class="line">ADC_RegularChannelConfig(ADC1, ADC_Channel, <span class="number">1</span>, ADC_SampleTime_55Cycles5);<span class="comment">//在每次转换前，根据函数形参灵活更改规则组的通道1</span></span><br><span class="line">ADC_SoftwareStartConvCmd(ADC1, ENABLE);<span class="comment">//软件触发AD转换一次</span></span><br><span class="line"><span class="keyword">while</span> (ADC_GetFlagStatus(ADC1, ADC_FLAG_EOC) == RESET);<span class="comment">//等待EOC标志位，即等待AD转换结束</span></span><br><span class="line"><span class="keyword">return</span> ADC_GetConversionValue(ADC1);<span class="comment">//读数据寄存器，得到AD转换的结果</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]>
     </content>
     <id>http://example.com/2026/11/23/261123%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</id>
     <link href="http://example.com/2026/11/23/261123%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
@@ -84,7 +118,7 @@
     </author>
     <category term="stm32" scheme="http://example.com/tags/stm32/"/>
     <content>
-      <![CDATA[<p>今天主要学了6-8编码器接口测速<br>总体来说比较简单<br>整体思路是配置编码器为外部输入时钟源<br>通过两个通道判断方向</p><ul><li>GPIO输入模式是看外设的静息状态，如果是高电平就用上拉输入<br>1.RCC开启GPIO和TIM时钟<br>2.GPIO初始化<br>3.时基单元初始化<br>4.输入捕获初始化<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">TIM_ICInitTypeDef TIM_ICInitStructure;TIM_ICStructInit(&amp;TIM_ICInitStructure);TIM_ICInitStructure.TIM_Channel = TIM_Channel_1;TIM_ICInitStructure.TIM_ICFilter = <span class="number">0xF</span>;TIM_ICInit(TIM3, &amp;TIM_ICInitStructure);TIM_ICInitStructure.TIM_Channel = TIM_Channel_2;TIM_ICInitStructure.TIM_ICFilter = <span class="number">0xF</span>;TIM_ICInit(TIM3, &amp;TIM_ICInitStructure);</span><br></pre></td></tr></table></figure>这是同时配置两个通道的结构<br>只用配置滤波参数，其他的要么用不到，要么在编码器接口配置中配置了<br>5.编码器接口配置TIM_EncoderInterfaceConfig(TIM3, TIM_EncoderMode_TI12, TIM_ICPolarity_Rising, TIM_ICPolarity_Rising);<br>6.TIM使能</li></ul>]]>
+      <![CDATA[<p>今天主要学了6-8编码器接口测速<br>总体来说比较简单<br>整体思路是配置编码器为外部输入时钟源<br>通过两个通道判断方向</p><ul><li>GPIO输入模式是看外设的静息状态，如果是高电平就用上拉输入<br>1.RCC开启GPIO和TIM时钟<br>2.GPIO初始化<br>3.时基单元初始化<br>4.输入捕获初始化</li></ul> <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">TIM_ICInitTypeDef TIM_ICInitStructure;TIM_ICStructInit(&amp;TIM_ICInitStructure);TIM_ICInitStructure.TIM_Channel = TIM_Channel_1;TIM_ICInitStructure.TIM_ICFilter = <span class="number">0xF</span>;TIM_ICInit(TIM3, &amp;TIM_ICInitStructure);TIM_ICInitStructure.TIM_Channel = TIM_Channel_2;TIM_ICInitStructure.TIM_ICFilter = <span class="number">0xF</span>;TIM_ICInit(TIM3, &amp;TIM_ICInitStructure);</span><br></pre></td></tr></table></figure><p>这是同时配置两个通道的结构<br>只用配置滤波参数，其他的要么用不到，要么在编码器接口配置中配置了<br>5.编码器接口配置TIM_EncoderInterfaceConfig(TIM3, TIM_EncoderMode_TI12, TIM_ICPolarity_Rising, TIM_ICPolarity_Rising);<br>6.TIM使能</p>]]>
     </content>
     <id>http://example.com/2026/11/22/261122%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</id>
     <link href="http://example.com/2026/11/22/261122%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
@@ -120,7 +154,7 @@
     </author>
     <category term="stm32" scheme="http://example.com/tags/stm32/"/>
     <content>
-      <![CDATA[<p>今天主要把pwm输入捕获的项目自己写了一遍，全部写完之后变得很清晰<br>主要分两部分<br>第一个是输出比较部分：<br>1.开启GPIO和TIM的时钟<br>2.GPIO初始化<br>3.配置TIM的时钟源（默认内部）<br>4.时基单元舒适化（时钟分频；计数器模式；ARR;PSC;重复计数器，通用定时器就是这些）<br>5.输出比较初始化（TIM_OCStructInit设置初始值；输出比较模式；输出极性；输出使能；CCR）<br>6.TIM使能<br>7.可用TIM_SetCompare1设置CCR1;TIM_PrescalerConfig设置PSC</p><p>第二个输入捕获部分<br>1.前4点和输出比较一样，就是改了TIM;ARR;PSC<br>2.输入捕获初始化(选择配置定时器通道；输入滤波器参数0xF；极性，选择上升沿触发；捕获预分频；输入信号交叉，选择直通)<br>3.TIM_PWMIConfig将结构体变量交给TIM_PWMIConfig，配置TIM3的输入捕获通道此函数同时会把另一个通道配置为相反的配置，实现PWMI模式<br>4.选择触发源及从模式TIM_SelectInputTrigger(TIM3, TIM_TS_TI1FP1)   TIM_SelectSlaveMode(TIM3, TIM_SlaveMode_Reset);<br>5.TIM使能<br>6.测周法频率1000000(标准频率) / (TIM_GetCapture1(TIM3) + 1)<br>7.占空比TIM_GetCapture2(TIM3) + 1) * 100 / (TIM_GetCapture1(TIM3) + 1)</p>]]>
+      <![CDATA[<p>今天主要把pwm输入捕获的项目自己写了一遍，全部写完之后变得很清晰<br>主要分两部分<br>第一个是输出比较部分：<br>1.开启GPIO和TIM的时钟<br>2.GPIO初始化<br>3.配置TIM的时钟源（默认内部）<br>4.时基单元舒适化（时钟分频；计数器模式；ARR;PSC;重复计数器，通用定时器就是这些）<br>5.输出比较初始化（TIM_OCStructInit设置初始值；输出比较模式；输出极性；输出使能；CCR）<br>6.TIM使能<br>7.可用TIM_SetCompare1设置CCR1;TIM_PrescalerConfig设置PSC</p><p>第二个输入捕获部分<br>1.前4点和输出比较一样，就是改了TIM;ARR;PSC<br>2.输入捕获初始化(选择配置定时器通道；输入滤波器参数0xF；极性，选择上升沿触发；捕获预分频；输入信号交叉，选择直通)<br>3.TIM_PWMIConfig将结构体变量交给TIM_PWMIConfig，配置TIM3的输入捕获通道此函数同时会把另一个通道配置为相反的配置，实现PWMI模式<br>4.选择触发源及从模式TIM_SelectInputTrigger(TIM3, TIM_TS_TI1FP1)   TIM_SelectSlaveMode(TIM3, TIM_SlaveMode_Reset);<br>5.TIM使能<br>6.测周法频率1000000(标准频率) &#x2F; (TIM_GetCapture1(TIM3) + 1)<br>7.占空比TIM_GetCapture2(TIM3) + 1) * 100 &#x2F; (TIM_GetCapture1(TIM3) + 1)</p>]]>
     </content>
     <id>http://example.com/2026/11/21/261121%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</id>
     <link href="http://example.com/2026/11/21/261121%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
@@ -316,40 +350,5 @@
     </summary>
     <title>261116学习记录</title>
     <updated>2026-11-16T12:54:11.039Z</updated>
-  </entry>
-  <entry>
-    <author>
-      <name>彭宇豪</name>
-    </author>
-    <category term="生活" scheme="http://example.com/tags/%E7%94%9F%E6%B4%BB/"/>
-    <category term="健身" scheme="http://example.com/tags/%E5%81%A5%E8%BA%AB/"/>
-    <content>
-      <![CDATA[<p>今天练肩，感觉没怎么连到位，下次要加强度</p>]]>
-    </content>
-    <id>http://example.com/2026/11/15/261115%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/</id>
-    <link href="http://example.com/2026/11/15/261115%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/"/>
-    <published>2026-11-15T13:41:39.000Z</published>
-    <summary>
-      <![CDATA[<p>今天练肩，感觉没怎么连到位，下次要加强度</p>]]>
-    </summary>
-    <title>261115生活日常</title>
-    <updated>2026-11-15T13:43:30.535Z</updated>
-  </entry>
-  <entry>
-    <author>
-      <name>彭宇豪</name>
-    </author>
-    <category term="stm32" scheme="http://example.com/tags/stm32/"/>
-    <content>
-      <![CDATA[<p>今天只学了1个小时，关于tim定时中断</p>]]>
-    </content>
-    <id>http://example.com/2026/11/15/261115%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</id>
-    <link href="http://example.com/2026/11/15/261115%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
-    <published>2026-11-15T13:41:29.000Z</published>
-    <summary>
-      <![CDATA[<p>今天只学了1个小时，关于tim定时中断</p>]]>
-    </summary>
-    <title>261115学习记录</title>
-    <updated>2026-11-15T13:42:24.888Z</updated>
   </entry>
 </feed>

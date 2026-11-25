@@ -224,7 +224,7 @@
 
       
         <p>今天主要把pwm输入捕获的项目自己写了一遍，全部写完之后变得很清晰<br>主要分两部分<br>第一个是输出比较部分：<br>1.开启GPIO和TIM的时钟<br>2.GPIO初始化<br>3.配置TIM的时钟源（默认内部）<br>4.时基单元舒适化（时钟分频；计数器模式；ARR;PSC;重复计数器，通用定时器就是这些）<br>5.输出比较初始化（TIM_OCStructInit设置初始值；输出比较模式；输出极性；输出使能；CCR）<br>6.TIM使能<br>7.可用TIM_SetCompare1设置CCR1;TIM_PrescalerConfig设置PSC</p>
-<p>第二个输入捕获部分<br>1.前4点和输出比较一样，就是改了TIM;ARR;PSC<br>2.输入捕获初始化(选择配置定时器通道；输入滤波器参数0xF；极性，选择上升沿触发；捕获预分频；输入信号交叉，选择直通)<br>3.TIM_PWMIConfig将结构体变量交给TIM_PWMIConfig，配置TIM3的输入捕获通道此函数同时会把另一个通道配置为相反的配置，实现PWMI模式<br>4.选择触发源及从模式TIM_SelectInputTrigger(TIM3, TIM_TS_TI1FP1)   TIM_SelectSlaveMode(TIM3, TIM_SlaveMode_Reset);<br>5.TIM使能<br>6.测周法频率1000000(标准频率) / (TIM_GetCapture1(TIM3) + 1)<br>7.占空比TIM_GetCapture2(TIM3) + 1) * 100 / (TIM_GetCapture1(TIM3) + 1)</p>
+<p>第二个输入捕获部分<br>1.前4点和输出比较一样，就是改了TIM;ARR;PSC<br>2.输入捕获初始化(选择配置定时器通道；输入滤波器参数0xF；极性，选择上升沿触发；捕获预分频；输入信号交叉，选择直通)<br>3.TIM_PWMIConfig将结构体变量交给TIM_PWMIConfig，配置TIM3的输入捕获通道此函数同时会把另一个通道配置为相反的配置，实现PWMI模式<br>4.选择触发源及从模式TIM_SelectInputTrigger(TIM3, TIM_TS_TI1FP1)   TIM_SelectSlaveMode(TIM3, TIM_SlaveMode_Reset);		<br>5.TIM使能<br>6.测周法频率1000000(标准频率) &#x2F; (TIM_GetCapture1(TIM3) + 1)<br>7.占空比TIM_GetCapture2(TIM3) + 1) * 100 &#x2F; (TIM_GetCapture1(TIM3) + 1)</p>
 
     </div>
 
@@ -321,7 +321,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">53</span>
+          <span class="site-state-item-count">55</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
