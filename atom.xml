@@ -10,7 +10,41 @@
   <rights>All rights reserved 2026, 彭宇豪</rights>
   <subtitle>学习记录博客</subtitle>
   <title>彭宇豪的博客</title>
-  <updated>2026-11-25T14:01:59.145Z</updated>
+  <updated>2026-11-26T13:36:46.446Z</updated>
+  <entry>
+    <author>
+      <name>彭宇豪</name>
+    </author>
+    <category term="stm32" scheme="http://example.com/tags/stm32/"/>
+    <content>
+      <![CDATA[<p>今天看了9-1到9-3<br>是usart的输出输出<br>串口好像是难点，我花了一些时间去理解，也只是把这几个视频看完<br>明天要把这些搞懂，写到笔记里</p>]]>
+    </content>
+    <id>http://example.com/2026/11/26/261126%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</id>
+    <link href="http://example.com/2026/11/26/261126%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
+    <published>2026-11-26T13:27:13.000Z</published>
+    <summary>
+      <![CDATA[<p>今天看了9-1到9-3<br>是usart的输出输出<br>串口好像是难点，我花了一些时间去理解，也只是把这几个视频看完<br>明天要把这些搞懂，写到笔记里</p>]]>
+    </summary>
+    <title>261126学习记录</title>
+    <updated>2026-11-26T13:36:46.446Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>彭宇豪</name>
+    </author>
+    <category term="健身" scheme="http://example.com/tags/%E5%81%A5%E8%BA%AB/"/>
+    <content>
+      <![CDATA[<p>今天练手臂和窄推<br>能明显感到力量增加了，练完充血也有线条了<br>我的海淘快递到济南互换站了<br>应该快到了</p>]]>
+    </content>
+    <id>http://example.com/2026/11/26/261126%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/</id>
+    <link href="http://example.com/2026/11/26/261126%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/"/>
+    <published>2026-11-26T13:27:07.000Z</published>
+    <summary>
+      <![CDATA[<p>今天练手臂和窄推<br>能明显感到力量增加了，练完充血也有线条了<br>我的海淘快递到济南互换站了<br>应该快到了</p>]]>
+    </summary>
+    <title>261126生活日常</title>
+    <updated>2026-11-26T13:35:06.172Z</updated>
+  </entry>
   <entry>
     <author>
       <name>彭宇豪</name>
@@ -316,39 +350,5 @@
     </summary>
     <title>261117学习记录</title>
     <updated>2026-11-17T13:59:20.054Z</updated>
-  </entry>
-  <entry>
-    <author>
-      <name>彭宇豪</name>
-    </author>
-    <category term="生活" scheme="http://example.com/tags/%E7%94%9F%E6%B4%BB/"/>
-    <content>
-      <![CDATA[<p>今天休息日，中午吃了比较放纵的一顿，拉肚子了<br>下午我买的椅子到了，但是被监控拍到了，好像是说要处分，无所谓，不是什么大事<br>椅子挺舒服，晚上完成了今天的学习任务，虽然刚开始看理论部分时一头雾水，但是实践项目部分还是很顺利的，能够好好的集中精神，越学越感到我的不足，我的路还有很远很远，加油！！！</p>]]>
-    </content>
-    <id>http://example.com/2026/11/16/261116%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/</id>
-    <link href="http://example.com/2026/11/16/261116%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/"/>
-    <published>2026-11-16T12:42:39.000Z</published>
-    <summary>
-      <![CDATA[<p>今天休息日，中午吃了比较放纵的一顿，拉肚子了<br>下午我买的椅子到了，但是被监控拍到了，好像是说要处分，无所谓，不是什么大事<br>椅子挺舒服，晚上完成了今天的学习任务，虽然刚开始看理论部分时一头雾水，但是实践项目部分还是很顺利的，能够好好的集中精神，越学越感到我的不足，]]>
-    </summary>
-    <title>261116生活日常</title>
-    <updated>2026-11-16T12:57:27.577Z</updated>
-  </entry>
-  <entry>
-    <author>
-      <name>彭宇豪</name>
-    </author>
-    <category term="stm32" scheme="http://example.com/tags/stm32/"/>
-    <content>
-      <![CDATA[<p>今天学了TIM函数的内部定时和外部定时<br>内部定时：<br>1.RCC开启TIM的时钟<br>2.TIM_InternalClockConfig配置內部时钟源（不配置默认内部）<br>3.时基单元初始化<br>4.中断输出配置：TIM_ClearFlag清除TIM_TimeBaseInit函数末尾的更新标志位；TIM_ITConfig开启TIM的更新中断<br>5.NVIC_PriorityGroupConfig配置NVIC的分组<br>6.配置NVIC<br>7.TIM_Cmd给TIM使能<br>8.中断函数里用TIM_GetITStatus判断中断；TIM_ClearITPendingBit清除中断标志位</p><p>外部定时<br>1.RCC开启TIM和GPIOA的时钟<br>2.初始化GPIO<br>3.TIM_ETRClockMode2Config配置外部时钟源（ETR固定PA0）<br>4.时基单元初始化<br>5.中断输出配置：TIM_ClearFlag清除TIM_TimeBaseInit函数末尾的更新标志位；TIM_ITConfig开启TIM的更新中断<br>6.NVIC_PriorityGroupConfig配置NVIC的分组<br>7.配置NVIC<br>8.TIM_Cmd给TIM使能<br>9.中断函数里用TIM_GetITStatus判断中断；TIM_ClearITPendingBit清除中断标志位</p>]]>
-    </content>
-    <id>http://example.com/2026/11/16/261116%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</id>
-    <link href="http://example.com/2026/11/16/261116%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
-    <published>2026-11-16T12:42:32.000Z</published>
-    <summary>
-      <![CDATA[<p>今天学了TIM函数的内部定时和外部定时<br>内部定时：<br>1.RCC开启TIM的时钟<br>2.TIM_InternalClockConfig配置內部时钟源（不配置默认内部）<br>3.时基单元初始化<br>4.中断输出配置：TIM_ClearFlag清除TIM_Ti]]>
-    </summary>
-    <title>261116学习记录</title>
-    <updated>2026-11-16T12:54:11.039Z</updated>
   </entry>
 </feed>
