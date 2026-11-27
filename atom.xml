@@ -10,7 +10,40 @@
   <rights>All rights reserved 2026, 彭宇豪</rights>
   <subtitle>学习记录博客</subtitle>
   <title>彭宇豪的博客</title>
-  <updated>2026-11-26T13:36:46.446Z</updated>
+  <updated>2026-11-27T13:25:58.182Z</updated>
+  <entry>
+    <author>
+      <name>彭宇豪</name>
+    </author>
+    <category term="stm32" scheme="http://example.com/tags/stm32/"/>
+    <content>
+      <![CDATA[<p>本来想今天把9-1到9-3完结的，但是课程里有很多额外的内容，还要多费时间搞定<br>今天把这三节课的知识点记在笔记本里了项目也自己独立做了<br>其实写代码部分很简单，主要是知识点多难</p>]]>
+    </content>
+    <id>http://example.com/2026/11/27/261127%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</id>
+    <link href="http://example.com/2026/11/27/261127%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
+    <published>2026-11-27T13:19:47.000Z</published>
+    <summary>
+      <![CDATA[<p>本来想今天把9-1到9-3完结的，但是课程里有很多额外的内容，还要多费时间搞定<br>今天把这三节课的知识点记在笔记本里了项目也自己独立做了<br>其实写代码部分很简单，主要是知识点多难</p>]]>
+    </summary>
+    <title>261127学习记录</title>
+    <updated>2026-11-27T13:25:58.182Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>彭宇豪</name>
+    </author>
+    <content>
+      <![CDATA[<p>今天休息日，本来想吃点油腻的东西，但是忍住了，中午吃的牛腩饭<br>明明上午有很多时间，但不知道怎么就是打不起精神去学习<br>以后不能这样了<br>明天有很多事，上午的实验课，还是练腿日，还碰上体测<br>我要好好安排，体测推两天其实也没事，但还是想早点结束，反正也过不了<br>看了看时间安排，推几天吧，明天还是照常练腿</p>]]>
+    </content>
+    <id>http://example.com/2026/11/27/261127%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/</id>
+    <link href="http://example.com/2026/11/27/261127%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/"/>
+    <published>2026-11-27T13:19:39.000Z</published>
+    <summary>
+      <![CDATA[<p>今天休息日，本来想吃点油腻的东西，但是忍住了，中午吃的牛腩饭<br>明明上午有很多时间，但不知道怎么就是打不起精神去学习<br>以后不能这样了<br>明天有很多事，上午的实验课，还是练腿日，还碰上体测<br>我要好好安排，体测推两天其实也没事，但还是想早点结束，反正也过不了]]>
+    </summary>
+    <title>261127生活日常</title>
+    <updated>2026-11-27T13:23:36.522Z</updated>
+  </entry>
   <entry>
     <author>
       <name>彭宇豪</name>
@@ -316,39 +349,5 @@
     </summary>
     <title>261118学习记录</title>
     <updated>2026-11-18T13:40:50.417Z</updated>
-  </entry>
-  <entry>
-    <author>
-      <name>彭宇豪</name>
-    </author>
-    <category term="健身" scheme="http://example.com/tags/%E5%81%A5%E8%BA%AB/"/>
-    <content>
-      <![CDATA[<p>今天早上起晚了，没吃鸡蛋燕麦，喝了杯蛋白粉就算了<br>健身挪到了下午，今天练胸，最好的状态下75kg可以推四个，感觉回复很不错<br>今天被导员叫到办公室，给我两天时间处理椅子，我先拖着，之后再看吧<br>有点影响心情</p>]]>
-    </content>
-    <id>http://example.com/2026/11/17/261117%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/</id>
-    <link href="http://example.com/2026/11/17/261117%E7%94%9F%E6%B4%BB%E6%97%A5%E5%B8%B8/"/>
-    <published>2026-11-17T13:57:36.000Z</published>
-    <summary>
-      <![CDATA[<p>今天早上起晚了，没吃鸡蛋燕麦，喝了杯蛋白粉就算了<br>健身挪到了下午，今天练胸，最好的状态下75kg可以推四个，感觉回复很不错<br>今天被导员叫到办公室，给我两天时间处理椅子，我先拖着，之后再看吧<br>有点影响心情</p>]]>
-    </summary>
-    <title>261117生活日常</title>
-    <updated>2026-11-17T14:02:13.849Z</updated>
-  </entry>
-  <entry>
-    <author>
-      <name>彭宇豪</name>
-    </author>
-    <category term="stm32" scheme="http://example.com/tags/stm32/"/>
-    <content>
-      <![CDATA[<p>今天学了6-3和6-4<br>pwm呼吸灯和舵机<br>时间有点赶，学的不怎么清楚</p>]]>
-    </content>
-    <id>http://example.com/2026/11/17/261117%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</id>
-    <link href="http://example.com/2026/11/17/261117%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
-    <published>2026-11-17T13:57:28.000Z</published>
-    <summary>
-      <![CDATA[<p>今天学了6-3和6-4<br>pwm呼吸灯和舵机<br>时间有点赶，学的不怎么清楚</p>]]>
-    </summary>
-    <title>261117学习记录</title>
-    <updated>2026-11-17T13:59:20.054Z</updated>
   </entry>
 </feed>
